@@ -8,7 +8,8 @@ using namespace std;
 using namespace pbbs;
 
 char const *FILEPATH = nullptr;
-constexpr int NUM_SRC = 1000;
+char const *FILEPATH2 = nullptr;
+constexpr int NUM_SRC = 20;
 constexpr int NUM_ROUND = 10;
 constexpr uint32_t in_que = 1;
 constexpr uint32_t to_add = 2;
@@ -57,9 +58,10 @@ class SSSP {
   SSSP(const Graph &_G, Algorithm _algo, size_t _param = 1 << 21)
       : G(_G), algo(_algo), param(_param) {
     max_queue = 1ULL << static_cast<int>(ceil(log2(G.n)));
-    doubling = ceil(log2(max_queue / MIN_QUEUE)) + 1;
+    doubling = ceil(log2(max_queue / MIN_QUEUE)) + 2;
     info = sequence<Information>(G.n);
-    que[0] = que[1] = sequence<NodeId>(max_queue);
+    que[0]= sequence<NodeId>(max_queue);
+    que[1] = sequence<NodeId>(max_queue);
     que_num = sequence<NodeId>(max_queue);
   }
   void sssp(int s, EdgeTy *dist);

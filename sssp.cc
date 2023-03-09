@@ -331,12 +331,20 @@ void SSSP::sssp(int s, EdgeTy *_dist) {
   t_all.stop();
   parallel_for(0, G.n, [&](size_t i) { _dist[i] = info[i].dist; });
 }
+// ./sssp -i /data0/zwan018/origin/Germany_sym_wgh.adj -f /data0/zwan018/contract/Germany_sym_wgh.adj -p 200000 -w -v -c -a rho-stepping
+// ./sssp -i /data0/zwan018/origin/Germany_sym_wgh.adj -f /data0/zwan018/contract/Germany_sym_wgh.adj -p 200000 -w -v -c -a delta-stepping
+// ./sssp -i /data0/zwan018/origin/Germany_sym_wgh.adj -f /data0/zwan018/contract/Germany_sym_wgh.adj -p 200000 -w -v -c -a bellman-ford
+// ./sssp -i /data0/zwan018/origin/RoadUSA_sym_wgh.adj -f /data0/zwan018/contract/RoadUSA_sym_wgh.adj -p 200000 -w -v -c -a rho-stepping
+// ./sssp -i /data0/zwan018/origin/RoadUSA_sym_wgh.adj -f /data0/zwan018/contract/RoadUSA_sym_wgh.adj -p 200000 -w -v -c -a delta-stepping
+// ./sssp -i /data0/zwan018/origin/RoadUSA_sym_wgh.adj -f /data0/zwan018/contract/RoadUSA_sym_wgh.adj -p 200000 -w -v -c -a bellman-ford
+// ./sssp -i /data0/zwan018/origin/twitter.adj -f /data0/zwan018/contract/twitter.adj -p 200000 -w -v -c -a rho-stepping
+
 
 int main(int argc, char *argv[]) {
   if (argc == 1) {
     fprintf(
         stderr,
-        "Usage: %s [-i input_file] [-p parameter] [-w] [-s] [-v] [-a "
+        "Usage: %s [-i input_file] [-f input_file2]  [-p parameter] [-w] [-s] [-v] [-c] [-a "
         "algorithm]\n"
         "Options:\n"
         "\t-i,\tinput file path\n"
@@ -344,6 +352,7 @@ int main(int argc, char *argv[]) {
         "\t-w,\tweighted input graph\n"
         "\t-s,\tsymmetrized input graph\n"
         "\t-v,\tverify result\n"
+        "\t-c,\tcontracted graph\n"
         "\t-a,\talgorithm: [rho-stepping] [delta-stepping] [bellman-ford]\n",
         argv[0]);
     exit(EXIT_FAILURE);
@@ -352,12 +361,16 @@ int main(int argc, char *argv[]) {
   bool weighted = false;
   bool symmetrized = false;
   bool verify = false;
+  bool contract = false;
   size_t param = 1 << 21;
   Algorithm algo = rho_stepping;
-  while ((c = getopt(argc, argv, "i:p:a:wsv")) != -1) {
+  while ((c = getopt(argc, argv, "i:f:p:a:cwsv")) != -1) {
     switch (c) {
       case 'i':
         FILEPATH = optarg;
+        break;
+      case 'f':
+        FILEPATH2 = optarg;
         break;
       case 'p':
         param = atol(optarg);
@@ -374,6 +387,9 @@ int main(int argc, char *argv[]) {
           exit(EXIT_FAILURE);
         }
         break;
+      case 'c':
+        contract = true;
+        break;
       case 'w':
         weighted = true;
         break;
@@ -389,17 +405,22 @@ int main(int argc, char *argv[]) {
     }
   }
   Graph G(weighted, symmetrized);
+  Graph G2(weighted, symmetrized, contract);
 
   printf("Info: Reading graph\n");
   G.read_graph(FILEPATH);
+  G2.read_graph(FILEPATH2);
   if (!weighted) {
     printf("Info: Generating edge weights\n");
     G.generate_weight();
   }
 
   SSSP solver(G, algo, param);
+  SSSP solver2(G2, algo, param);
   int sd_scale = G.m / G.n;
+  int sd_scale2 = G2.m / G2.n;
   solver.set_sd_scale(sd_scale);
+  solver2.set_sd_scale(sd_scale2);
   fprintf(stdout,
           "Running on %s: |V|=%zu, |E|=%zu, param=%zu, num_src=%d, "
           "num_round=%d\n",
@@ -407,30 +428,47 @@ int main(int argc, char *argv[]) {
   EdgeTy *dijkstra_dist = new EdgeTy[G.n];
   EdgeTy *my_dist = new EdgeTy[G.n];
 
+  EdgeTy *my_dist2 = new EdgeTy[G2.n];
+
   for (int v = 0; v < NUM_SRC; v++) {
     int s = hash32(v) % G.n;
-    printf("source: %-10d\n", s);
+    while(G2.residual[s])s=hash32(s+v)%G.n;
+    //printf("source: %-10d\n", s);
     vector<double> sssp_time;
+    vector<double> sssp_time2;
     // first time warmup
     solver.reset_timer();
     solver.sssp(s, my_dist);
-    printf("warmup round (not counted): %f\n", solver.t_all.get_total());
+    //printf("warmup round (not counted): %f\n", solver.t_all.get_total());
 
     for (int i = 0; i < NUM_ROUND; i++) {
       solver.reset_timer();
       solver.sssp(s, my_dist);
       sssp_time.push_back(solver.t_all.get_total());
 
-      printf("round %d: %f\n", i + 1, solver.t_all.get_total());
+      //printf("round %d: %f\n", i + 1, solver.t_all.get_total());
+    }
+
+    solver2.reset_timer();
+    solver2.sssp(s, my_dist2);
+    //printf("warmup round (not counted): %f\n", solver2.t_all.get_total());
+
+    for (int i = 0; i < NUM_ROUND; i++) {
+      solver2.reset_timer();
+      solver2.sssp(s, my_dist2);
+      sssp_time2.push_back(solver2.t_all.get_total());
+      p//rintf("round %d: %f\n", i + 1, solver2.t_all.get_total());
     }
     sort(begin(sssp_time), end(sssp_time));
-    printf("median running time: %f\n", sssp_time[(sssp_time.size() - 1) / 2]);
-    printf("average running time: %f\n",
-           accumulate(begin(sssp_time), end(sssp_time), 0.0) / NUM_ROUND);
+    sort(begin(sssp_time2), end(sssp_time2));
+    //printf("median running time: %f\t%f\n", sssp_time[(sssp_time.size() - 1) / 2], sssp_time2[(sssp_time2.size() - 1) / 2]);
+    printf("average running time: %f\t%f\n",
+           accumulate(begin(sssp_time), end(sssp_time), 0.0) / NUM_ROUND,
+           accumulate(begin(sssp_time2), end(sssp_time2), 0.0) / NUM_ROUND);
 
     if (verify) {
       printf("Info: Running verifier\n");
-      verifier(s, G, my_dist);
+      verifier(s, G, my_dist, my_dist2);
     }
   }
   delete[] dijkstra_dist;

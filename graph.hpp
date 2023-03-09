@@ -42,12 +42,14 @@ class Graph {
   uint64_t n, m;
   sequence<Edge> edge;
   sequence<EdgeId> offset;
+  sequence<bool> residual;
   bool weighted;
   bool symmetrized;
+  bool contracted;
 
   Graph() = delete;
-  Graph(bool _weighted = false, bool _symmetrized = false)
-      : weighted(_weighted), symmetrized(_symmetrized) {}
+  Graph(bool _weighted = false, bool _symmetrized = false, bool _contracted = false)
+      : weighted(_weighted), symmetrized(_symmetrized), contracted(_contracted)  {n = m = 0;}
   void generate_weight() {
     if (weighted) {
       fprintf(stderr, "Warning: Overwrite original weight\n");
@@ -89,11 +91,16 @@ class Graph {
     });
     n = num[0], m = num[1];
     if (weighted) {
-      assert(num.size() == n + m + m + 2);
+      if(contracted){
+        assert(num.size() == n + n + m + m + 2);
+      }else{
+        assert(num.size() == n + m + m + 2);
+      }
     } else {
       assert(num.size() == n + m + 2);
     }
     offset = sequence<EdgeId>(n + 1);
+    residual = sequence<bool>(n);
     edge = sequence<Edge>(m);
     parallel_for(0, n, [&](size_t i) { offset[i] = num[i + 2]; });
     offset[n] = m;
@@ -101,74 +108,12 @@ class Graph {
     if (weighted) {
       parallel_for(0, m, [&](size_t i) { edge[i].w = num[i + n + m + 2]; });
     }
+    if (contracted) {
+      parallel_for(0, n, [&](size_t i) { residual[i] = num[i + n + m + m + 2]; });
+    }
     fclose(fp);
   }
-  void read_gapbs_format(char const* filename) {
-    ifstream ifs(filename);
-    if (!ifs.is_open()) {
-      fprintf(stderr, "Error: file %s does not exist\n", filename);
-      exit(EXIT_FAILURE);
-    }
-    bool directed;
-    ifs.read(reinterpret_cast<char*>(&directed), sizeof(bool));
-    assert(directed == !symmetrized);
-    ifs.read(reinterpret_cast<char*>(&m), sizeof(size_t));
-    ifs.read(reinterpret_cast<char*>(&n), sizeof(size_t));
-    offset = sequence<EdgeId>(n + 1);
-    edge = sequence<Edge>(m);
-    ifs.read(reinterpret_cast<char*>(offset.begin()), (n + 1) * sizeof(EdgeId));
-    ifs.read(reinterpret_cast<char*>(edge.begin()), m * sizeof(Edge));
-    if (directed) {
-      sequence<EdgeId> inv_offset(n + 1);
-      sequence<Edge> inv_edge(m);
-      ifs.read(reinterpret_cast<char*>(inv_offset.begin()),
-               (n + 1) * sizeof(EdgeId));
-      ifs.read(reinterpret_cast<char*>(inv_edge.begin()), m * sizeof(Edge));
-    }
-    if (ifs.peek() != EOF) {
-      fprintf(stderr, "Error: Bad data\n");
-      exit(EXIT_FAILURE);
-    }
-    ifs.close();
-  }
-  void read_galois_format(char const* filename) {
-    FILE* fp = fopen(filename, "r");
-    if (fp == nullptr) {
-      fprintf(stderr, "Error: file %s does not exist\n", filename);
-      exit(EXIT_FAILURE);
-    }
-    fseek(fp, 0, SEEK_END);
-    size_t size = ftell(fp);
-    rewind(fp);
-    vector<char> buf(size);
-    if (fread(buf.data(), 1, size, fp) != size) {
-      fprintf(stderr, "Error: Read failed\n");
-      exit(EXIT_FAILURE);
-    }
-    uint64_t* fptr = (uint64_t*)buf.data();
-    size_t version = *fptr++;
-    size_t sizeof_edge_data = *fptr++;
-    assert(version == 1);
-    assert(sizeof_edge_data == sizeof(EdgeTy));
-    n = *fptr++;
-    m = *fptr++;
-    offset = sequence<EdgeId>(n + 1);
-    edge = sequence<Edge>(m);
-    offset[0] = 0;
-    for (size_t i = 1; i <= n; i++) {
-      offset[i] = *fptr++;
-    }
-    uint32_t* fptr32 = (uint32_t*)fptr;
-    for (size_t i = 0; i < m; i++) {
-      edge[i].v = *fptr32++;
-    }
-    if (m % 2) fptr32++;  // padding
-    for (size_t i = 0; i < m; i++) {
-      edge[i].w = *fptr32++;
-    }
-    assert((void*)fptr32 == buf.data() + size);
-    fclose(fp);
-  }
+ 
   void read_binary_format(char const* filename) {
     // use mmap by default
     if (weighted == true) {
@@ -217,12 +162,6 @@ class Graph {
     if (subfix == "adj") {
       printf("Info: Reading pbbs format\n");
       read_pbbs_format(filename);
-    } else if (subfix == "wsg") {
-      printf("Info: Reading gapbs format\n");
-      read_gapbs_format(filename);
-    } else if (subfix == "gr") {
-      printf("Info: Reading galois format\n");
-      read_galois_format(filename);
     } else if (subfix == "bin") {
       read_binary_format(filename);
     } else {

@@ -1,5 +1,5 @@
 CC = g++
-CXXFLAGS = -O3 -mcx16 -march=native -std=c++17 -Wall -Wextra -Werror -fcilkplus -DCILK
+CXXFLAGS = -O3 -mcx16 -march=native -std=c++17 -Wall -Wextra  -DHOMEGROWN -pthread
 
 all: sssp
 .PHONY: gen run clean
