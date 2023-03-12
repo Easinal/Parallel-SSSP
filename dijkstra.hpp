@@ -26,18 +26,28 @@ void dijkstra(size_t s, const Graph &G, EdgeTy *dist) {
   }
 }
 
-void verifier(size_t s, const Graph &G, EdgeTy *ch_dist, EdgeTy *ch_dist2) {
+void verifier(size_t s, const Graph &G, EdgeTy *ch_dist, EdgeTy *ch_dist2 =NULL, bool contract = false) {
   EdgeTy *cor_dist = new EdgeTy[G.n];
   timer tm;
   dijkstra(s, G, cor_dist);
   tm.stop();
   printf("dijkstra running time: %-10f\n", tm.get_total());
-  parallel_for(0, G.n, [&](size_t i) {
-    if (cor_dist[i] != ch_dist[i] || cor_dist[i] != ch_dist2[i] ) {
-      printf("dijkstra_dist[%zu]=%d, my_dist[%zu]=%d, my_dist2[%zu]=%d\n", i, cor_dist[i], i,
-             ch_dist[i], i, ch_dist2[i]);
-    }
-    assert(cor_dist[i] == ch_dist[i]&&cor_dist[i] == ch_dist2[i]);
-  });
+  if(contract){
+    parallel_for(0, G.n, [&](size_t i) {
+        if (cor_dist[i] != ch_dist[i] || cor_dist[i] != ch_dist2[i] ) {
+          printf("dijkstra_dist[%zu]=%d, my_dist[%zu]=%d, my_dist2[%zu]=%d\n", i, cor_dist[i], i,
+                ch_dist[i], i, ch_dist2[i]);
+        }
+        assert(cor_dist[i] == ch_dist[i]&&cor_dist[i] == ch_dist2[i]);
+    });
+  }else{
+    parallel_for(0, G.n, [&](size_t i) {
+        if (cor_dist[i] != ch_dist[i]) {
+          printf("dijkstra_dist[%zu]=%d, my_dist[%zu]=%d\n", i, cor_dist[i], i,
+                ch_dist[i]);
+        }
+        assert(cor_dist[i] == ch_dist[i]);
+    });
+  }
   delete[] cor_dist;
 }
