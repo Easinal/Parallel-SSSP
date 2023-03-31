@@ -9,7 +9,8 @@ using namespace pbbs;
 
 char const *FILEPATH = nullptr;
 char const *FILEPATH2 = nullptr;
-constexpr int NUM_SRC = 20;
+char const *FILEPATH3 = nullptr;
+constexpr int NUM_SRC = 10;
 constexpr int NUM_ROUND = 10;
 constexpr uint32_t in_que = 1;
 constexpr uint32_t to_add = 2;
@@ -32,6 +33,7 @@ struct Information {
 class SSSP {
  private:
   const Graph &G;
+  const Graph &Gc;
   Algorithm algo;
   bool sparse;
   int cur, nxt;
@@ -52,11 +54,12 @@ class SSSP {
   size_t dense_sampling();
   void relax(size_t sz);
   int pack();
+  void decompress();
 
  public:
   SSSP() = delete;
-  SSSP(const Graph &_G, Algorithm _algo, size_t _param = 1 << 21)
-      : G(_G), algo(_algo), param(_param) {
+  SSSP(const Graph &_G, Algorithm _algo, size_t _param = 1 << 21, const Graph &_Gc = new Graph(false, false, true))
+      : G(_G), algo(_algo), param(_param), Gc(_Gc) {
     max_queue = 1ULL << static_cast<int>(ceil(log2(G.n)));
     doubling = ceil(log2(max_queue / MIN_QUEUE)) + 2;
     info = sequence<Information>(G.n);
@@ -64,6 +67,7 @@ class SSSP {
     que[1] = sequence<NodeId>(max_queue);
     que_num = sequence<NodeId>(max_queue);
   }
+  bool contracted = false;
   void sssp(int s, EdgeTy *dist);
   void reset_timer();
   void set_sd_scale(int x) { sd_scale = x; }

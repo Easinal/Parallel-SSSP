@@ -43,6 +43,21 @@ size_t SSSP::dense_sampling() {
   return 1.0 * SSSP_SAMPLES / num_sample * G.n;
 }
 
+void SSSP::decompress() {
+  parallel_for(0, Gc.n, [&](size_t u){
+    if(G.residual[u]){
+      assert(Gc.offset[u+1]-Gc.offset[u]<=2);
+      for (size_t j = Gc.offset[u]; j < Gc.offset[u + 1]; j++) {
+        NodeId v = Gc.edge[j].v;
+        EdgeTy w = Gc.edge[j].w;
+        if (info[u].dist >info[v].dist+ w) {
+          info[u].dist = info[v].dist + w;
+        }
+      }
+    }
+  });
+}
+
 void SSSP::relax(size_t sz) {
   if (sparse) {
     size_t qsize[doubling], cnt[doubling];
@@ -322,11 +337,16 @@ void SSSP::sssp(int s, EdgeTy *_dist) {
   while (sz) {
     relax(sz);
     sz = pack();
+    //cout<<sz<<endl;
     if (sz >= G.n / sd_scale) {
       sparse = false;
     } else {
       sparse = true;
     };
+  }
+  
+  if(contracted){
+    decompress();
   }
   t_all.stop();
   parallel_for(0, G.n, [&](size_t i) { _dist[i] = info[i].dist; });
@@ -344,7 +364,7 @@ int main(int argc, char *argv[]) {
   if (argc == 1) {
     fprintf(
         stderr,
-        "Usage: %s [-i input_file] [-f input_file2]  [-p parameter] [-w] [-s] [-v] [-c] [-a "
+        "Usage: %s [-i input_file] [-f input_file2] [-d input_file3]  [-p parameter] [-w] [-s] [-v] [-c] [-a] "
         "algorithm]\n"
         "Options:\n"
         "\t-i,\tinput file path\n"
@@ -364,13 +384,16 @@ int main(int argc, char *argv[]) {
   bool contract = false;
   size_t param = 1 << 21;
   Algorithm algo = rho_stepping;
-  while ((c = getopt(argc, argv, "i:f:p:a:cwsv")) != -1) {
+  while ((c = getopt(argc, argv, "i:f:d:p:a:cwsv")) != -1) {
     switch (c) {
       case 'i':
         FILEPATH = optarg;
         break;
       case 'f':
         FILEPATH2 = optarg;
+        break;
+      case 'd':
+        FILEPATH3 = optarg;
         break;
       case 'p':
         param = atol(optarg);
@@ -431,8 +454,16 @@ int main(int argc, char *argv[]) {
       printf("Info: Generating edge weights\n");
       G2.generate_weight();
     }
+    Graph G3(weighted, false, contract);
+    printf("Info: Reading graph\n");
+    G3.read_graph(FILEPATH3);
+    if (!weighted) {
+      printf("Info: Generating edge weights\n");
+      G3.generate_weight();
+    }
     int sd_scale2 = G2.m / G2.n;
-    SSSP solver2(G2, algo, param);
+    SSSP solver2(G2, algo, param, G3);
+    solver2.contracted=true;
     solver2.set_sd_scale(sd_scale2);
     EdgeTy *my_dist2 = new EdgeTy[G2.n];
     for (int v = 0; v < NUM_SRC; v++) {
@@ -442,10 +473,10 @@ int main(int argc, char *argv[]) {
       vector<double> sssp_time;
       vector<double> sssp_time2;
       // first time warmup
+      printf("origin\n");
       solver.reset_timer();
       solver.sssp(s, my_dist);
       printf("warmup round (not counted): %f\n", solver.t_all.get_total());
-
       for (int i = 0; i < NUM_ROUND; i++) {
         solver.reset_timer();
         solver.sssp(s, my_dist);
@@ -453,7 +484,7 @@ int main(int argc, char *argv[]) {
 
         printf("round %d: %f\n", i + 1, solver.t_all.get_total());
       }
-
+      printf("contract\n");
       solver2.reset_timer();
       solver2.sssp(s, my_dist2);
       printf("warmup round (not counted): %f\n", solver2.t_all.get_total());
