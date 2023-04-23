@@ -2,6 +2,7 @@
 
 #include <functional>
 #include <numeric>
+#include <set>
 
 #include "dijkstra.hpp"
 
@@ -127,7 +128,7 @@ void SSSP::relax(size_t sz) {
       sum_deg += sample_deg[i];
     }
     size_t avg_deg = sum_deg / SSSP_SAMPLES;
-    bool super_sparse = (avg_deg <= DEG_THLD);
+    bool super_sparse = (avg_deg <= DEG_THLD);//false;
     EdgeTy th;
     if (algo == rho_stepping) {
       sparse_sampling(sz);
@@ -314,6 +315,51 @@ int SSSP::pack() {
 
 void SSSP::reset_timer() { t_all.reset(); }
 
+size_t SSSP::bfs(int s) {
+  info[s].dist = 0;
+  size_t sz = Gr.offset[s+1]-Gr.offset[s];
+  if(sz==0){
+    return 0;
+  }
+  for (size_t j = Gc.offset[s]; j < Gc.offset[s + 1]; j++) {
+    NodeId v = Gc.edge[j].v;
+    EdgeTy w = Gc.edge[j].w;
+  }
+  for (size_t j = Gr.offset[s]; j < Gr.offset[s + 1]; j++) {
+    NodeId prev_v = s;
+    NodeId v = Gr.edge[j].v;
+    EdgeTy w = Gr.edge[j].w;
+    while(G.residual[v]){
+      info[v].dist = w;
+      if(Gr.offset[v+1]-Gr.offset[v]<2)break;
+      size_t k = Gr.offset[v];
+      NodeId u = Gr.edge[k].v;
+      if(u==prev_v){
+        k++;
+        u=Gr.edge[k].v;
+      }
+      prev_v = v;
+      w+=Gr.edge[k].w;
+      v=u;
+    }
+  }
+  set<NodeId> st;
+  sz = 0;
+  for (size_t j = Gc.offset[s]; j < Gc.offset[s + 1]; j++) {
+    NodeId v = Gc.edge[j].v;
+    if(G.residual[v])continue;
+    EdgeTy w = Gc.edge[j].w;
+    if(st.find(v)==st.end()){
+      info[v].dist = w;
+      que[cur][sz] = v;
+      sz++;
+    }else if(w<info[v].dist){
+      info[v].dist = w;
+    }
+  }
+  return sz;
+}
+
 void SSSP::sssp(int s, EdgeTy *_dist) {
   if (!G.weighted) {
     fprintf(stderr, "Error: Input graph is unweighted\n");
@@ -329,9 +375,15 @@ void SSSP::sssp(int s, EdgeTy *_dist) {
   parallel_for(0, info.size(),
                [&](size_t i) { info[i] = Information(INT_MAX / 2, 0); });
 
-  size_t sz = 1;
-  que[cur][0] = s;
-  info[s].dist = 0;
+  size_t sz = 0;
+
+  if(contracted && G.residual[s]){
+    sz = bfs(s);
+  }else{
+    sz=1;
+    que[cur][0] = s;
+    info[s].dist = 0;
+  }
   sparse = true;
 
   while (sz) {
@@ -364,7 +416,7 @@ int main(int argc, char *argv[]) {
   if (argc == 1) {
     fprintf(
         stderr,
-        "Usage: %s [-i input_file] [-f input_file2] [-d input_file3]  [-p parameter] [-w] [-s] [-v] [-c] [-a] "
+        "Usage: %s [-i input_file] [-f input_file2] [-d input_file3] [-r input_residual] [-p parameter] [-w] [-s] [-v] [-c] [-a] "
         "algorithm]\n"
         "Options:\n"
         "\t-i,\tinput file path\n"
@@ -384,7 +436,7 @@ int main(int argc, char *argv[]) {
   bool contract = false;
   size_t param = 1 << 21;
   Algorithm algo = rho_stepping;
-  while ((c = getopt(argc, argv, "i:f:d:p:a:cwsv")) != -1) {
+  while ((c = getopt(argc, argv, "i:f:d:r:p:a:cwsv")) != -1) {
     switch (c) {
       case 'i':
         FILEPATH = optarg;
@@ -394,6 +446,9 @@ int main(int argc, char *argv[]) {
         break;
       case 'd':
         FILEPATH3 = optarg;
+        break;
+      case 'r':
+        FILEPATH4 = optarg;
         break;
       case 'p':
         param = atol(optarg);
@@ -461,14 +516,20 @@ int main(int argc, char *argv[]) {
       printf("Info: Generating edge weights\n");
       G3.generate_weight();
     }
+    Graph G4(weighted, false, contract);
+    printf("Info: Reading graph\n");
+    G4.read_graph(FILEPATH4);
+    if (!weighted) {
+      printf("Info: Generating edge weights\n");
+      G4.generate_weight();
+    }
     int sd_scale2 = G2.m / G2.n;
-    SSSP solver2(G2, algo, param, G3);
+    SSSP solver2(G2, algo, param, G3, G4);
     solver2.contracted=true;
     solver2.set_sd_scale(sd_scale2);
     EdgeTy *my_dist2 = new EdgeTy[G2.n];
     for (int v = 0; v < NUM_SRC; v++) {
       int s = hash32(v) % G.n;
-      while(G2.residual[s])s=hash32(s+v)%G.n;
       printf("source: %-10d\n", s);
       vector<double> sssp_time;
       vector<double> sssp_time2;
