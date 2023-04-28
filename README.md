@@ -11,7 +11,7 @@ This repository includes the implmentation of $\rho$-stepping, $\Delta$\*-steppi
 ### Setting up 
 Clone the library with submodule 
 ```shell
-git clone --recurse-submodules https://github.com/ucrparlay/Parallel-SSSP.git 
+git clone --recurse-submodules git@github.com:Easinal/Parallel-SSSP.git
 cd Parallel-SSSP/ 
 ```
 
