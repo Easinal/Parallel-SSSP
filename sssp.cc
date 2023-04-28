@@ -44,6 +44,38 @@ size_t SSSP::dense_sampling() {
   return 1.0 * SSSP_SAMPLES / num_sample * G.n;
 }
 
+void SSSP::decompressLayered() {
+  sequence<std::pair<size_t, NodeId>> layerMap(Gc.n);
+  sequence<NodeId> sortedLayer(Gc.n);
+  parallel_for(0, Gc.n, [&](size_t i){
+    layerMap[i] = make_pair(Gc.residual[i],i);
+  });
+  sort(layerMap.begin(), layerMap.end());
+  size_t layer = layerMap[Gc.n-1].first;
+  size_t layerOffset[layer+2];
+  layerOffset[1]=0;
+  layerOffset[layer+1]=Gc.n;
+  sortedLayer[0]=layerMap[0].second;
+  parallel_for(1, Gc.n, [&](size_t i){
+    sortedLayer[i]=layerMap[i].second;
+    if(layerMap[i].first!=layerMap[i-1].first){
+      layerOffset[layerMap[i].first]=i;
+    }
+  });
+  for(size_t i=layer;i>0;--i){
+    parallel_for(layerOffset[i], layerOffset[i+1], [&](size_t k){
+      NodeId u = sortedLayer[k];
+      for (size_t j = Gc.offset[u]; j < Gc.offset[u + 1]; j++) {
+        NodeId v = Gc.edge[j].v;
+        EdgeTy w = Gc.edge[j].w;
+        if (info[u].dist >info[v].dist+ w) {
+          info[u].dist = info[v].dist + w;
+        }
+      }
+    });
+  }
+}
+
 void SSSP::decompress() {
   parallel_for(0, Gc.n, [&](size_t u){
     if(G.residual[u]){
@@ -315,15 +347,48 @@ int SSSP::pack() {
 
 void SSSP::reset_timer() { t_all.reset(); }
 
+size_t SSSP::dijkstraResidual(int s) {
+  info[s].dist = 0;
+  priority_queue<pair<EdgeTy, NodeId>, vector<pair<EdgeTy, NodeId>>,
+                 greater<pair<EdgeTy, NodeId>>>
+      pq;
+  size_t sz = 0;
+  set<NodeId> st;
+  pq.push(make_pair(info[s].dist, s));
+  while (!pq.empty()) {
+    pair<EdgeTy, NodeId> dist_and_node = pq.top();
+    pq.pop();
+    EdgeTy d = dist_and_node.first;
+    NodeId u = dist_and_node.second;
+    if (info[u].dist < d) continue;
+    if(Gr.offset[u+1]==Gr.offset[u]){
+      if(st.find(u)==st.end()){
+        info[u].dist = d;
+        que[cur][sz] = u;
+        st.insert(u);
+        sz++;
+      }else if(d<info[u].dist){
+        info[u].dist = d;
+      }
+    }
+    for (size_t j = Gr.offset[u]; j < Gr.offset[u + 1]; j++) {
+      NodeId v = Gr.edge[j].v;
+      EdgeTy w = Gr.edge[j].w;
+      if (info[v].dist > info[u].dist + w) {
+        info[v].dist = info[u].dist + w;
+        pq.push(make_pair(info[v].dist, v));
+      }
+    }
+  }
+  return sz;
+}
+
+
 size_t SSSP::bfs(int s) {
   info[s].dist = 0;
   size_t sz = Gr.offset[s+1]-Gr.offset[s];
   if(sz==0){
     return 0;
-  }
-  for (size_t j = Gc.offset[s]; j < Gc.offset[s + 1]; j++) {
-    NodeId v = Gc.edge[j].v;
-    EdgeTy w = Gc.edge[j].w;
   }
   for (size_t j = Gr.offset[s]; j < Gr.offset[s + 1]; j++) {
     NodeId prev_v = s;
@@ -350,6 +415,7 @@ size_t SSSP::bfs(int s) {
     if(G.residual[v])continue;
     EdgeTy w = Gc.edge[j].w;
     if(st.find(v)==st.end()){
+      st.insert(v);
       info[v].dist = w;
       que[cur][sz] = v;
       sz++;
@@ -378,7 +444,7 @@ void SSSP::sssp(int s, EdgeTy *_dist) {
   size_t sz = 0;
 
   if(contracted && G.residual[s]){
-    sz = bfs(s);
+    sz = dijkstraResidual(s);
   }else{
     sz=1;
     que[cur][0] = s;
@@ -398,7 +464,7 @@ void SSSP::sssp(int s, EdgeTy *_dist) {
   }
   
   if(contracted){
-    decompress();
+    decompressLayered();
   }
   t_all.stop();
   parallel_for(0, G.n, [&](size_t i) { _dist[i] = info[i].dist; });

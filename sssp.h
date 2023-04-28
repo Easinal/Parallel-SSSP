@@ -11,7 +11,7 @@ char const *FILEPATH = nullptr;
 char const *FILEPATH2 = nullptr;
 char const *FILEPATH3 = nullptr;
 char const *FILEPATH4 = nullptr;
-constexpr int NUM_SRC = 10;
+constexpr int NUM_SRC = 1000;
 constexpr int NUM_ROUND = 10;
 constexpr uint32_t in_que = 1;
 constexpr uint32_t to_add = 2;
@@ -57,6 +57,7 @@ class SSSP {
   void relax(size_t sz);
   int pack();
   void decompress();
+  void decompressLayered();
 
  public:
   SSSP() = delete;
@@ -72,7 +73,9 @@ class SSSP {
   bool contracted = false;
   void sssp(int s, EdgeTy *dist);
   size_t bfs(int s);
+  size_t dijkstraResidual(int s);
   void reset_timer();
   void set_sd_scale(int x) { sd_scale = x; }
   timer t_all;
+  timer t_tmp;
 };

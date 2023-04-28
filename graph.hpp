@@ -42,7 +42,7 @@ class Graph {
   uint64_t n, m;
   sequence<Edge> edge;
   sequence<EdgeId> offset;
-  sequence<bool> residual;
+  sequence<size_t> residual;
   bool weighted;
   bool symmetrized;
   bool contracted;
@@ -100,7 +100,7 @@ class Graph {
       assert(num.size() == n + m + 2);
     }
     offset = sequence<EdgeId>(n + 1);
-    residual = sequence<bool>(n);
+    residual = sequence<size_t>(n);
     edge = sequence<Edge>(m);
     parallel_for(0, n, [&](size_t i) { offset[i] = num[i + 2]; });
     offset[n] = m;

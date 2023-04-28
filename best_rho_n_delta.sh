@@ -10,8 +10,8 @@ steps=("8192" "16384" "32768" "65536" "131072" "262144" "524288" "1048576" "2097
 graphs=("Germany" "RoadUSA")
 for graph in ${graphs[@]}; do
     for step in ${steps[@]}; do
-        ./sssp -i ${folderOrigin}/${graph}_sym_wgh.adj -f ${folderContract}/${graph}_sym_wgh.adj -d ${folderStar}/${graph}_sym_wgh.adj -r ${folderResidual}/${graph}_sym_wgh.adj -p ${step} -w -v -c -a rho-stepping > ${graph}/rho_${step}.txt
-        ./sssp -i ${folderOrigin}/${graph}_sym_wgh.adj -f ${folderContract}/${graph}_sym_wgh.adj -d ${folderStar}/${graph}_sym_wgh.adj -r ${folderResidual}/${graph}_sym_wgh.adj -p ${step} -w -v -c -a delta-stepping > ${graph}/delta_${step}.txt
+        ./sssp -i ${folderOrigin}/${graph}_sym_wgh.adj -f ${folderContract}/${graph}_sym_wgh.adj -d ${folderStar}/${graph}_sym_wgh.adj -r ${folderResidual}/${graph}_sym_wgh.adj -p ${step} -w -v -c -a rho-stepping > ${graph}_new/rho_${step}.txt
+        ./sssp -i ${folderOrigin}/${graph}_sym_wgh.adj -f ${folderContract}/${graph}_sym_wgh.adj -d ${folderStar}/${graph}_sym_wgh.adj -r ${folderResidual}/${graph}_sym_wgh.adj -p ${step} -w -v -c -a delta-stepping > ${graph}_new/delta_${step}.txt
     done
 done
 
