@@ -8,6 +8,9 @@
 
 using namespace std;
 using namespace pbbs;
+sequence<NodeId> sortedLayer;
+sequence<size_t> layerOffset;
+size_t layer;
 
 void SSSP::degree_sampling(size_t sz) {
   static uint32_t seed = 353442899;
@@ -45,23 +48,6 @@ size_t SSSP::dense_sampling() {
 }
 
 void SSSP::decompressLayered() {
-  sequence<std::pair<size_t, NodeId>> layerMap(Gc.n);
-  sequence<NodeId> sortedLayer(Gc.n);
-  parallel_for(0, Gc.n, [&](size_t i){
-    layerMap[i] = make_pair(Gc.residual[i],i);
-  });
-  sort(layerMap.begin(), layerMap.end());
-  size_t layer = layerMap[Gc.n-1].first;
-  size_t layerOffset[layer+2];
-  layerOffset[1]=0;
-  layerOffset[layer+1]=Gc.n;
-  sortedLayer[0]=layerMap[0].second;
-  parallel_for(1, Gc.n, [&](size_t i){
-    sortedLayer[i]=layerMap[i].second;
-    if(layerMap[i].first!=layerMap[i-1].first){
-      layerOffset[layerMap[i].first]=i;
-    }
-  });
   for(size_t i=layer;i>0;--i){
     parallel_for(layerOffset[i], layerOffset[i+1], [&](size_t k){
       NodeId u = sortedLayer[k];
@@ -160,7 +146,7 @@ void SSSP::relax(size_t sz) {
       sum_deg += sample_deg[i];
     }
     size_t avg_deg = sum_deg / SSSP_SAMPLES;
-    bool super_sparse = (avg_deg <= DEG_THLD);//false;
+    bool super_sparse = false;//(avg_deg <= DEG_THLD);
     EdgeTy th;
     if (algo == rho_stepping) {
       sparse_sampling(sz);
@@ -589,6 +575,25 @@ int main(int argc, char *argv[]) {
       printf("Info: Generating edge weights\n");
       G4.generate_weight();
     }
+
+    sequence<std::pair<size_t, NodeId>> layerMap(G3.n);
+    sortedLayer=sequence<NodeId>(G3.n);
+    parallel_for(0, G3.n, [&](size_t i){
+      layerMap[i] = make_pair(G3.residual[i],i);
+    });
+    sort(layerMap.begin(), layerMap.end());
+    layer = layerMap[G3.n-1].first;
+    layerOffset=sequence<size_t>(layer+2);
+    layerOffset[1]=0;
+    layerOffset[layer+1]=G3.n;
+    sortedLayer[0]=layerMap[0].second;
+    parallel_for(1, G3.n, [&](size_t i){
+      sortedLayer[i]=layerMap[i].second;
+      if(layerMap[i].first!=layerMap[i-1].first){
+        layerOffset[layerMap[i].first]=i;
+      }
+    });
+
     int sd_scale2 = G2.m / G2.n;
     SSSP solver2(G2, algo, param, G3, G4);
     solver2.contracted=true;
