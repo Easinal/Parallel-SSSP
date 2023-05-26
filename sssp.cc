@@ -146,7 +146,7 @@ void SSSP::relax(size_t sz) {
       sum_deg += sample_deg[i];
     }
     size_t avg_deg = sum_deg / SSSP_SAMPLES;
-    bool super_sparse = false;//(avg_deg <= DEG_THLD);
+    bool super_sparse (avg_deg <= DEG_THLD);//= false;
     EdgeTy th;
     if (algo == rho_stepping) {
       sparse_sampling(sz);
@@ -437,11 +437,11 @@ void SSSP::sssp(int s, EdgeTy *_dist) {
     info[s].dist = 0;
   }
   sparse = true;
+  if(sd_scale==0)sd_scale++;
 
   while (sz) {
     relax(sz);
     sz = pack();
-    //cout<<sz<<endl;
     if (sz >= G.n / sd_scale) {
       sparse = false;
     } else {
@@ -593,7 +593,6 @@ int main(int argc, char *argv[]) {
         layerOffset[layerMap[i].first]=i;
       }
     });
-
     int sd_scale2 = G2.m / G2.n;
     SSSP solver2(G2, algo, param, G3, G4);
     solver2.contracted=true;
