@@ -1,11 +1,46 @@
+ifdef CLANG
+CC = clang++
+else
 CC = g++
+<<<<<<< HEAD
 CXXFLAGS = -O3 -mcx16 -march=native -std=c++17 -Wall -Wextra  -DHOMEGROWN -pthread
+=======
+endif
+
+CPPFLAGS = -std=c++17 -Wall -Wextra -Werror
+
+INCLUDE_PATH = -Iparlaylib/include/
+
+ifdef CILKPLUS
+CPPFLAGS += -DPARLAY_CILKPLUS -DCILK -fcilkplus
+else ifdef OPENCILK
+CPPFLAGS += -DPARLAY_OPENCILK -DCILK -fopencilk
+else ifdef SERIAL
+CPPFLAGS += -DPARLAY_SEQUENTIAL
+else
+CPPFLAGS += -pthread
+endif
+
+ifdef DEBUG
+CPPFLAGS += -DDEBUG -Og
+else ifdef PERF
+CC = g++
+CPPFLAGS += -Og -mcx16 -march=native -g
+else ifdef MEMCHECK
+CPPFLAGS += -Og -mcx16 -DPARLAY_SEQUENTIAL
+else
+CPPFLAGS += -O3 -mcx16 -march=native
+endif
+
+ifdef STDALLOC
+CPPFLAGS += -DPARLAY_USE_STD_ALLOC
+endif
+>>>>>>> upstream/parlaylib
 
 all: sssp
-.PHONY: gen run clean
 
-sssp:	sssp.cc sssp.h dijkstra.hpp graph.hpp
-	$(CC) $(CXXFLAGS) sssp.cc -o sssp
+sssp:	sssp.cc sssp.h dijkstra.h graph.h utils.h
+	$(CC) $(CPPFLAGS) $(INCLUDE_PATH) sssp.cc -o sssp
 
 clean:
 	rm sssp
