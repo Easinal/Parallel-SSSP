@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-sssp
-*.txt
-*.sh
-=======
 # Executables with no extension
 *
 !*.*
@@ -48,4 +43,3 @@ sssp
 *.exe
 *.out
 *.app
->>>>>>> upstream/parlaylib

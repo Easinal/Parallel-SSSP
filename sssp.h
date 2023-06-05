@@ -5,19 +5,8 @@
 using namespace std;
 using namespace parlay;
 
-<<<<<<< HEAD
-char const *FILEPATH = nullptr;
-char const *FILEPATH2 = nullptr;
-char const *FILEPATH3 = nullptr;
-char const *FILEPATH4 = nullptr;
-constexpr int NUM_SRC = 30;
+constexpr int NUM_SRC = 20;
 constexpr int NUM_ROUND = 10;
-constexpr uint32_t in_que = 1;
-constexpr uint32_t to_add = 2;
-=======
-constexpr int NUM_SRC = 10;
-constexpr int NUM_ROUND = 5;
->>>>>>> upstream/parlaylib
 
 constexpr size_t LOCAL_QUEUE_SIZE = 4096;
 constexpr size_t DEG_THLD = 20;
@@ -28,12 +17,6 @@ enum Algorithm { rho_stepping = 0, delta_stepping, bellman_ford };
 class SSSP {
  protected:
   const Graph &G;
-<<<<<<< HEAD
-  const Graph &Gc;
-  const Graph &Gr;
-  Algorithm algo;
-=======
->>>>>>> upstream/parlaylib
   bool sparse;
   int sd_scale;
   size_t frontier_size;
@@ -43,42 +26,26 @@ class SSSP {
   sequence<bool> in_frontier;
   sequence<bool> in_next_frontier;
 
-<<<<<<< HEAD
-  void degree_sampling(size_t sz);
-  void sparse_sampling(size_t sz);
-  size_t dense_sampling();
-  void relax(size_t sz);
-  int pack();
-  void decompress();
-  void decompressLayered();
-
- public:
-  SSSP() = delete;
-  SSSP(const Graph &_G, Algorithm _algo, size_t _param = 1 << 21, const Graph &_Gc = new Graph(false, false, true), const Graph &_Gr = new Graph(false, false, true))
-      : G(_G), algo(_algo), param(_param), Gc(_Gc), Gr(_Gr) {
-    max_queue = 1ULL << static_cast<int>(ceil(log2(G.n)));
-    doubling = ceil(log2(max_queue / MIN_QUEUE)) + 2;
-    info = sequence<Information>(G.n);
-    que[0]= sequence<NodeId>(max_queue);
-    que[1] = sequence<NodeId>(max_queue);
-    que_num = sequence<NodeId>(max_queue);
-  }
-  bool contracted = false;
-  void sssp(int s, EdgeTy *dist);
-  size_t bfs(int s);
-  size_t dijkstraResidual(int s);
-  void reset_timer();
-  void set_sd_scale(int x) { sd_scale = x; }
-  timer t_all;
-  timer t_tmp;
-=======
   void add_to_bag(NodeId v) {
     if (!in_frontier[v] &&
         compare_and_swap(&in_next_frontier[v], false, true)) {
       bag.insert(v);
     }
   }
-
+  void decompressLayered() {
+    for(size_t i=G.layer-1;i>0;--i){
+      parallel_for(G.layerOffset[i], G.layerOffset[i+1], [&](size_t k){
+        NodeId u = G.sortedLayer[k];
+        for (size_t j = G.offset[u]; j < G.offset[u + 1]; j++) {
+          NodeId v = G.edge[j].v;
+          EdgeTy w = G.edge[j].w;
+          if (dist[u] >dist[v]+ w) {
+            dist[u] = dist[v] + w;
+          }
+        }
+      });
+    }
+  }
   size_t estimate_size() {
     static uint32_t seed = 10086;
     size_t hits = 0;
@@ -312,6 +279,7 @@ class SSSP {
       // printf("pack: %f\n", t.next_time());
       sparse = next_sparse;
     }
+    if(G.contracted)decompressLayered();
     return dist;
   }
 
@@ -327,6 +295,7 @@ class Rho_Stepping : public SSSP {
     seed = 0;
     init = []() {};
     get_threshold = [&]() {
+      //cerr<<"rho = "<<rho<<endl;
       if (frontier_size <= rho) {
         if (sparse) {
           auto _dist = delayed_seq<EdgeTy>(
@@ -351,7 +320,7 @@ class Rho_Stepping : public SSSP {
         }
       }
       seed += SSSP_SAMPLES + 1;
-      size_t id = 1.0 * rho / frontier_size * SSSP_SAMPLES;
+      size_t id = rho * SSSP_SAMPLES / frontier_size ;
       sort(sample_dist, sample_dist + SSSP_SAMPLES + 1);
       return sample_dist[id];
     };
@@ -379,5 +348,4 @@ class Bellman_Ford : public SSSP {
     init = []() {};
     get_threshold = []() { return DIST_MAX; };
   }
->>>>>>> upstream/parlaylib
 };

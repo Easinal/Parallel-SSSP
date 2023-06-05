@@ -2,9 +2,6 @@ ifdef CLANG
 CC = clang++
 else
 CC = g++
-<<<<<<< HEAD
-CXXFLAGS = -O3 -mcx16 -march=native -std=c++17 -Wall -Wextra  -DHOMEGROWN -pthread
-=======
 endif
 
 CPPFLAGS = -std=c++17 -Wall -Wextra -Werror
@@ -35,7 +32,6 @@ endif
 ifdef STDALLOC
 CPPFLAGS += -DPARLAY_USE_STD_ALLOC
 endif
->>>>>>> upstream/parlaylib
 
 all: sssp
 

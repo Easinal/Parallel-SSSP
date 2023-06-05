@@ -48,9 +48,12 @@ class Graph {
   sequence<Edge> edge;
   sequence<EdgeId> offset;
   sequence<size_t> residual;
+  sequence<size_t> layerOffset;
+  sequence<size_t> sortedLayer;
   bool weighted;
   bool symmetrized;
-  bool contracted;
+  bool contracted=false;
+  size_t layer=0;
 
   Graph() = delete;
   Graph(bool _weighted = false, bool _symmetrized = false, bool _contracted = false)
@@ -94,29 +97,39 @@ class Graph {
     auto num = delayed_seq<size_t>(num_sum, [&](size_t i) {
       return stol(string(buf.begin() + st[i], buf.begin() + ed[i] + 1));
     });
-    n = num[0], m = num[1];
-    if (weighted) {
-      if(contracted){
-        assert(num.size() == n + n + m + m + 2);
-      }else{
+    if(contracted){
+      n = num[0], m = num[1], layer = num[2];
+      assert(weighted);
+      assert(num.size() == n + n + m + m + layer + 3);
+      offset = sequence<EdgeId>(n + 1);
+      sortedLayer = sequence<size_t>(n + 1);
+      edge = sequence<Edge>(m);
+      layerOffset = sequence<size_t>(layer+1);
+      parallel_for(0, n, [&](size_t i) { offset[i] = num[i+3];});
+      offset[n] = m;
+      parallel_for(0, n, [&](size_t i) { sortedLayer[i] = num[i + n +3];});
+      parallel_for(0, m, [&](size_t i) { edge[i].v = num[i + n + n + 3]; });
+      parallel_for(0, m, [&](size_t i) { edge[i].w = num[i + n + n + m + 3]; });
+      parallel_for(0, layer, [&](size_t i) { layerOffset[i] = num[i + n + n + m + m + 3]; });
+      layerOffset[layer] = n;
+      fclose(fp);
+    }else{
+      n = num[0], m = num[1];
+      if (weighted) {
         assert(num.size() == n + m + m + 2);
+      } else {
+        assert(num.size() == n + m + 2);
       }
-    } else {
-      assert(num.size() == n + m + 2);
+      offset = sequence<EdgeId>(n + 1);
+      edge = sequence<Edge>(m);
+      parallel_for(0, n, [&](size_t i) { offset[i] = num[i + 2]; });
+      offset[n] = m;
+      parallel_for(0, m, [&](size_t i) { edge[i].v = num[i + n + 2]; });
+      if (weighted) {
+        parallel_for(0, m, [&](size_t i) { edge[i].w = num[i + n + m + 2]; });
+      }
+      fclose(fp);
     }
-    offset = sequence<EdgeId>(n + 1);
-    residual = sequence<size_t>(n);
-    edge = sequence<Edge>(m);
-    parallel_for(0, n, [&](size_t i) { offset[i] = num[i + 2]; });
-    offset[n] = m;
-    parallel_for(0, m, [&](size_t i) { edge[i].v = num[i + n + 2]; });
-    if (weighted) {
-      parallel_for(0, m, [&](size_t i) { edge[i].w = num[i + n + m + 2]; });
-    }
-    if (contracted) {
-      parallel_for(0, n, [&](size_t i) { residual[i] = num[i + n + m + m + 2]; });
-    }
-    fclose(fp);
   }
  
   void read_binary_format(char const* filename) {

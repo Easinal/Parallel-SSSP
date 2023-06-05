@@ -1,298 +1,565 @@
+Reading graph...
 Info: Reading pbbs format
-Running on /data0/zwan018/origin/Germany_sym_wgh.adj: |V|=12277375, |E|=32266600, param=2097152, num_src=10, num_round=10
-Info: Reading graph
+Reading contracted graph...
 Info: Reading pbbs format
-Info: Reading graph
-Info: Reading pbbs format
-Info: Reading graph
-Info: Reading pbbs format
-source: 7832761   
-origin
-warmup round (not counted): 0.246651
-round 1: 0.211374
-round 2: 0.203441
-round 3: 0.208573
-round 4: 0.230040
-round 5: 0.221394
-round 6: 0.206822
-round 7: 0.208413
-round 8: 0.205191
-round 9: 0.206676
-round 10: 0.209438
-contract
-warmup round (not counted): 0.261643
-round 1: 0.186124
-round 2: 0.204737
-round 3: 0.189077
-round 4: 0.182337
-round 5: 0.180172
-round 6: 0.179019
-round 7: 0.180325
-round 8: 0.185033
-round 9: 0.185338
-round 10: 0.182860
-median running time: 0.208413	0.182860
-average running time: 0.211136	0.185502
-Info: Running verifier
-dijkstra running time: 4.757454  
-source: 8479660   
-origin
-warmup round (not counted): 0.254458
-round 1: 0.198613
-round 2: 0.206493
-round 3: 0.199341
-round 4: 0.197176
-round 5: 0.220504
-round 6: 0.222136
-round 7: 0.200506
-round 8: 0.202476
-round 9: 0.197531
-round 10: 0.205403
-contract
-warmup round (not counted): 0.191290
-round 1: 0.173139
-round 2: 0.172796
-round 3: 0.175265
-round 4: 0.174805
-round 5: 0.176846
-round 6: 0.174882
-round 7: 0.171711
-round 8: 0.172145
-round 9: 0.173323
-round 10: 0.172259
-median running time: 0.200506	0.173139
-average running time: 0.205018	0.173717
-Info: Running verifier
-dijkstra running time: 4.735909  
-source: 4739329   
-origin
-warmup round (not counted): 0.244182
-round 1: 0.225807
-round 2: 0.224234
-round 3: 0.221505
-round 4: 0.226170
-round 5: 0.222939
-round 6: 0.223206
-round 7: 0.241805
-round 8: 0.225011
-round 9: 0.237146
-round 10: 0.223303
-contract
-warmup round (not counted): 0.200710
-round 1: 0.199526
-round 2: 0.204807
-round 3: 0.211238
-round 4: 0.198569
-round 5: 0.203122
-round 6: 0.203219
-round 7: 0.203362
-round 8: 0.200799
-round 9: 0.197662
-round 10: 0.201500
-median running time: 0.224234	0.201500
-average running time: 0.227113	0.202380
-Info: Running verifier
-dijkstra running time: 4.371383  
-source: 6656264   
-origin
-warmup round (not counted): 0.219574
-round 1: 0.232639
-round 2: 0.215446
-round 3: 0.204821
-round 4: 0.210932
-round 5: 0.212875
-round 6: 0.213924
-round 7: 0.208862
-round 8: 0.216131
-round 9: 0.218556
-round 10: 0.213365
-contract
-warmup round (not counted): 0.192157
-round 1: 0.191051
-round 2: 0.190665
-round 3: 0.185050
-round 4: 0.185400
-round 5: 0.199276
-round 6: 0.191694
-round 7: 0.186330
-round 8: 0.182823
-round 9: 0.187235
-round 10: 0.179675
-median running time: 0.213365	0.186330
-average running time: 0.214755	0.187920
-Info: Running verifier
-dijkstra running time: 4.339920  
-source: 990186    
-origin
-warmup round (not counted): 0.232127
-round 1: 0.227404
-round 2: 0.226704
-round 3: 0.223854
-round 4: 0.241511
-round 5: 0.231193
-round 6: 0.229911
-round 7: 0.227109
-round 8: 0.228275
-round 9: 0.225825
-round 10: 0.229730
-contract
-warmup round (not counted): 0.211041
-round 1: 0.193498
-round 2: 0.197806
-round 3: 0.198584
-round 4: 0.192382
-round 5: 0.194893
-round 6: 0.189436
-round 7: 0.191375
-round 8: 0.211237
-round 9: 0.198227
-round 10: 0.192091
-median running time: 0.227404	0.193498
-average running time: 0.229152	0.195953
-Info: Running verifier
-dijkstra running time: 4.258794  
-source: 8108528   
-origin
-warmup round (not counted): 0.248115
-round 1: 0.234910
-round 2: 0.232684
-round 3: 0.230456
-round 4: 0.234243
-round 5: 0.242412
-round 6: 0.239363
-round 7: 0.233025
-round 8: 0.229304
-round 9: 0.234424
-round 10: 0.231596
-contract
-warmup round (not counted): 0.200413
-round 1: 0.203528
-round 2: 0.202807
-round 3: 0.199868
-round 4: 0.202925
-round 5: 0.205638
-round 6: 0.200423
-round 7: 0.198575
-round 8: 0.200104
-round 9: 0.206077
-round 10: 0.207795
-median running time: 0.233025	0.202807
-average running time: 0.234242	0.202774
-Info: Running verifier
-dijkstra running time: 4.263066  
-source: 8017151   
-origin
-warmup round (not counted): 0.223242
-round 1: 0.209116
-round 2: 0.212580
-round 3: 0.207702
-round 4: 0.208872
-round 5: 0.207766
-round 6: 0.210343
-round 7: 0.225220
-round 8: 0.211039
-round 9: 0.209910
-round 10: 0.209682
-contract
-warmup round (not counted): 0.180370
-round 1: 0.182718
-round 2: 0.184375
-round 3: 0.173510
-round 4: 0.186871
-round 5: 0.184074
-round 6: 0.183042
-round 7: 0.180109
-round 8: 0.180481
-round 9: 0.182283
-round 10: 0.182010
-median running time: 0.209682	0.182283
-average running time: 0.211223	0.181947
-Info: Running verifier
-dijkstra running time: 4.356499  
-source: 2053165   
-origin
-warmup round (not counted): 0.228075
-round 1: 0.220055
-round 2: 0.216264
-round 3: 0.246367
-round 4: 0.212244
-round 5: 0.213729
-round 6: 0.215343
-round 7: 0.211916
-round 8: 0.212754
-round 9: 0.209779
-round 10: 0.253993
-contract
-warmup round (not counted): 0.196868
-round 1: 0.187503
-round 2: 0.180901
-round 3: 0.181920
-round 4: 0.185512
-round 5: 0.178909
-round 6: 0.177358
-round 7: 0.198216
-round 8: 0.184259
-round 9: 0.180195
-round 10: 0.179032
-median running time: 0.213729	0.180901
-average running time: 0.221244	0.183381
-Info: Running verifier
-dijkstra running time: 4.304988  
-source: 1874697   
-origin
-warmup round (not counted): 0.236456
-round 1: 0.235914
-round 2: 0.235095
-round 3: 0.234128
-round 4: 0.232662
-round 5: 0.241588
-round 6: 0.230622
-round 7: 0.235800
-round 8: 0.233774
-round 9: 0.230353
-round 10: 0.233597
-contract
-warmup round (not counted): 0.201413
-round 1: 0.213495
-round 2: 0.195314
-round 3: 0.197705
-round 4: 0.202886
-round 5: 0.198756
-round 6: 0.197972
-round 7: 0.196826
-round 8: 0.198947
-round 9: 0.209904
-round 10: 0.201036
-median running time: 0.233774	0.198756
-average running time: 0.234353	0.201284
-Info: Running verifier
-dijkstra running time: 4.216721  
-source: 4072505   
-origin
-warmup round (not counted): 0.242327
-round 1: 0.229278
-round 2: 0.234196
-round 3: 0.229566
-round 4: 0.228982
-round 5: 0.226734
-round 6: 0.225162
-round 7: 0.236632
-round 8: 0.225872
-round 9: 0.227696
-round 10: 0.230734
-contract
-warmup round (not counted): 0.193274
-round 1: 0.199862
-round 2: 0.197741
-round 3: 0.198243
-round 4: 0.188939
-round 5: 0.194745
-round 6: 0.197993
-round 7: 0.194735
-round 8: 0.193054
-round 9: 0.191668
-round 10: 0.188832
-median running time: 0.228982	0.194735
-average running time: 0.229485	0.194581
-Info: Running verifier
-dijkstra running time: 4.260509  
+Running on /data9/zwan018/origin/Germany_sym_wgh.adj: |V|=12277375, |E|=32266600, param=2097152, num_src=20, num_round=10
+source 0: 7832761   
+Warmup Round: 0.194670
+Round 1: 0.176528
+Round 2: 0.176459
+Round 3: 0.186880
+Round 4: 0.176581
+Round 5: 0.177040
+Round 6: 0.175336
+Round 7: 0.175632
+Round 8: 0.178935
+Round 9: 0.174938
+Round 10: 0.175398
+Warmup Round: 0.135198
+Round 1: 0.134913
+Round 2: 0.129359
+Round 3: 0.120542
+Round 4: 0.124900
+Round 5: 0.120748
+Round 6: 0.122929
+Round 7: 0.123715
+Round 8: 0.123116
+Round 9: 0.125780
+Round 10: 0.121866
+Average time: 0.177373	0.124787
+Running verifier...
+Our running time: 0.172998	0.126292
+dijkstra running time: 4.116801  
+
+source 1: 8479660   
+Warmup Round: 0.197995
+Round 1: 0.189002
+Round 2: 0.181975
+Round 3: 0.199814
+Round 4: 0.184206
+Round 5: 0.187806
+Round 6: 0.183697
+Round 7: 0.186384
+Round 8: 0.185279
+Round 9: 0.180372
+Round 10: 0.185046
+Warmup Round: 0.210116
+Round 1: 0.133441
+Round 2: 0.132900
+Round 3: 0.129192
+Round 4: 0.126632
+Round 5: 0.128641
+Round 6: 0.129142
+Round 7: 0.132072
+Round 8: 0.128300
+Round 9: 0.125402
+Round 10: 0.127966
+Average time: 0.186358	0.129369
+Running verifier...
+Our running time: 0.187670	0.139791
+dijkstra running time: 3.691270  
+
+source 2: 4739329   
+Warmup Round: 0.206204
+Round 1: 0.195397
+Round 2: 0.199754
+Round 3: 0.198490
+Round 4: 0.240366
+Round 5: 0.199332
+Round 6: 0.198539
+Round 7: 0.201016
+Round 8: 0.196639
+Round 9: 0.197901
+Round 10: 0.201175
+Warmup Round: 0.147165
+Round 1: 0.166975
+Round 2: 0.145224
+Round 3: 0.148369
+Round 4: 0.148337
+Round 5: 0.147189
+Round 6: 0.146590
+Round 7: 0.147848
+Round 8: 0.149167
+Round 9: 0.145189
+Round 10: 0.142174
+Average time: 0.202861	0.148706
+Running verifier...
+Our running time: 0.225121	0.148130
+dijkstra running time: 3.347005  
+
+source 3: 6656264   
+Warmup Round: 0.189524
+Round 1: 0.188698
+Round 2: 0.188693
+Round 3: 0.187573
+Round 4: 0.184001
+Round 5: 0.209725
+Round 6: 0.191745
+Round 7: 0.185958
+Round 8: 0.193055
+Round 9: 0.188866
+Round 10: 0.193126
+Warmup Round: 0.138407
+Round 1: 0.132669
+Round 2: 0.135327
+Round 3: 0.148664
+Round 4: 0.137201
+Round 5: 0.134514
+Round 6: 0.130873
+Round 7: 0.139114
+Round 8: 0.141050
+Round 9: 0.135487
+Round 10: 0.132509
+Average time: 0.191144	0.136741
+Running verifier...
+Our running time: 0.185549	0.134433
+dijkstra running time: 3.323786  
+
+source 4: 990186    
+Warmup Round: 0.214736
+Round 1: 0.216428
+Round 2: 0.200524
+Round 3: 0.200989
+Round 4: 0.196872
+Round 5: 0.196036
+Round 6: 0.196158
+Round 7: 0.205656
+Round 8: 0.201719
+Round 9: 0.192313
+Round 10: 0.195036
+Warmup Round: 0.147709
+Round 1: 0.140829
+Round 2: 0.143890
+Round 3: 0.145931
+Round 4: 0.143501
+Round 5: 0.138849
+Round 6: 0.160042
+Round 7: 0.143258
+Round 8: 0.147441
+Round 9: 0.142156
+Round 10: 0.141524
+Average time: 0.200173	0.144742
+Running verifier...
+Our running time: 0.195931	0.141686
+dijkstra running time: 3.390769  
+
+source 5: 8108528   
+Warmup Round: 0.200862
+Round 1: 0.213999
+Round 2: 0.198503
+Round 3: 0.201489
+Round 4: 0.197406
+Round 5: 0.208031
+Round 6: 0.211265
+Round 7: 0.199177
+Round 8: 0.227565
+Round 9: 0.203473
+Round 10: 0.200335
+Warmup Round: 0.151352
+Round 1: 0.147035
+Round 2: 0.145173
+Round 3: 0.146103
+Round 4: 0.146655
+Round 5: 0.144280
+Round 6: 0.146763
+Round 7: 0.165930
+Round 8: 0.145218
+Round 9: 0.146134
+Round 10: 0.146454
+Average time: 0.206124	0.147975
+Running verifier...
+Our running time: 0.192537	0.146445
+dijkstra running time: 3.420783  
+
+source 6: 8017151   
+Warmup Round: 0.187320
+Round 1: 0.182436
+Round 2: 0.207257
+Round 3: 0.184771
+Round 4: 0.182451
+Round 5: 0.182457
+Round 6: 0.184377
+Round 7: 0.183616
+Round 8: 0.184225
+Round 9: 0.180810
+Round 10: 0.210961
+Warmup Round: 0.134057
+Round 1: 0.133495
+Round 2: 0.133578
+Round 3: 0.134085
+Round 4: 0.132563
+Round 5: 0.138364
+Round 6: 0.134114
+Round 7: 0.140372
+Round 8: 0.134259
+Round 9: 0.129966
+Round 10: 0.152938
+Average time: 0.188336	0.136373
+Running verifier...
+Our running time: 0.189028	0.134401
+dijkstra running time: 3.447211  
+
+source 7: 2053165   
+Warmup Round: 0.188297
+Round 1: 0.184722
+Round 2: 0.186094
+Round 3: 0.187283
+Round 4: 0.191336
+Round 5: 0.187264
+Round 6: 0.187728
+Round 7: 0.180250
+Round 8: 0.179754
+Round 9: 0.183276
+Round 10: 0.176052
+Warmup Round: 0.142844
+Round 1: 0.137421
+Round 2: 0.158059
+Round 3: 0.141608
+Round 4: 0.138649
+Round 5: 0.138213
+Round 6: 0.137782
+Round 7: 0.138400
+Round 8: 0.137913
+Round 9: 0.134675
+Round 10: 0.136472
+Average time: 0.184376	0.139919
+Running verifier...
+Our running time: 0.183244	0.137622
+dijkstra running time: 3.417775  
+
+source 8: 1874697   
+Warmup Round: 0.200074
+Round 1: 0.196006
+Round 2: 0.198156
+Round 3: 0.192200
+Round 4: 0.194759
+Round 5: 0.200093
+Round 6: 0.228996
+Round 7: 0.196745
+Round 8: 0.194597
+Round 9: 0.194892
+Round 10: 0.194304
+Warmup Round: 0.145413
+Round 1: 0.146084
+Round 2: 0.146851
+Round 3: 0.143923
+Round 4: 0.160555
+Round 5: 0.144382
+Round 6: 0.146501
+Round 7: 0.145383
+Round 8: 0.150201
+Round 9: 0.148939
+Round 10: 0.146609
+Average time: 0.199075	0.147943
+Running verifier...
+Our running time: 0.195070	0.151994
+dijkstra running time: 3.377772  
+
+source 9: 4072505   
+Warmup Round: 0.193569
+Round 1: 0.189074
+Round 2: 0.192146
+Round 3: 0.188483
+Round 4: 0.188721
+Round 5: 0.193206
+Round 6: 0.194627
+Round 7: 0.223927
+Round 8: 0.194915
+Round 9: 0.193275
+Round 10: 0.191293
+Warmup Round: 0.148429
+Round 1: 0.145644
+Round 2: 0.145409
+Round 3: 0.148531
+Round 4: 0.144412
+Round 5: 0.146583
+Round 6: 0.180676
+Round 7: 0.144300
+Round 8: 0.145534
+Round 9: 0.145800
+Round 10: 0.143074
+Average time: 0.194967	0.148996
+Running verifier...
+Our running time: 0.197324	0.153244
+dijkstra running time: 3.491493  
+
+source 10: 6229199   
+Warmup Round: 0.194756
+Round 1: 0.185437
+Round 2: 0.186098
+Round 3: 0.181381
+Round 4: 0.185390
+Round 5: 0.180193
+Round 6: 0.186037
+Round 7: 0.185222
+Round 8: 0.193132
+Round 9: 0.187114
+Round 10: 0.180275
+Warmup Round: 0.134136
+Round 1: 0.137094
+Round 2: 0.132342
+Round 3: 0.134831
+Round 4: 0.135175
+Round 5: 0.131930
+Round 6: 0.133555
+Round 7: 0.133323
+Round 8: 0.144122
+Round 9: 0.138440
+Round 10: 0.144717
+Average time: 0.185028	0.136553
+Running verifier...
+Our running time: 0.186455	0.138449
+dijkstra running time: 3.444006  
+
+source 11: 11148814  
+Warmup Round: 0.193822
+Round 1: 0.188897
+Round 2: 0.210732
+Round 3: 0.198110
+Round 4: 0.193035
+Round 5: 0.196900
+Round 6: 0.195380
+Round 7: 0.194656
+Round 8: 0.196171
+Round 9: 0.191240
+Round 10: 0.211060
+Warmup Round: 0.143577
+Round 1: 0.146476
+Round 2: 0.140384
+Round 3: 0.137836
+Round 4: 0.145076
+Round 5: 0.141711
+Round 6: 0.138256
+Round 7: 0.138058
+Round 8: 0.139294
+Round 9: 0.139354
+Round 10: 0.157354
+Average time: 0.197618	0.142380
+Running verifier...
+Our running time: 0.192654	0.141250
+dijkstra running time: 3.432152  
+
+source 12: 1570767   
+Warmup Round: 0.183017
+Round 1: 0.179806
+Round 2: 0.176558
+Round 3: 0.177534
+Round 4: 0.190012
+Round 5: 0.186478
+Round 6: 0.181623
+Round 7: 0.181512
+Round 8: 0.177448
+Round 9: 0.177601
+Round 10: 0.176019
+Warmup Round: 0.125116
+Round 1: 0.126751
+Round 2: 0.127132
+Round 3: 0.144240
+Round 4: 0.124761
+Round 5: 0.127670
+Round 6: 0.129612
+Round 7: 0.128259
+Round 8: 0.126312
+Round 9: 0.125411
+Round 10: 0.128325
+Average time: 0.180459	0.128847
+Running verifier...
+Our running time: 0.175217	0.129054
+dijkstra running time: 3.489329  
+
+source 13: 7898820   
+Warmup Round: 0.193490
+Round 1: 0.196227
+Round 2: 0.193084
+Round 3: 0.191237
+Round 4: 0.188149
+Round 5: 0.189357
+Round 6: 0.185411
+Round 7: 0.223170
+Round 8: 0.189360
+Round 9: 0.186577
+Round 10: 0.187905
+Warmup Round: 0.138222
+Round 1: 0.139814
+Round 2: 0.135919
+Round 3: 0.139233
+Round 4: 0.136420
+Round 5: 0.139585
+Round 6: 0.158387
+Round 7: 0.141404
+Round 8: 0.136945
+Round 9: 0.141782
+Round 10: 0.136754
+Average time: 0.193048	0.140624
+Running verifier...
+Our running time: 0.186118	0.143177
+dijkstra running time: 3.486157  
+
+source 14: 3697653   
+Warmup Round: 0.218145
+Round 1: 0.190119
+Round 2: 0.190018
+Round 3: 0.193935
+Round 4: 0.186907
+Round 5: 0.190226
+Round 6: 0.189523
+Round 7: 0.191769
+Round 8: 0.214761
+Round 9: 0.198914
+Round 10: 0.194636
+Warmup Round: 0.146705
+Round 1: 0.148882
+Round 2: 0.143605
+Round 3: 0.142513
+Round 4: 0.142746
+Round 5: 0.144161
+Round 6: 0.144255
+Round 7: 0.147902
+Round 8: 0.148522
+Round 9: 0.148243
+Round 10: 0.149573
+Average time: 0.194081	0.146040
+Running verifier...
+Our running time: 0.202643	0.148258
+dijkstra running time: 3.497984  
+
+source 15: 1852911   
+Warmup Round: 0.195109
+Round 1: 0.212386
+Round 2: 0.191814
+Round 3: 0.187088
+Round 4: 0.192172
+Round 5: 0.187705
+Round 6: 0.199579
+Round 7: 0.190592
+Round 8: 0.194429
+Round 9: 0.219334
+Round 10: 0.192791
+Warmup Round: 0.141643
+Round 1: 0.138853
+Round 2: 0.139783
+Round 3: 0.137605
+Round 4: 0.139716
+Round 5: 0.137941
+Round 6: 0.142790
+Round 7: 0.142504
+Round 8: 0.161343
+Round 9: 0.145105
+Round 10: 0.143759
+Average time: 0.196789	0.142940
+Running verifier...
+Our running time: 0.184999	0.139048
+dijkstra running time: 3.532541  
+
+source 16: 8125094   
+Warmup Round: 0.186613
+Round 1: 0.186579
+Round 2: 0.201600
+Round 3: 0.188751
+Round 4: 0.191745
+Round 5: 0.188586
+Round 6: 0.188933
+Round 7: 0.186120
+Round 8: 0.189604
+Round 9: 0.187792
+Round 10: 0.209012
+Warmup Round: 0.132263
+Round 1: 0.134178
+Round 2: 0.135199
+Round 3: 0.132608
+Round 4: 0.134159
+Round 5: 0.133570
+Round 6: 0.135692
+Round 7: 0.134709
+Round 8: 0.133505
+Round 9: 0.136068
+Round 10: 0.131227
+Average time: 0.191872	0.134092
+Running verifier...
+Our running time: 0.192508	0.133350
+dijkstra running time: 3.523118  
+
+source 17: 6628804   
+Warmup Round: 0.201198
+Round 1: 0.196689
+Round 2: 0.201499
+Round 3: 0.200631
+Round 4: 0.208964
+Round 5: 0.204061
+Round 6: 0.196706
+Round 7: 0.201999
+Round 8: 0.189062
+Round 9: 0.201230
+Round 10: 0.196028
+Warmup Round: 0.140700
+Round 1: 0.153781
+Round 2: 0.143403
+Round 3: 0.140703
+Round 4: 0.141612
+Round 5: 0.137103
+Round 6: 0.137055
+Round 7: 0.138164
+Round 8: 0.138721
+Round 9: 0.137755
+Round 10: 0.140516
+Average time: 0.199687	0.140881
+Running verifier...
+Our running time: 0.214454	0.140077
+dijkstra running time: 3.507513  
+
+source 18: 5181099   
+Warmup Round: 0.196342
+Round 1: 0.192051
+Round 2: 0.190517
+Round 3: 0.193147
+Round 4: 0.193421
+Round 5: 0.209619
+Round 6: 0.194925
+Round 7: 0.193571
+Round 8: 0.193455
+Round 9: 0.193333
+Round 10: 0.194195
+Warmup Round: 0.149571
+Round 1: 0.144778
+Round 2: 0.163713
+Round 3: 0.147926
+Round 4: 0.149531
+Round 5: 0.148844
+Round 6: 0.148745
+Round 7: 0.147472
+Round 8: 0.143931
+Round 9: 0.141598
+Round 10: 0.146833
+Average time: 0.194823	0.148337
+Running verifier...
+Our running time: 0.196194	0.165743
+dijkstra running time: 3.476376  
+
+source 19: 12054158  
+Warmup Round: 0.207246
+Round 1: 0.199847
+Round 2: 0.192574
+Round 3: 0.203434
+Round 4: 0.194873
+Round 5: 0.213718
+Round 6: 0.200103
+Round 7: 0.198332
+Round 8: 0.196515
+Round 9: 0.200046
+Round 10: 0.198101
+Warmup Round: 0.144203
+Round 1: 0.147201
+Round 2: 0.147684
+Round 3: 0.167610
+Round 4: 0.146566
+Round 5: 0.146038
+Round 6: 0.146398
+Round 7: 0.144561
+Round 8: 0.141900
+Round 9: 0.144714
+Round 10: 0.142619
+Average time: 0.199754	0.147529
+Running verifier...
+Our running time: 0.197833	0.144003
+dijkstra running time: 3.521857  
+
