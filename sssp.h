@@ -5,8 +5,13 @@
 using namespace std;
 using namespace parlay;
 
+<<<<<<< HEAD
 constexpr int NUM_SRC = 5;
 constexpr int NUM_ROUND = 3;
+=======
+constexpr int NUM_SRC = 25;
+constexpr int NUM_ROUND = 10;
+>>>>>>> e0334fa7dbdb243968bdbf13bc8564fe2e6bd56b
 
 constexpr size_t LOCAL_QUEUE_SIZE = 4096;
 constexpr size_t DEG_THLD = 20;
@@ -23,8 +28,8 @@ class SSSP {
   hashbag<NodeId> bag;
   sequence<EdgeTy> dist;
   sequence<NodeId> frontier;
-  sequence<bool> in_frontier;
-  sequence<bool> in_next_frontier;
+  sequence<atomic<bool>> in_frontier;
+  sequence<atomic<bool>> in_next_frontier;
 
   void add_to_bag(NodeId v) {
     if (!in_frontier[v] &&
@@ -34,16 +39,29 @@ class SSSP {
   }
   void decompressLayered() {
     for(size_t i=G.layer-1;i>0;--i){
-      parallel_for(G.layerOffset[i], G.layerOffset[i+1], [&](size_t k){
-        NodeId u = G.sortedLayer[k];
-        for (size_t j = G.offset[u]; j < G.offset[u + 1]; j++) {
-          NodeId v = G.edge[j].v;
-          EdgeTy w = G.edge[j].w;
-          if (dist[u] >dist[v]+ w) {
-            dist[u] = dist[v] + w;
+      if(G.layerOffset[i+1]-G.layerOffset[i]>1000){
+        parallel_for(G.layerOffset[i], G.layerOffset[i+1], [&](size_t k){
+          NodeId u = G.sortedLayer[k];
+          for (size_t j = G.offset[u]; j < G.offset[u + 1]; j++) {
+            NodeId v = G.edge[j].v;
+            EdgeTy w = G.edge[j].w;
+            if (dist[u] >dist[v]+ w) {
+              dist[u] = dist[v] + w;
+            }
+          }
+        });
+      }else{
+        for(size_t k = G.layerOffset[i]; k<G.layerOffset[i+1];++k){
+          NodeId u = G.sortedLayer[k];
+          for (size_t j = G.offset[u]; j < G.offset[u + 1]; j++) {
+            NodeId v = G.edge[j].v;
+            EdgeTy w = G.edge[j].w;
+            if (dist[u] >dist[v]+ w) {
+              dist[u] = dist[v] + w;
+            }
           }
         }
-      });
+      }
     }
   }
   size_t estimate_size() {
@@ -240,8 +258,8 @@ class SSSP {
   SSSP(const Graph &_G) : G(_G), bag(G.n) {
     dist = sequence<EdgeTy>::uninitialized(G.n);
     frontier = sequence<NodeId>::uninitialized(G.n);
-    in_frontier = sequence<bool>::uninitialized(G.n);
-    in_next_frontier = sequence<bool>::uninitialized(G.n);
+    in_frontier = sequence<atomic<bool>>::uninitialized(G.n);
+    in_next_frontier = sequence<atomic<bool>>::uninitialized(G.n);
   }
   sequence<EdgeTy> sssp(NodeId s) {
     if (!G.weighted) {
@@ -260,7 +278,7 @@ class SSSP {
     in_frontier[s] = true;
     sparse = false;
 
-    // int round = 0;
+     int round = 0;
     while (frontier_size) {
       // printf("(Round %d, size: %zu\n)", round++, frontier_size); internal::timer t;
       if (sparse) {
@@ -275,9 +293,11 @@ class SSSP {
       } else if (!sparse && next_sparse) {
         dense2sparse();
       }
+      round++;
       // printf("pack: %f\n", t.next_time());
       sparse = next_sparse;
     }
+    printf("%d ", round);
     if(G.contracted)decompressLayered();
     return dist;
   }
