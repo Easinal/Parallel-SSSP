@@ -52,17 +52,17 @@ void run2(Algo &algo, const Graph &G, Algo &algo2, bool verify) {
     NodeId s = hash32(v) % G.n;
     printf("source %d: %-10d\n", v, s);
     double total_time = 0;
-    for (int i = 0; i <= NUM_ROUND; i++) {
-      internal::timer t;
-      algo.sssp(s);
-      t.stop();
-      if (i == 0) {
-        printf("Warmup Round: %f\n", t.total_time());
-      } else {
-        printf("Round %d: %f\n", i, t.total_time());
-        total_time += t.total_time();
-      }
-    }
+    // for (int i = 0; i <= NUM_ROUND; i++) {
+    //   internal::timer t;
+    //   algo.sssp(s);
+    //   t.stop();
+    //   if (i == 0) {
+    //     printf("Warmup Round: %f\n", t.total_time());
+    //   } else {
+    //     printf("Round %d: %f\n", i, t.total_time());
+    //     total_time += t.total_time();
+    //   }
+    // }
     double average_time = total_time / NUM_ROUND;
     double total_time2 = 0;
     for (int i = 0; i <= NUM_ROUND; i++) {
@@ -196,8 +196,8 @@ int main(int argc, char *argv[]) {
           "num_round=%d\n",
           FILEPATH, G.n, G.m, param, NUM_SRC, NUM_ROUND);
 
-  int sd_scale = max(1, (int)(G.m / G.n));
-  int sd_scale2 = max(1, (int)(G2.m / G2.n));
+  int sd_scale = 1;
+  int sd_scale2 = 1;
   if(contract){
     if (algo == rho_stepping) {
       Rho_Stepping solver(G, param);

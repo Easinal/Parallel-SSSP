@@ -1,0 +1,55 @@
+Reading graph...
+Info: Reading pbbs format
+Reading contracted graph...
+Info: Reading pbbs format
+Running on /data9/zwan018/origin/com-orkut_sym_wgh18.adj: |V|=3072627, |E|=234370166, param=8192, num_src=5, num_round=1
+source 0: 2842716   
+Warmup Round: 0.278306
+Round 1: 0.295191
+Warmup Round: 0.293698
+Round 1: 0.283588
+Average time: 0.295191	0.283588
+Running verifier...
+Our running time: 0.291968	0.281696
+dijkstra running time: 6.088930  
+
+source 1: 2176315   
+Warmup Round: 0.318470
+Round 1: 0.309467
+Warmup Round: 0.306187
+Round 1: 0.281409
+Average time: 0.309467	0.281409
+Running verifier...
+Our running time: 0.315605	0.291923
+dijkstra running time: 5.444200  
+
+source 2: 681232    
+Warmup Round: 0.303157
+Round 1: 0.320352
+Warmup Round: 0.304143
+Round 1: 0.275593
+Average time: 0.320352	0.275593
+Running verifier...
+Our running time: 0.307285	0.284390
+dijkstra running time: 5.027431  
+
+source 3: 2165273   
+Warmup Round: 0.340897
+Round 1: 0.306046
+Warmup Round: 0.279073
+Round 1: 0.284330
+Average time: 0.306046	0.284330
+Running verifier...
+Our running time: 0.278959	0.268470
+dijkstra running time: 5.179699  
+
+source 4: 3051572   
+Warmup Round: 0.303857
+Round 1: 0.295959
+Warmup Round: 0.301866
+Round 1: 0.322025
+Average time: 0.295959	0.322025
+Running verifier...
+Our running time: 0.307458	0.283003
+dijkstra running time: 5.364810  
+

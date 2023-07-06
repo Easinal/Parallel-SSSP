@@ -5,8 +5,8 @@
 using namespace std;
 using namespace parlay;
 
-constexpr int NUM_SRC = 20;
-constexpr int NUM_ROUND = 10;
+constexpr int NUM_SRC = 5;
+constexpr int NUM_ROUND = 3;
 
 constexpr size_t LOCAL_QUEUE_SIZE = 4096;
 constexpr size_t DEG_THLD = 20;
@@ -258,19 +258,18 @@ class SSSP {
     dist[s] = 0;
     frontier[0] = s;
     in_frontier[s] = true;
-    sparse = true;
+    sparse = false;
 
     // int round = 0;
     while (frontier_size) {
-      // printf("Round %d: %s, size: %zu, ", round++, sparse ? "sparse" :
-      // "dense", frontier_size); internal::timer t;
+      // printf("(Round %d, size: %zu\n)", round++, frontier_size); internal::timer t;
       if (sparse) {
         frontier_size = sparse_relax();
       } else {
         frontier_size = dense_relax();
       }
       // printf("relax: %f, ", t.next_time());
-      bool next_sparse = (frontier_size < G.n / sd_scale) ? true : false;
+      bool next_sparse = (frontier_size < G.n / sd_scale) ? false : false;
       if (sparse && !next_sparse) {
         sparse2dense();
       } else if (!sparse && next_sparse) {
