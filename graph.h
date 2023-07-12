@@ -50,6 +50,7 @@ class Graph {
   sequence<size_t> residual;
   sequence<size_t> layerOffset;
   sequence<size_t> sortedLayer;
+  sequence<size_t> radius;
   bool weighted;
   bool symmetrized;
   bool contracted=false;
@@ -100,11 +101,12 @@ class Graph {
     if(contracted){
       n = num[0], m = num[1], layer = num[2];
       assert(weighted);
-      assert(num.size() == n + n + m + m + layer + 3);
+      assert(num.size() == n + n + n + m + m + layer + 3);
       offset = sequence<EdgeId>(n + 1);
       sortedLayer = sequence<size_t>(n + 1);
       edge = sequence<Edge>(m);
       layerOffset = sequence<size_t>(layer+1);
+      radius = sequence<size_t>(n);
       parallel_for(0, n, [&](size_t i) { offset[i] = num[i+3];});
       offset[n] = m;
       parallel_for(0, n, [&](size_t i) { sortedLayer[i] = num[i + n +3];});
@@ -112,6 +114,7 @@ class Graph {
       parallel_for(0, m, [&](size_t i) { edge[i].w = num[i + n + n + m + 3]; });
       parallel_for(0, layer, [&](size_t i) { layerOffset[i] = num[i + n + n + m + m + 3]; });
       layerOffset[layer] = n;
+      parallel_for(0, n, [&](size_t i) { radius[i] = num[i + n + n + layer + m + m + 3];});
       fclose(fp);
     }else{
       n = num[0], m = num[1];
@@ -127,6 +130,7 @@ class Graph {
       parallel_for(0, m, [&](size_t i) { edge[i].v = num[i + n + 2]; });
       if (weighted) {
         parallel_for(0, m, [&](size_t i) { edge[i].w = num[i + n + m + 2]; });
+        // generate_weight();
       }
       fclose(fp);
     }
@@ -134,10 +138,10 @@ class Graph {
  
   void read_binary_format(char const* filename) {
     // use mmap by default
-    if (weighted == true) {
-      fprintf(stderr, "Error: Binary format does not support weighted input\n");
-      exit(EXIT_FAILURE);
-    }
+    // if (weighted == true) {
+    //   fprintf(stderr, "Error: Binary format does not support weighted input\n");
+    //   exit(EXIT_FAILURE);
+    // }
     struct stat sb;
     int fd = open(filename, O_RDONLY);
     if (fd == -1) {
@@ -164,7 +168,7 @@ class Graph {
     parallel_for(0, m, [&](size_t i) {
       edge[i].v = reinterpret_cast<uint32_t*>(data + 3 * 8 + (n + 1) * 8)[i];
     });
-
+    generate_weight();
     if (data) {
       const void* b = data;
       munmap(const_cast<void*>(b), len);
