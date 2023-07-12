@@ -52,17 +52,17 @@ void run2(Algo &algo, const Graph &G, Algo &algo2, bool verify) {
     NodeId s = hash32(v) % G.n;
     printf("source %d: %-10d\n", v, s);
     double total_time = 0;
-    // for (int i = 0; i <= NUM_ROUND; i++) {
-    //   internal::timer t;
-    //   algo.sssp(s);
-    //   t.stop();
-    //   if (i == 0) {
-    //     printf("Warmup Round: %f\n", t.total_time());
-    //   } else {
-    //     printf("Round %d: %f\n", i, t.total_time());
-    //     total_time += t.total_time();
-    //   }
-    // }
+    for (int i = 0; i <= NUM_ROUND; i++) {
+      internal::timer t;
+      algo.sssp(s);
+      t.stop();
+      if (i == 0) {
+        printf("Warmup Round: %f\n", t.total_time());
+      } else {
+        printf("Round %d: %f\n", i, t.total_time());
+        total_time += t.total_time();
+      }
+    }
     double average_time = total_time / NUM_ROUND;
     double total_time2 = 0;
     for (int i = 0; i <= NUM_ROUND; i++) {

@@ -4,8 +4,8 @@ export LD_PRELOAD=/usr/local/lib/libjemalloc.so
 folderOrigin="/data9/ezhu021/graph"
 folderContract="/data9/ezhu021/contract"
 #2^11 - 2^25 "Germany"
-steps=("131072" "262144" "524288" "1048576" "2097152" "4194304" "8388608" "16777216" "33554432")
-graphs=("europe_osm")
+steps=("8192" "16384" "32768" "65536" "131072" "262144" "524288" "1048576" "2097152" "4194304" "8388608" "16777216" "33554432")
+graphs=("hugetrace-00020")
 for graph in ${graphs[@]}; do
     for step in ${steps[@]}; do
         echo "$graph"

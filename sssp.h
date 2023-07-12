@@ -5,13 +5,8 @@
 using namespace std;
 using namespace parlay;
 
-<<<<<<< HEAD
-constexpr int NUM_SRC = 5;
-constexpr int NUM_ROUND = 3;
-=======
-constexpr int NUM_SRC = 25;
+constexpr int NUM_SRC = 20;
 constexpr int NUM_ROUND = 10;
->>>>>>> e0334fa7dbdb243968bdbf13bc8564fe2e6bd56b
 
 constexpr size_t LOCAL_QUEUE_SIZE = 4096;
 constexpr size_t DEG_THLD = 20;
@@ -287,7 +282,7 @@ class SSSP {
         frontier_size = dense_relax();
       }
       // printf("relax: %f, ", t.next_time());
-      bool next_sparse = (frontier_size < G.n / sd_scale) ? false : false;
+      bool next_sparse = (frontier_size < G.n / sd_scale) ? true : false;
       if (sparse && !next_sparse) {
         sparse2dense();
       } else if (!sparse && next_sparse) {
@@ -316,7 +311,7 @@ class Rho_Stepping : public SSSP {
     get_threshold = [&]() {
       //cerr<<"rho = "<<rho<<endl;
       if (frontier_size <= rho) {
-        if (sparse) {
+        if (false && sparse) {
           auto _dist = delayed_seq<EdgeTy>(
               frontier_size, [&](size_t i) { return dist[frontier[i]]; });
           return *max_element(_dist);
@@ -326,7 +321,7 @@ class Rho_Stepping : public SSSP {
       }
       EdgeTy sample_dist[SSSP_SAMPLES + 1];
       for (size_t i = 0; i <= SSSP_SAMPLES; i++) {
-        if (sparse) {
+        if (false && sparse) {
           NodeId v = frontier[hash32(seed + i) % frontier_size];
           sample_dist[i] = dist[v];
         } else {

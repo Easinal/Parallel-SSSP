@@ -2,54 +2,564 @@ Reading graph...
 Info: Reading pbbs format
 Reading contracted graph...
 Info: Reading pbbs format
-Running on /data9/ezhu021/graph/hugetrace-00020.adj: |V|=16002413, |E|=47997626, param=1048576, num_src=5, num_round=1
+Running on /data9/ezhu021/graph/hugetrace-00020.adj: |V|=16002413, |E|=47997626, param=1048576, num_src=20, num_round=10
 source 0: 8059255   
-Round 0: sparse, size: 1, Round 1: sparse, size: 239, Round 2: sparse, size: 1508, Round 3: sparse, size: 1633, Round 4: sparse, size: 2397, Round 5: sparse, size: 3405, Round 6: sparse, size: 4204, Round 7: sparse, size: 5592, Round 8: sparse, size: 6849, Round 9: sparse, size: 8133, Round 10: sparse, size: 9308, Round 11: sparse, size: 10613, Round 12: sparse, size: 9959, Round 13: sparse, size: 11212, Round 14: sparse, size: 12024, Round 15: sparse, size: 14066, Round 16: sparse, size: 15818, Round 17: sparse, size: 17280, Round 18: sparse, size: 17914, Round 19: sparse, size: 18749, Round 20: sparse, size: 19969, Round 21: sparse, size: 22954, Round 22: sparse, size: 23414, Round 23: sparse, size: 25110, Round 24: sparse, size: 26429, Round 25: sparse, size: 25745, Round 26: sparse, size: 27015, Round 27: sparse, size: 26677, Round 28: sparse, size: 27505, Round 29: sparse, size: 29730, Round 30: sparse, size: 29721, Round 31: sparse, size: 30744, Round 32: sparse, size: 31958, Round 33: sparse, size: 29805, Round 34: sparse, size: 30797, Round 35: sparse, size: 30839, Round 36: sparse, size: 30246, Round 37: sparse, size: 29234, Round 38: sparse, size: 28845, Round 39: sparse, size: 27549, Round 40: sparse, size: 27441, Round 41: sparse, size: 26523, Round 42: sparse, size: 27078, Round 43: sparse, size: 28324, Round 44: sparse, size: 28284, Round 45: sparse, size: 29618, Round 46: sparse, size: 30527, Round 47: sparse, size: 30049, Round 48: sparse, size: 30802, Round 49: sparse, size: 30469, Round 50: sparse, size: 35001, Round 51: sparse, size: 35610, Round 52: sparse, size: 36794, Round 53: sparse, size: 37160, Round 54: sparse, size: 40102, Round 55: sparse, size: 42617, Round 56: sparse, size: 43934, Round 57: sparse, size: 46321, Round 58: sparse, size: 46423, Round 59: sparse, size: 43861, Round 60: sparse, size: 46910, Round 61: sparse, size: 43911, Round 62: sparse, size: 46911, Round 63: sparse, size: 43918, Round 64: sparse, size: 41472, Round 65: sparse, size: 42598, Round 66: sparse, size: 42174, Round 67: sparse, size: 39917, Round 68: sparse, size: 39385, Round 69: sparse, size: 38245, Round 70: sparse, size: 39084, Round 71: sparse, size: 36122, Round 72: sparse, size: 34945, Round 73: sparse, size: 37226, Round 74: sparse, size: 33651, Round 75: sparse, size: 32567, Round 76: sparse, size: 30019, Round 77: sparse, size: 31429, Round 78: sparse, size: 30945, Round 79: sparse, size: 30138, Round 80: sparse, size: 31271, Round 81: sparse, size: 28447, Round 82: sparse, size: 27779, Round 83: sparse, size: 25890, Round 84: sparse, size: 23134, Round 85: sparse, size: 20720, Round 86: sparse, size: 19268, Round 87: sparse, size: 17361, Round 88: sparse, size: 14636, Round 89: sparse, size: 13612, Round 90: sparse, size: 12599, Round 91: sparse, size: 11426, Round 92: sparse, size: 9947, Round 93: sparse, size: 7803, Round 94: sparse, size: 7116, Round 95: sparse, size: 6366, Round 96: sparse, size: 5892, Round 97: sparse, size: 5177, Round 98: sparse, size: 4422, Round 99: sparse, size: 3585, Round 100: sparse, size: 1954, Round 101: sparse, size: 362, Warmup Round: 0.141578
-Round 0: sparse, size: 1, Round 1: sparse, size: 239, Round 2: sparse, size: 1416, Round 3: sparse, size: 1948, Round 4: sparse, size: 2675, Round 5: sparse, size: 3153, Round 6: sparse, size: 4147, Round 7: sparse, size: 5599, Round 8: sparse, size: 6709, Round 9: sparse, size: 8427, Round 10: sparse, size: 9734, Round 11: sparse, size: 10578, Round 12: sparse, size: 9966, Round 13: sparse, size: 11162, Round 14: sparse, size: 12536, Round 15: sparse, size: 13758, Round 16: sparse, size: 16034, Round 17: sparse, size: 17183, Round 18: sparse, size: 17789, Round 19: sparse, size: 19012, Round 20: sparse, size: 21267, Round 21: sparse, size: 22845, Round 22: sparse, size: 22754, Round 23: sparse, size: 24696, Round 24: sparse, size: 26279, Round 25: sparse, size: 24624, Round 26: sparse, size: 27437, Round 27: sparse, size: 27786, Round 28: sparse, size: 29119, Round 29: sparse, size: 30037, Round 30: sparse, size: 28965, Round 31: sparse, size: 31774, Round 32: sparse, size: 30379, Round 33: sparse, size: 30937, Round 34: sparse, size: 29338, Round 35: sparse, size: 31043, Round 36: sparse, size: 30959, Round 37: sparse, size: 30061, Round 38: sparse, size: 28416, Round 39: sparse, size: 29073, Round 40: sparse, size: 28185, Round 41: sparse, size: 26631, Round 42: sparse, size: 28194, Round 43: sparse, size: 28728, Round 44: sparse, size: 29385, Round 45: sparse, size: 29884, Round 46: sparse, size: 29642, Round 47: sparse, size: 30624, Round 48: sparse, size: 30945, Round 49: sparse, size: 32286, Round 50: sparse, size: 34538, Round 51: sparse, size: 34460, Round 52: sparse, size: 37248, Round 53: sparse, size: 36224, Round 54: sparse, size: 39492, Round 55: sparse, size: 41895, Round 56: sparse, size: 42245, Round 57: sparse, size: 45280, Round 58: sparse, size: 46146, Round 59: sparse, size: 43873, Round 60: sparse, size: 44374, Round 61: sparse, size: 43608, Round 62: sparse, size: 46966, Round 63: sparse, size: 41893, Round 64: sparse, size: 42414, Round 65: sparse, size: 42021, Round 66: sparse, size: 43595, Round 67: sparse, size: 39404, Round 68: sparse, size: 39372, Round 69: sparse, size: 38569, Round 70: sparse, size: 38376, Round 71: sparse, size: 36575, Round 72: sparse, size: 35794, Round 73: sparse, size: 35733, Round 74: sparse, size: 36408, Round 75: sparse, size: 34195, Round 76: sparse, size: 31417, Round 77: sparse, size: 31814, Round 78: sparse, size: 30600, Round 79: sparse, size: 30400, Round 80: sparse, size: 30687, Round 81: sparse, size: 29145, Round 82: sparse, size: 27320, Round 83: sparse, size: 27337, Round 84: sparse, size: 22560, Round 85: sparse, size: 19802, Round 86: sparse, size: 19079, Round 87: sparse, size: 17711, Round 88: sparse, size: 15090, Round 89: sparse, size: 14144, Round 90: sparse, size: 12159, Round 91: sparse, size: 11323, Round 92: sparse, size: 10100, Round 93: sparse, size: 8037, Round 94: sparse, size: 6865, Round 95: sparse, size: 6353, Round 96: sparse, size: 5776, Round 97: sparse, size: 5168, Round 98: sparse, size: 4254, Round 99: sparse, size: 3546, Round 100: sparse, size: 2144, Round 101: sparse, size: 437, Round 1: 0.117819
-Round 0: sparse, size: 1, Round 1: sparse, size: 214, Round 2: sparse, size: 680, Round 3: sparse, size: 1079, Round 4: sparse, size: 1638, Round 5: sparse, size: 2209, Round 6: sparse, size: 2780, Round 7: sparse, size: 3713, Round 8: sparse, size: 4358, Round 9: sparse, size: 5211, Round 10: sparse, size: 6350, Round 11: sparse, size: 6728, Round 12: sparse, size: 6597, Round 13: sparse, size: 8071, Round 14: sparse, size: 8254, Round 15: sparse, size: 9613, Round 16: sparse, size: 10772, Round 17: sparse, size: 11502, Round 18: sparse, size: 11793, Round 19: sparse, size: 12420, Round 20: sparse, size: 13756, Round 21: sparse, size: 14394, Round 22: sparse, size: 15526, Round 23: sparse, size: 17153, Round 24: sparse, size: 17219, Round 25: sparse, size: 17433, Round 26: sparse, size: 18113, Round 27: sparse, size: 18043, Round 28: sparse, size: 19789, Round 29: sparse, size: 20544, Round 30: sparse, size: 20371, Round 31: sparse, size: 22756, Round 32: sparse, size: 20954, Round 33: sparse, size: 20928, Round 34: sparse, size: 20929, Round 35: sparse, size: 21459, Round 36: sparse, size: 19722, Round 37: sparse, size: 20562, Round 38: sparse, size: 19006, Round 39: sparse, size: 17941, Round 40: sparse, size: 17921, Round 41: sparse, size: 18158, Round 42: sparse, size: 18476, Round 43: sparse, size: 18927, Round 44: sparse, size: 19777, Round 45: sparse, size: 19808, Round 46: sparse, size: 21174, Round 47: sparse, size: 20381, Round 48: sparse, size: 21491, Round 49: sparse, size: 22023, Round 50: sparse, size: 23489, Round 51: sparse, size: 22571, Round 52: sparse, size: 25275, Round 53: sparse, size: 25199, Round 54: sparse, size: 27136, Round 55: sparse, size: 28384, Round 56: sparse, size: 28962, Round 57: sparse, size: 31440, Round 58: sparse, size: 31281, Round 59: sparse, size: 30090, Round 60: sparse, size: 30776, Round 61: sparse, size: 30327, Round 62: sparse, size: 31006, Round 63: sparse, size: 29794, Round 64: sparse, size: 28022, Round 65: sparse, size: 28435, Round 66: sparse, size: 28034, Round 67: sparse, size: 27411, Round 68: sparse, size: 27899, Round 69: sparse, size: 25944, Round 70: sparse, size: 25623, Round 71: sparse, size: 25533, Round 72: sparse, size: 24335, Round 73: sparse, size: 25667, Round 74: sparse, size: 24649, Round 75: sparse, size: 22934, Round 76: sparse, size: 21414, Round 77: sparse, size: 21357, Round 78: sparse, size: 21167, Round 79: sparse, size: 20383, Round 80: sparse, size: 20133, Round 81: sparse, size: 19570, Round 82: sparse, size: 19341, Round 83: sparse, size: 18102, Round 84: sparse, size: 15549, Round 85: sparse, size: 13443, Round 86: sparse, size: 12585, Round 87: sparse, size: 11817, Round 88: sparse, size: 9822, Round 89: sparse, size: 9106, Round 90: sparse, size: 8951, Round 91: sparse, size: 7257, Round 92: sparse, size: 6325, Round 93: sparse, size: 5552, Round 94: sparse, size: 4874, Round 95: sparse, size: 4116, Round 96: sparse, size: 3871, Round 97: sparse, size: 3290, Round 98: sparse, size: 3057, Round 99: sparse, size: 2321, Round 100: sparse, size: 1191, Round 101: sparse, size: 284, Warmup Round: 0.124867
-Round 0: sparse, size: 1, Round 1: sparse, size: 214, Round 2: sparse, size: 762, Round 3: sparse, size: 1078, Round 4: sparse, size: 1551, Round 5: sparse, size: 2192, Round 6: sparse, size: 2863, Round 7: sparse, size: 3428, Round 8: sparse, size: 4366, Round 9: sparse, size: 5331, Round 10: sparse, size: 6188, Round 11: sparse, size: 6742, Round 12: sparse, size: 7086, Round 13: sparse, size: 7885, Round 14: sparse, size: 8788, Round 15: sparse, size: 9376, Round 16: sparse, size: 11043, Round 17: sparse, size: 12175, Round 18: sparse, size: 11658, Round 19: sparse, size: 12620, Round 20: sparse, size: 14521, Round 21: sparse, size: 14505, Round 22: sparse, size: 16286, Round 23: sparse, size: 16567, Round 24: sparse, size: 17568, Round 25: sparse, size: 17182, Round 26: sparse, size: 17552, Round 27: sparse, size: 18520, Round 28: sparse, size: 19934, Round 29: sparse, size: 20120, Round 30: sparse, size: 20108, Round 31: sparse, size: 21396, Round 32: sparse, size: 21249, Round 33: sparse, size: 22112, Round 34: sparse, size: 20790, Round 35: sparse, size: 21489, Round 36: sparse, size: 20807, Round 37: sparse, size: 19758, Round 38: sparse, size: 18834, Round 39: sparse, size: 18623, Round 40: sparse, size: 17926, Round 41: sparse, size: 18183, Round 42: sparse, size: 18643, Round 43: sparse, size: 19315, Round 44: sparse, size: 20231, Round 45: sparse, size: 19997, Round 46: sparse, size: 19811, Round 47: sparse, size: 19665, Round 48: sparse, size: 21520, Round 49: sparse, size: 22267, Round 50: sparse, size: 23076, Round 51: sparse, size: 23090, Round 52: sparse, size: 24509, Round 53: sparse, size: 24904, Round 54: sparse, size: 25672, Round 55: sparse, size: 28708, Round 56: sparse, size: 29301, Round 57: sparse, size: 29868, Round 58: sparse, size: 32101, Round 59: sparse, size: 31149, Round 60: sparse, size: 30067, Round 61: sparse, size: 31272, Round 62: sparse, size: 31167, Round 63: sparse, size: 29154, Round 64: sparse, size: 28431, Round 65: sparse, size: 28819, Round 66: sparse, size: 27319, Round 67: sparse, size: 28573, Round 68: sparse, size: 26653, Round 69: sparse, size: 25642, Round 70: sparse, size: 25023, Round 71: sparse, size: 24154, Round 72: sparse, size: 24026, Round 73: sparse, size: 24038, Round 74: sparse, size: 23909, Round 75: sparse, size: 23055, Round 76: sparse, size: 21306, Round 77: sparse, size: 22113, Round 78: sparse, size: 21592, Round 79: sparse, size: 20699, Round 80: sparse, size: 20257, Round 81: sparse, size: 19715, Round 82: sparse, size: 19578, Round 83: sparse, size: 17915, Round 84: sparse, size: 15597, Round 85: sparse, size: 13587, Round 86: sparse, size: 12638, Round 87: sparse, size: 11811, Round 88: sparse, size: 9627, Round 89: sparse, size: 9267, Round 90: sparse, size: 8110, Round 91: sparse, size: 7783, Round 92: sparse, size: 6444, Round 93: sparse, size: 5272, Round 94: sparse, size: 4633, Round 95: sparse, size: 4087, Round 96: sparse, size: 3927, Round 97: sparse, size: 3483, Round 98: sparse, size: 3166, Round 99: sparse, size: 2376, Round 100: sparse, size: 1285, Round 101: sparse, size: 272, Round 1: 0.127459
-Average time: 0.117819	0.127459
+103 Warmup Round: 0.136006
+103 Round 1: 0.124002
+103 Round 2: 0.125459
+103 Round 3: 0.127916
+103 Round 4: 0.121665
+103 Round 5: 0.125424
+103 Round 6: 0.125793
+103 Round 7: 0.121894
+103 Round 8: 0.122623
+103 Round 9: 0.128469
+103 Round 10: 0.135809
+103 Warmup Round: 0.129689
+103 Round 1: 0.117882
+103 Round 2: 0.116624
+103 Round 3: 0.122835
+103 Round 4: 0.119095
+103 Round 5: 0.114405
+103 Round 6: 0.115708
+103 Round 7: 0.115274
+103 Round 8: 0.117391
+103 Round 9: 0.119697
+103 Round 10: 0.116984
+Average time: 0.125905	0.117590
 Running verifier...
-Round 0: sparse, size: 1, Round 1: sparse, size: 239, Round 2: sparse, size: 1360, Round 3: sparse, size: 1861, Round 4: sparse, size: 3058, Round 5: sparse, size: 3289, Round 6: sparse, size: 4022, Round 7: sparse, size: 5408, Round 8: sparse, size: 6789, Round 9: sparse, size: 8270, Round 10: sparse, size: 9625, Round 11: sparse, size: 10558, Round 12: sparse, size: 10930, Round 13: sparse, size: 11250, Round 14: sparse, size: 12405, Round 15: sparse, size: 13902, Round 16: sparse, size: 15980, Round 17: sparse, size: 16987, Round 18: sparse, size: 19690, Round 19: sparse, size: 19940, Round 20: sparse, size: 20244, Round 21: sparse, size: 22198, Round 22: sparse, size: 23905, Round 23: sparse, size: 25045, Round 24: sparse, size: 26228, Round 25: sparse, size: 26109, Round 26: sparse, size: 26311, Round 27: sparse, size: 27589, Round 28: sparse, size: 27940, Round 29: sparse, size: 31313, Round 30: sparse, size: 29505, Round 31: sparse, size: 31536, Round 32: sparse, size: 30997, Round 33: sparse, size: 30643, Round 34: sparse, size: 30461, Round 35: sparse, size: 30717, Round 36: sparse, size: 31472, Round 37: sparse, size: 28975, Round 38: sparse, size: 29141, Round 39: sparse, size: 26441, Round 40: sparse, size: 28687, Round 41: sparse, size: 27566, Round 42: sparse, size: 27928, Round 43: sparse, size: 28879, Round 44: sparse, size: 28498, Round 45: sparse, size: 29814, Round 46: sparse, size: 30614, Round 47: sparse, size: 29503, Round 48: sparse, size: 30872, Round 49: sparse, size: 32571, Round 50: sparse, size: 35062, Round 51: sparse, size: 35268, Round 52: sparse, size: 38496, Round 53: sparse, size: 38757, Round 54: sparse, size: 40615, Round 55: sparse, size: 44321, Round 56: sparse, size: 43826, Round 57: sparse, size: 45614, Round 58: sparse, size: 45746, Round 59: sparse, size: 43196, Round 60: sparse, size: 45100, Round 61: sparse, size: 44755, Round 62: sparse, size: 46212, Round 63: sparse, size: 42766, Round 64: sparse, size: 42014, Round 65: sparse, size: 41014, Round 66: sparse, size: 41902, Round 67: sparse, size: 39171, Round 68: sparse, size: 38902, Round 69: sparse, size: 39318, Round 70: sparse, size: 37546, Round 71: sparse, size: 37078, Round 72: sparse, size: 35060, Round 73: sparse, size: 34745, Round 74: sparse, size: 36497, Round 75: sparse, size: 34384, Round 76: sparse, size: 32669, Round 77: sparse, size: 31432, Round 78: sparse, size: 30682, Round 79: sparse, size: 32085, Round 80: sparse, size: 31519, Round 81: sparse, size: 28230, Round 82: sparse, size: 27506, Round 83: sparse, size: 25963, Round 84: sparse, size: 23743, Round 85: sparse, size: 19910, Round 86: sparse, size: 19705, Round 87: sparse, size: 18526, Round 88: sparse, size: 14258, Round 89: sparse, size: 13605, Round 90: sparse, size: 11602, Round 91: sparse, size: 11693, Round 92: sparse, size: 10111, Round 93: sparse, size: 8016, Round 94: sparse, size: 6888, Round 95: sparse, size: 6049, Round 96: sparse, size: 6150, Round 97: sparse, size: 5023, Round 98: sparse, size: 4504, Round 99: sparse, size: 3616, Round 100: sparse, size: 2097, Round 101: sparse, size: 398, Round 0: sparse, size: 1, Round 1: sparse, size: 214, Round 2: sparse, size: 717, Round 3: sparse, size: 1117, Round 4: sparse, size: 1511, Round 5: sparse, size: 2254, Round 6: sparse, size: 2790, Round 7: sparse, size: 3592, Round 8: sparse, size: 4523, Round 9: sparse, size: 5248, Round 10: sparse, size: 6378, Round 11: sparse, size: 6594, Round 12: sparse, size: 7121, Round 13: sparse, size: 7743, Round 14: sparse, size: 8315, Round 15: sparse, size: 9418, Round 16: sparse, size: 11013, Round 17: sparse, size: 11383, Round 18: sparse, size: 11620, Round 19: sparse, size: 12900, Round 20: sparse, size: 13970, Round 21: sparse, size: 14844, Round 22: sparse, size: 16597, Round 23: sparse, size: 16873, Round 24: sparse, size: 17803, Round 25: sparse, size: 17454, Round 26: sparse, size: 17054, Round 27: sparse, size: 18064, Round 28: sparse, size: 19246, Round 29: sparse, size: 19266, Round 30: sparse, size: 20311, Round 31: sparse, size: 21076, Round 32: sparse, size: 21314, Round 33: sparse, size: 21431, Round 34: sparse, size: 21281, Round 35: sparse, size: 21344, Round 36: sparse, size: 20695, Round 37: sparse, size: 19602, Round 38: sparse, size: 18663, Round 39: sparse, size: 18553, Round 40: sparse, size: 18270, Round 41: sparse, size: 18392, Round 42: sparse, size: 20018, Round 43: sparse, size: 18798, Round 44: sparse, size: 19583, Round 45: sparse, size: 20257, Round 46: sparse, size: 20333, Round 47: sparse, size: 20555, Round 48: sparse, size: 20436, Round 49: sparse, size: 22408, Round 50: sparse, size: 22665, Round 51: sparse, size: 23769, Round 52: sparse, size: 24369, Round 53: sparse, size: 26306, Round 54: sparse, size: 26633, Round 55: sparse, size: 28791, Round 56: sparse, size: 28607, Round 57: sparse, size: 31386, Round 58: sparse, size: 31739, Round 59: sparse, size: 29872, Round 60: sparse, size: 29829, Round 61: sparse, size: 31702, Round 62: sparse, size: 32477, Round 63: sparse, size: 28899, Round 64: sparse, size: 26849, Round 65: sparse, size: 28918, Round 66: sparse, size: 27851, Round 67: sparse, size: 26757, Round 68: sparse, size: 27322, Round 69: sparse, size: 26640, Round 70: sparse, size: 25582, Round 71: sparse, size: 25876, Round 72: sparse, size: 24217, Round 73: sparse, size: 23849, Round 74: sparse, size: 22858, Round 75: sparse, size: 23081, Round 76: sparse, size: 21552, Round 77: sparse, size: 21522, Round 78: sparse, size: 20728, Round 79: sparse, size: 20480, Round 80: sparse, size: 20689, Round 81: sparse, size: 20687, Round 82: sparse, size: 19782, Round 83: sparse, size: 17726, Round 84: sparse, size: 16328, Round 85: sparse, size: 13894, Round 86: sparse, size: 12759, Round 87: sparse, size: 11660, Round 88: sparse, size: 9499, Round 89: sparse, size: 9363, Round 90: sparse, size: 8472, Round 91: sparse, size: 7384, Round 92: sparse, size: 6225, Round 93: sparse, size: 5685, Round 94: sparse, size: 4734, Round 95: sparse, size: 3950, Round 96: sparse, size: 4300, Round 97: sparse, size: 3269, Round 98: sparse, size: 2891, Round 99: sparse, size: 2339, Round 100: sparse, size: 1227, Round 101: sparse, size: 187, Our running time: 0.149169	0.122888
-dijkstra running time: 4.033397  
+103 103 Our running time: 0.135865	0.125126
+dijkstra running time: 3.899786  
 
 source 1: 4257853   
-Round 0: sparse, size: 1, Round 1: sparse, size: 251, Round 2: sparse, size: 1558, Round 3: sparse, size: 1532, Round 4: sparse, size: 2390, Round 5: sparse, size: 2841, Round 6: sparse, size: 4243, Round 7: sparse, size: 4600, Round 8: sparse, size: 5493, Round 9: sparse, size: 6774, Round 10: sparse, size: 7723, Round 11: sparse, size: 9225, Round 12: sparse, size: 10394, Round 13: sparse, size: 10840, Round 14: sparse, size: 12113, Round 15: sparse, size: 12640, Round 16: sparse, size: 11966, Round 17: sparse, size: 14049, Round 18: sparse, size: 13914, Round 19: sparse, size: 13762, Round 20: sparse, size: 15706, Round 21: sparse, size: 16699, Round 22: sparse, size: 17183, Round 23: sparse, size: 17645, Round 24: sparse, size: 17886, Round 25: sparse, size: 18475, Round 26: sparse, size: 19745, Round 27: sparse, size: 20559, Round 28: sparse, size: 21579, Round 29: sparse, size: 21892, Round 30: sparse, size: 22768, Round 31: sparse, size: 23294, Round 32: sparse, size: 23108, Round 33: sparse, size: 24097, Round 34: sparse, size: 23239, Round 35: sparse, size: 25169, Round 36: sparse, size: 24673, Round 37: sparse, size: 24966, Round 38: sparse, size: 24473, Round 39: sparse, size: 24099, Round 40: sparse, size: 23256, Round 41: sparse, size: 25205, Round 42: sparse, size: 26053, Round 43: sparse, size: 26345, Round 44: sparse, size: 25322, Round 45: sparse, size: 26675, Round 46: sparse, size: 24582, Round 47: sparse, size: 23930, Round 48: sparse, size: 22881, Round 49: sparse, size: 24371, Round 50: sparse, size: 23481, Round 51: sparse, size: 25175, Round 52: sparse, size: 25894, Round 53: sparse, size: 26648, Round 54: sparse, size: 27844, Round 55: sparse, size: 26761, Round 56: sparse, size: 24862, Round 57: sparse, size: 25233, Round 58: sparse, size: 26219, Round 59: sparse, size: 25390, Round 60: sparse, size: 24928, Round 61: sparse, size: 26747, Round 62: sparse, size: 26513, Round 63: sparse, size: 25146, Round 64: sparse, size: 24189, Round 65: sparse, size: 23091, Round 66: sparse, size: 24140, Round 67: sparse, size: 21508, Round 68: sparse, size: 20106, Round 69: sparse, size: 19681, Round 70: sparse, size: 19254, Round 71: sparse, size: 19666, Round 72: sparse, size: 20652, Round 73: sparse, size: 22154, Round 74: sparse, size: 22634, Round 75: sparse, size: 23608, Round 76: sparse, size: 23826, Round 77: sparse, size: 25274, Round 78: sparse, size: 24618, Round 79: sparse, size: 26273, Round 80: sparse, size: 26201, Round 81: sparse, size: 26444, Round 82: sparse, size: 28374, Round 83: sparse, size: 29356, Round 84: sparse, size: 31288, Round 85: sparse, size: 30077, Round 86: sparse, size: 31072, Round 87: sparse, size: 31644, Round 88: sparse, size: 32380, Round 89: sparse, size: 33901, Round 90: sparse, size: 36712, Round 91: sparse, size: 34251, Round 92: sparse, size: 34491, Round 93: sparse, size: 36025, Round 94: sparse, size: 37350, Round 95: sparse, size: 35570, Round 96: sparse, size: 34828, Round 97: sparse, size: 32639, Round 98: sparse, size: 32807, Round 99: sparse, size: 32165, Round 100: sparse, size: 30241, Round 101: sparse, size: 28720, Round 102: sparse, size: 24537, Round 103: sparse, size: 21471, Round 104: sparse, size: 18737, Round 105: sparse, size: 16600, Round 106: sparse, size: 14443, Round 107: sparse, size: 12561, Round 108: sparse, size: 11730, Round 109: sparse, size: 10103, Round 110: sparse, size: 8801, Round 111: sparse, size: 6159, Round 112: sparse, size: 3772, Round 113: sparse, size: 2896, Round 114: sparse, size: 2247, Round 115: sparse, size: 2018, Round 116: sparse, size: 1205, Round 117: sparse, size: 92, Warmup Round: 0.142652
-Round 0: sparse, size: 1, Round 1: sparse, size: 251, Round 2: sparse, size: 1529, Round 3: sparse, size: 1493, Round 4: sparse, size: 2143, Round 5: sparse, size: 2868, Round 6: sparse, size: 3884, Round 7: sparse, size: 4987, Round 8: sparse, size: 5696, Round 9: sparse, size: 6720, Round 10: sparse, size: 7994, Round 11: sparse, size: 9335, Round 12: sparse, size: 10092, Round 13: sparse, size: 11191, Round 14: sparse, size: 12048, Round 15: sparse, size: 12049, Round 16: sparse, size: 12390, Round 17: sparse, size: 13214, Round 18: sparse, size: 13411, Round 19: sparse, size: 14333, Round 20: sparse, size: 15789, Round 21: sparse, size: 16019, Round 22: sparse, size: 16735, Round 23: sparse, size: 18153, Round 24: sparse, size: 18835, Round 25: sparse, size: 18709, Round 26: sparse, size: 19754, Round 27: sparse, size: 20675, Round 28: sparse, size: 23294, Round 29: sparse, size: 22372, Round 30: sparse, size: 23478, Round 31: sparse, size: 22272, Round 32: sparse, size: 22991, Round 33: sparse, size: 23571, Round 34: sparse, size: 25051, Round 35: sparse, size: 23904, Round 36: sparse, size: 25533, Round 37: sparse, size: 25847, Round 38: sparse, size: 23113, Round 39: sparse, size: 22214, Round 40: sparse, size: 22485, Round 41: sparse, size: 25364, Round 42: sparse, size: 24519, Round 43: sparse, size: 25353, Round 44: sparse, size: 27181, Round 45: sparse, size: 27629, Round 46: sparse, size: 24049, Round 47: sparse, size: 23578, Round 48: sparse, size: 23301, Round 49: sparse, size: 24404, Round 50: sparse, size: 25071, Round 51: sparse, size: 25965, Round 52: sparse, size: 25670, Round 53: sparse, size: 26547, Round 54: sparse, size: 28000, Round 55: sparse, size: 26762, Round 56: sparse, size: 25594, Round 57: sparse, size: 24723, Round 58: sparse, size: 25947, Round 59: sparse, size: 26745, Round 60: sparse, size: 26730, Round 61: sparse, size: 26147, Round 62: sparse, size: 25649, Round 63: sparse, size: 25018, Round 64: sparse, size: 25066, Round 65: sparse, size: 23674, Round 66: sparse, size: 23912, Round 67: sparse, size: 22559, Round 68: sparse, size: 19644, Round 69: sparse, size: 21123, Round 70: sparse, size: 19534, Round 71: sparse, size: 20223, Round 72: sparse, size: 21803, Round 73: sparse, size: 21904, Round 74: sparse, size: 22070, Round 75: sparse, size: 24101, Round 76: sparse, size: 24233, Round 77: sparse, size: 26121, Round 78: sparse, size: 25675, Round 79: sparse, size: 26435, Round 80: sparse, size: 27224, Round 81: sparse, size: 27398, Round 82: sparse, size: 26941, Round 83: sparse, size: 29276, Round 84: sparse, size: 31165, Round 85: sparse, size: 30399, Round 86: sparse, size: 31309, Round 87: sparse, size: 33094, Round 88: sparse, size: 32306, Round 89: sparse, size: 35308, Round 90: sparse, size: 33803, Round 91: sparse, size: 35881, Round 92: sparse, size: 34667, Round 93: sparse, size: 35983, Round 94: sparse, size: 37460, Round 95: sparse, size: 36255, Round 96: sparse, size: 34115, Round 97: sparse, size: 32297, Round 98: sparse, size: 33531, Round 99: sparse, size: 32860, Round 100: sparse, size: 29076, Round 101: sparse, size: 29239, Round 102: sparse, size: 22688, Round 103: sparse, size: 20508, Round 104: sparse, size: 18084, Round 105: sparse, size: 15738, Round 106: sparse, size: 14572, Round 107: sparse, size: 12632, Round 108: sparse, size: 10905, Round 109: sparse, size: 9776, Round 110: sparse, size: 8633, Round 111: sparse, size: 6144, Round 112: sparse, size: 4091, Round 113: sparse, size: 3121, Round 114: sparse, size: 2374, Round 115: sparse, size: 1907, Round 116: sparse, size: 1253, Round 117: sparse, size: 212, Round 1: 0.129289
-Round 0: sparse, size: 1, Round 1: sparse, size: 213, Round 2: sparse, size: 858, Round 3: sparse, size: 1452, Round 4: sparse, size: 1597, Round 5: sparse, size: 1944, Round 6: sparse, size: 2946, Round 7: sparse, size: 3131, Round 8: sparse, size: 3761, Round 9: sparse, size: 4592, Round 10: sparse, size: 5235, Round 11: sparse, size: 6109, Round 12: sparse, size: 7115, Round 13: sparse, size: 7464, Round 14: sparse, size: 8130, Round 15: sparse, size: 8181, Round 16: sparse, size: 8393, Round 17: sparse, size: 8860, Round 18: sparse, size: 9655, Round 19: sparse, size: 9418, Round 20: sparse, size: 10419, Round 21: sparse, size: 10682, Round 22: sparse, size: 11057, Round 23: sparse, size: 12102, Round 24: sparse, size: 12524, Round 25: sparse, size: 12685, Round 26: sparse, size: 13542, Round 27: sparse, size: 13983, Round 28: sparse, size: 14834, Round 29: sparse, size: 15366, Round 30: sparse, size: 15262, Round 31: sparse, size: 16144, Round 32: sparse, size: 15341, Round 33: sparse, size: 16127, Round 34: sparse, size: 16544, Round 35: sparse, size: 17510, Round 36: sparse, size: 17185, Round 37: sparse, size: 16478, Round 38: sparse, size: 15615, Round 39: sparse, size: 16450, Round 40: sparse, size: 16106, Round 41: sparse, size: 16315, Round 42: sparse, size: 17043, Round 43: sparse, size: 17351, Round 44: sparse, size: 17961, Round 45: sparse, size: 17176, Round 46: sparse, size: 16291, Round 47: sparse, size: 15929, Round 48: sparse, size: 16370, Round 49: sparse, size: 16683, Round 50: sparse, size: 16573, Round 51: sparse, size: 16613, Round 52: sparse, size: 17357, Round 53: sparse, size: 17137, Round 54: sparse, size: 19359, Round 55: sparse, size: 17601, Round 56: sparse, size: 16514, Round 57: sparse, size: 16910, Round 58: sparse, size: 17198, Round 59: sparse, size: 17633, Round 60: sparse, size: 17649, Round 61: sparse, size: 17636, Round 62: sparse, size: 17834, Round 63: sparse, size: 17592, Round 64: sparse, size: 16207, Round 65: sparse, size: 15183, Round 66: sparse, size: 14699, Round 67: sparse, size: 14277, Round 68: sparse, size: 13584, Round 69: sparse, size: 12992, Round 70: sparse, size: 13089, Round 71: sparse, size: 12789, Round 72: sparse, size: 13586, Round 73: sparse, size: 14198, Round 74: sparse, size: 14691, Round 75: sparse, size: 16503, Round 76: sparse, size: 17128, Round 77: sparse, size: 17855, Round 78: sparse, size: 16653, Round 79: sparse, size: 17980, Round 80: sparse, size: 17247, Round 81: sparse, size: 17611, Round 82: sparse, size: 18714, Round 83: sparse, size: 20015, Round 84: sparse, size: 21045, Round 85: sparse, size: 21188, Round 86: sparse, size: 21566, Round 87: sparse, size: 22492, Round 88: sparse, size: 21911, Round 89: sparse, size: 23052, Round 90: sparse, size: 24059, Round 91: sparse, size: 24257, Round 92: sparse, size: 24796, Round 93: sparse, size: 26085, Round 94: sparse, size: 25578, Round 95: sparse, size: 24885, Round 96: sparse, size: 22961, Round 97: sparse, size: 22442, Round 98: sparse, size: 22100, Round 99: sparse, size: 21403, Round 100: sparse, size: 20609, Round 101: sparse, size: 19175, Round 102: sparse, size: 15974, Round 103: sparse, size: 13809, Round 104: sparse, size: 12680, Round 105: sparse, size: 11025, Round 106: sparse, size: 9629, Round 107: sparse, size: 8494, Round 108: sparse, size: 7723, Round 109: sparse, size: 6446, Round 110: sparse, size: 5841, Round 111: sparse, size: 4140, Round 112: sparse, size: 2642, Round 113: sparse, size: 1909, Round 114: sparse, size: 1487, Round 115: sparse, size: 1146, Round 116: sparse, size: 739, Round 117: sparse, size: 159, Warmup Round: 0.226317
-Round 0: sparse, size: 1, Round 1: sparse, size: 213, Round 2: sparse, size: 658, Round 3: sparse, size: 994, Round 4: sparse, size: 1580, Round 5: sparse, size: 1829, Round 6: sparse, size: 2614, Round 7: sparse, size: 3084, Round 8: sparse, size: 3995, Round 9: sparse, size: 4367, Round 10: sparse, size: 5026, Round 11: sparse, size: 6211, Round 12: sparse, size: 6403, Round 13: sparse, size: 7264, Round 14: sparse, size: 8304, Round 15: sparse, size: 8309, Round 16: sparse, size: 8155, Round 17: sparse, size: 9027, Round 18: sparse, size: 8841, Round 19: sparse, size: 9851, Round 20: sparse, size: 9886, Round 21: sparse, size: 10358, Round 22: sparse, size: 11136, Round 23: sparse, size: 12319, Round 24: sparse, size: 12229, Round 25: sparse, size: 12806, Round 26: sparse, size: 13626, Round 27: sparse, size: 14545, Round 28: sparse, size: 14303, Round 29: sparse, size: 14489, Round 30: sparse, size: 14804, Round 31: sparse, size: 16018, Round 32: sparse, size: 16281, Round 33: sparse, size: 15101, Round 34: sparse, size: 15142, Round 35: sparse, size: 16355, Round 36: sparse, size: 16499, Round 37: sparse, size: 16733, Round 38: sparse, size: 16330, Round 39: sparse, size: 16048, Round 40: sparse, size: 16520, Round 41: sparse, size: 15532, Round 42: sparse, size: 16486, Round 43: sparse, size: 18528, Round 44: sparse, size: 18010, Round 45: sparse, size: 17800, Round 46: sparse, size: 16702, Round 47: sparse, size: 15999, Round 48: sparse, size: 15481, Round 49: sparse, size: 15444, Round 50: sparse, size: 16694, Round 51: sparse, size: 17357, Round 52: sparse, size: 17375, Round 53: sparse, size: 17690, Round 54: sparse, size: 16944, Round 55: sparse, size: 18117, Round 56: sparse, size: 17056, Round 57: sparse, size: 16635, Round 58: sparse, size: 17777, Round 59: sparse, size: 17831, Round 60: sparse, size: 17655, Round 61: sparse, size: 16955, Round 62: sparse, size: 17387, Round 63: sparse, size: 17001, Round 64: sparse, size: 16592, Round 65: sparse, size: 16309, Round 66: sparse, size: 14949, Round 67: sparse, size: 14606, Round 68: sparse, size: 12621, Round 69: sparse, size: 12851, Round 70: sparse, size: 13247, Round 71: sparse, size: 13006, Round 72: sparse, size: 13585, Round 73: sparse, size: 14341, Round 74: sparse, size: 15533, Round 75: sparse, size: 15028, Round 76: sparse, size: 17093, Round 77: sparse, size: 17390, Round 78: sparse, size: 18003, Round 79: sparse, size: 17531, Round 80: sparse, size: 17423, Round 81: sparse, size: 18248, Round 82: sparse, size: 18049, Round 83: sparse, size: 19765, Round 84: sparse, size: 19816, Round 85: sparse, size: 19702, Round 86: sparse, size: 20307, Round 87: sparse, size: 20915, Round 88: sparse, size: 22600, Round 89: sparse, size: 23361, Round 90: sparse, size: 22695, Round 91: sparse, size: 23783, Round 92: sparse, size: 23366, Round 93: sparse, size: 24906, Round 94: sparse, size: 24502, Round 95: sparse, size: 24230, Round 96: sparse, size: 22570, Round 97: sparse, size: 22562, Round 98: sparse, size: 22505, Round 99: sparse, size: 21228, Round 100: sparse, size: 20108, Round 101: sparse, size: 19496, Round 102: sparse, size: 16558, Round 103: sparse, size: 14039, Round 104: sparse, size: 13041, Round 105: sparse, size: 11112, Round 106: sparse, size: 9819, Round 107: sparse, size: 7899, Round 108: sparse, size: 7651, Round 109: sparse, size: 6677, Round 110: sparse, size: 5792, Round 111: sparse, size: 4320, Round 112: sparse, size: 2479, Round 113: sparse, size: 1963, Round 114: sparse, size: 1381, Round 115: sparse, size: 1103, Round 116: sparse, size: 751, Round 117: sparse, size: 126, Round 1: 0.122544
-Average time: 0.129289	0.122544
+119 Warmup Round: 0.150616
+119 Round 1: 0.132706
+119 Round 2: 0.134765
+119 Round 3: 0.135151
+119 Round 4: 0.151845
+119 Round 5: 0.133265
+119 Round 6: 0.132815
+119 Round 7: 0.131302
+119 Round 8: 0.140944
+119 Round 9: 0.132338
+119 Round 10: 0.132517
+119 Warmup Round: 0.181409
+119 Round 1: 0.120272
+119 Round 2: 0.121459
+119 Round 3: 0.118551
+119 Round 4: 0.119133
+119 Round 5: 0.141508
+119 Round 6: 0.120263
+119 Round 7: 0.119740
+119 Round 8: 0.120715
+119 Round 9: 0.127034
+119 Round 10: 0.120814
+Average time: 0.135765	0.122949
 Running verifier...
-Round 0: sparse, size: 1, Round 1: sparse, size: 251, Round 2: sparse, size: 1486, Round 3: sparse, size: 1562, Round 4: sparse, size: 2364, Round 5: sparse, size: 2818, Round 6: sparse, size: 3956, Round 7: sparse, size: 4548, Round 8: sparse, size: 5787, Round 9: sparse, size: 7240, Round 10: sparse, size: 7472, Round 11: sparse, size: 9041, Round 12: sparse, size: 9858, Round 13: sparse, size: 10654, Round 14: sparse, size: 11672, Round 15: sparse, size: 11992, Round 16: sparse, size: 12070, Round 17: sparse, size: 13665, Round 18: sparse, size: 14045, Round 19: sparse, size: 14351, Round 20: sparse, size: 15119, Round 21: sparse, size: 16035, Round 22: sparse, size: 17277, Round 23: sparse, size: 17139, Round 24: sparse, size: 17944, Round 25: sparse, size: 19345, Round 26: sparse, size: 19377, Round 27: sparse, size: 20202, Round 28: sparse, size: 21854, Round 29: sparse, size: 22471, Round 30: sparse, size: 23232, Round 31: sparse, size: 23278, Round 32: sparse, size: 23739, Round 33: sparse, size: 24098, Round 34: sparse, size: 24236, Round 35: sparse, size: 23557, Round 36: sparse, size: 24531, Round 37: sparse, size: 24687, Round 38: sparse, size: 23698, Round 39: sparse, size: 23992, Round 40: sparse, size: 24645, Round 41: sparse, size: 24670, Round 42: sparse, size: 24869, Round 43: sparse, size: 24859, Round 44: sparse, size: 25875, Round 45: sparse, size: 27075, Round 46: sparse, size: 25585, Round 47: sparse, size: 24219, Round 48: sparse, size: 24321, Round 49: sparse, size: 24335, Round 50: sparse, size: 25016, Round 51: sparse, size: 24160, Round 52: sparse, size: 25813, Round 53: sparse, size: 28308, Round 54: sparse, size: 27141, Round 55: sparse, size: 27302, Round 56: sparse, size: 24959, Round 57: sparse, size: 25655, Round 58: sparse, size: 26158, Round 59: sparse, size: 27132, Round 60: sparse, size: 25991, Round 61: sparse, size: 24357, Round 62: sparse, size: 25597, Round 63: sparse, size: 27287, Round 64: sparse, size: 23094, Round 65: sparse, size: 24344, Round 66: sparse, size: 22345, Round 67: sparse, size: 22078, Round 68: sparse, size: 19929, Round 69: sparse, size: 19956, Round 70: sparse, size: 19484, Round 71: sparse, size: 20678, Round 72: sparse, size: 20344, Round 73: sparse, size: 22288, Round 74: sparse, size: 22374, Round 75: sparse, size: 23058, Round 76: sparse, size: 25216, Round 77: sparse, size: 25749, Round 78: sparse, size: 25306, Round 79: sparse, size: 26511, Round 80: sparse, size: 26441, Round 81: sparse, size: 26671, Round 82: sparse, size: 27799, Round 83: sparse, size: 28524, Round 84: sparse, size: 29251, Round 85: sparse, size: 29839, Round 86: sparse, size: 29954, Round 87: sparse, size: 32605, Round 88: sparse, size: 32216, Round 89: sparse, size: 35832, Round 90: sparse, size: 34965, Round 91: sparse, size: 34661, Round 92: sparse, size: 34504, Round 93: sparse, size: 36168, Round 94: sparse, size: 36852, Round 95: sparse, size: 35702, Round 96: sparse, size: 35389, Round 97: sparse, size: 32792, Round 98: sparse, size: 33148, Round 99: sparse, size: 33155, Round 100: sparse, size: 30278, Round 101: sparse, size: 28488, Round 102: sparse, size: 24201, Round 103: sparse, size: 20858, Round 104: sparse, size: 18066, Round 105: sparse, size: 17142, Round 106: sparse, size: 14774, Round 107: sparse, size: 12817, Round 108: sparse, size: 11083, Round 109: sparse, size: 10220, Round 110: sparse, size: 8505, Round 111: sparse, size: 6816, Round 112: sparse, size: 4392, Round 113: sparse, size: 3106, Round 114: sparse, size: 2325, Round 115: sparse, size: 1722, Round 116: sparse, size: 1369, Round 117: sparse, size: 111, Round 0: sparse, size: 1, Round 1: sparse, size: 213, Round 2: sparse, size: 698, Round 3: sparse, size: 1179, Round 4: sparse, size: 1644, Round 5: sparse, size: 1871, Round 6: sparse, size: 2885, Round 7: sparse, size: 3366, Round 8: sparse, size: 3890, Round 9: sparse, size: 4574, Round 10: sparse, size: 5166, Round 11: sparse, size: 6216, Round 12: sparse, size: 6717, Round 13: sparse, size: 7511, Round 14: sparse, size: 8084, Round 15: sparse, size: 8182, Round 16: sparse, size: 7831, Round 17: sparse, size: 8789, Round 18: sparse, size: 8661, Round 19: sparse, size: 9516, Round 20: sparse, size: 10582, Round 21: sparse, size: 10822, Round 22: sparse, size: 11149, Round 23: sparse, size: 11766, Round 24: sparse, size: 11602, Round 25: sparse, size: 12361, Round 26: sparse, size: 13837, Round 27: sparse, size: 14060, Round 28: sparse, size: 14442, Round 29: sparse, size: 14320, Round 30: sparse, size: 14639, Round 31: sparse, size: 15445, Round 32: sparse, size: 15688, Round 33: sparse, size: 16057, Round 34: sparse, size: 16584, Round 35: sparse, size: 16223, Round 36: sparse, size: 16797, Round 37: sparse, size: 16676, Round 38: sparse, size: 15772, Round 39: sparse, size: 15524, Round 40: sparse, size: 15782, Round 41: sparse, size: 15733, Round 42: sparse, size: 16363, Round 43: sparse, size: 17272, Round 44: sparse, size: 17441, Round 45: sparse, size: 18509, Round 46: sparse, size: 16486, Round 47: sparse, size: 16380, Round 48: sparse, size: 15635, Round 49: sparse, size: 15736, Round 50: sparse, size: 16352, Round 51: sparse, size: 16975, Round 52: sparse, size: 18287, Round 53: sparse, size: 17986, Round 54: sparse, size: 17701, Round 55: sparse, size: 18184, Round 56: sparse, size: 17626, Round 57: sparse, size: 16690, Round 58: sparse, size: 17065, Round 59: sparse, size: 17358, Round 60: sparse, size: 16311, Round 61: sparse, size: 17744, Round 62: sparse, size: 17381, Round 63: sparse, size: 16471, Round 64: sparse, size: 15761, Round 65: sparse, size: 15984, Round 66: sparse, size: 15544, Round 67: sparse, size: 14864, Round 68: sparse, size: 13364, Round 69: sparse, size: 12947, Round 70: sparse, size: 13025, Round 71: sparse, size: 12883, Round 72: sparse, size: 14054, Round 73: sparse, size: 14667, Round 74: sparse, size: 14763, Round 75: sparse, size: 14960, Round 76: sparse, size: 16728, Round 77: sparse, size: 17436, Round 78: sparse, size: 16681, Round 79: sparse, size: 18207, Round 80: sparse, size: 18755, Round 81: sparse, size: 17593, Round 82: sparse, size: 19061, Round 83: sparse, size: 19458, Round 84: sparse, size: 19470, Round 85: sparse, size: 20285, Round 86: sparse, size: 20675, Round 87: sparse, size: 22074, Round 88: sparse, size: 22418, Round 89: sparse, size: 23841, Round 90: sparse, size: 23242, Round 91: sparse, size: 22912, Round 92: sparse, size: 23660, Round 93: sparse, size: 24761, Round 94: sparse, size: 24832, Round 95: sparse, size: 24022, Round 96: sparse, size: 21582, Round 97: sparse, size: 23356, Round 98: sparse, size: 22663, Round 99: sparse, size: 21539, Round 100: sparse, size: 20648, Round 101: sparse, size: 20502, Round 102: sparse, size: 15855, Round 103: sparse, size: 14102, Round 104: sparse, size: 12764, Round 105: sparse, size: 12057, Round 106: sparse, size: 9823, Round 107: sparse, size: 8983, Round 108: sparse, size: 7536, Round 109: sparse, size: 6760, Round 110: sparse, size: 5534, Round 111: sparse, size: 4144, Round 112: sparse, size: 2360, Round 113: sparse, size: 2150, Round 114: sparse, size: 1441, Round 115: sparse, size: 1205, Round 116: sparse, size: 761, Round 117: sparse, size: 126, Our running time: 0.128830	0.119430
-dijkstra running time: 3.521186  
+119 119 Our running time: 0.132678	0.120778
+dijkstra running time: 3.347087  
 
 source 2: 5876323   
-Round 0: sparse, size: 1, Round 1: sparse, size: 251, Round 2: sparse, size: 1486, Round 3: sparse, size: 1875, Round 4: sparse, size: 2536, Round 5: sparse, size: 3664, Round 6: sparse, size: 4563, Round 7: sparse, size: 5405, Round 8: sparse, size: 6044, Round 9: sparse, size: 6744, Round 10: sparse, size: 7881, Round 11: sparse, size: 8735, Round 12: sparse, size: 10012, Round 13: sparse, size: 10705, Round 14: sparse, size: 11995, Round 15: sparse, size: 11962, Round 16: sparse, size: 12331, Round 17: sparse, size: 13276, Round 18: sparse, size: 13954, Round 19: sparse, size: 15417, Round 20: sparse, size: 15183, Round 21: sparse, size: 15786, Round 22: sparse, size: 17684, Round 23: sparse, size: 18214, Round 24: sparse, size: 17860, Round 25: sparse, size: 16397, Round 26: sparse, size: 16749, Round 27: sparse, size: 17276, Round 28: sparse, size: 17977, Round 29: sparse, size: 17920, Round 30: sparse, size: 18749, Round 31: sparse, size: 18324, Round 32: sparse, size: 18600, Round 33: sparse, size: 18528, Round 34: sparse, size: 18345, Round 35: sparse, size: 19429, Round 36: sparse, size: 20104, Round 37: sparse, size: 20962, Round 38: sparse, size: 21430, Round 39: sparse, size: 22137, Round 40: sparse, size: 22229, Round 41: sparse, size: 21471, Round 42: sparse, size: 24119, Round 43: sparse, size: 25625, Round 44: sparse, size: 26328, Round 45: sparse, size: 25574, Round 46: sparse, size: 26780, Round 47: sparse, size: 28109, Round 48: sparse, size: 26624, Round 49: sparse, size: 25668, Round 50: sparse, size: 26640, Round 51: sparse, size: 26132, Round 52: sparse, size: 22832, Round 53: sparse, size: 22799, Round 54: sparse, size: 23488, Round 55: sparse, size: 24176, Round 56: sparse, size: 25185, Round 57: sparse, size: 23873, Round 58: sparse, size: 24820, Round 59: sparse, size: 24434, Round 60: sparse, size: 24306, Round 61: sparse, size: 24668, Round 62: sparse, size: 26525, Round 63: sparse, size: 27538, Round 64: sparse, size: 27575, Round 65: sparse, size: 24199, Round 66: sparse, size: 24736, Round 67: sparse, size: 23757, Round 68: sparse, size: 25945, Round 69: sparse, size: 26082, Round 70: sparse, size: 26127, Round 71: sparse, size: 28073, Round 72: sparse, size: 28131, Round 73: sparse, size: 30386, Round 74: sparse, size: 29773, Round 75: sparse, size: 30051, Round 76: sparse, size: 29960, Round 77: sparse, size: 29569, Round 78: sparse, size: 29585, Round 79: sparse, size: 29884, Round 80: sparse, size: 29844, Round 81: sparse, size: 29408, Round 82: sparse, size: 32489, Round 83: sparse, size: 30622, Round 84: sparse, size: 30759, Round 85: sparse, size: 30741, Round 86: sparse, size: 32505, Round 87: sparse, size: 33944, Round 88: sparse, size: 35062, Round 89: sparse, size: 34942, Round 90: sparse, size: 34788, Round 91: sparse, size: 36892, Round 92: sparse, size: 36352, Round 93: sparse, size: 38284, Round 94: sparse, size: 35217, Round 95: sparse, size: 33526, Round 96: sparse, size: 34653, Round 97: sparse, size: 31428, Round 98: sparse, size: 30545, Round 99: sparse, size: 30858, Round 100: sparse, size: 25707, Round 101: sparse, size: 22157, Round 102: sparse, size: 19870, Round 103: sparse, size: 18117, Round 104: sparse, size: 15461, Round 105: sparse, size: 14674, Round 106: sparse, size: 12107, Round 107: sparse, size: 11066, Round 108: sparse, size: 10161, Round 109: sparse, size: 7264, Round 110: sparse, size: 4395, Round 111: sparse, size: 3958, Round 112: sparse, size: 3272, Round 113: sparse, size: 2423, Round 114: sparse, size: 2004, Round 115: sparse, size: 1482, Round 116: sparse, size: 1015, Round 117: sparse, size: 631, Round 118: sparse, size: 303, Round 119: sparse, size: 18, Warmup Round: 0.141345
-Round 0: sparse, size: 1, Round 1: sparse, size: 251, Round 2: sparse, size: 1488, Round 3: sparse, size: 1837, Round 4: sparse, size: 2628, Round 5: sparse, size: 3654, Round 6: sparse, size: 4632, Round 7: sparse, size: 5218, Round 8: sparse, size: 6301, Round 9: sparse, size: 6758, Round 10: sparse, size: 8163, Round 11: sparse, size: 9019, Round 12: sparse, size: 9472, Round 13: sparse, size: 10742, Round 14: sparse, size: 11530, Round 15: sparse, size: 11399, Round 16: sparse, size: 13151, Round 17: sparse, size: 13557, Round 18: sparse, size: 14113, Round 19: sparse, size: 14999, Round 20: sparse, size: 14946, Round 21: sparse, size: 16389, Round 22: sparse, size: 17954, Round 23: sparse, size: 17369, Round 24: sparse, size: 17042, Round 25: sparse, size: 16960, Round 26: sparse, size: 16537, Round 27: sparse, size: 16994, Round 28: sparse, size: 17972, Round 29: sparse, size: 17162, Round 30: sparse, size: 18580, Round 31: sparse, size: 18496, Round 32: sparse, size: 18343, Round 33: sparse, size: 18960, Round 34: sparse, size: 18079, Round 35: sparse, size: 20282, Round 36: sparse, size: 20007, Round 37: sparse, size: 20571, Round 38: sparse, size: 21502, Round 39: sparse, size: 22348, Round 40: sparse, size: 21833, Round 41: sparse, size: 22610, Round 42: sparse, size: 25413, Round 43: sparse, size: 25848, Round 44: sparse, size: 25316, Round 45: sparse, size: 25739, Round 46: sparse, size: 28309, Round 47: sparse, size: 28485, Round 48: sparse, size: 27272, Round 49: sparse, size: 25476, Round 50: sparse, size: 25618, Round 51: sparse, size: 26022, Round 52: sparse, size: 24298, Round 53: sparse, size: 23424, Round 54: sparse, size: 23793, Round 55: sparse, size: 23883, Round 56: sparse, size: 25828, Round 57: sparse, size: 24823, Round 58: sparse, size: 25173, Round 59: sparse, size: 24244, Round 60: sparse, size: 26154, Round 61: sparse, size: 23764, Round 62: sparse, size: 25513, Round 63: sparse, size: 27582, Round 64: sparse, size: 27106, Round 65: sparse, size: 26404, Round 66: sparse, size: 25392, Round 67: sparse, size: 24698, Round 68: sparse, size: 25960, Round 69: sparse, size: 25719, Round 70: sparse, size: 27265, Round 71: sparse, size: 27812, Round 72: sparse, size: 29236, Round 73: sparse, size: 28116, Round 74: sparse, size: 30289, Round 75: sparse, size: 29196, Round 76: sparse, size: 29791, Round 77: sparse, size: 30130, Round 78: sparse, size: 28974, Round 79: sparse, size: 29611, Round 80: sparse, size: 30313, Round 81: sparse, size: 30162, Round 82: sparse, size: 30779, Round 83: sparse, size: 31363, Round 84: sparse, size: 30710, Round 85: sparse, size: 31323, Round 86: sparse, size: 33074, Round 87: sparse, size: 34925, Round 88: sparse, size: 35155, Round 89: sparse, size: 35084, Round 90: sparse, size: 34571, Round 91: sparse, size: 36606, Round 92: sparse, size: 37060, Round 93: sparse, size: 36008, Round 94: sparse, size: 35901, Round 95: sparse, size: 33860, Round 96: sparse, size: 33758, Round 97: sparse, size: 31436, Round 98: sparse, size: 29787, Round 99: sparse, size: 30439, Round 100: sparse, size: 26615, Round 101: sparse, size: 23615, Round 102: sparse, size: 20518, Round 103: sparse, size: 18363, Round 104: sparse, size: 15016, Round 105: sparse, size: 13639, Round 106: sparse, size: 12899, Round 107: sparse, size: 11367, Round 108: sparse, size: 9860, Round 109: sparse, size: 7029, Round 110: sparse, size: 4407, Round 111: sparse, size: 3632, Round 112: sparse, size: 3236, Round 113: sparse, size: 2374, Round 114: sparse, size: 2050, Round 115: sparse, size: 1491, Round 116: sparse, size: 1122, Round 117: sparse, size: 578, Round 118: sparse, size: 277, Round 119: sparse, size: 18, Round 1: 0.130674
-Round 0: sparse, size: 1, Round 1: sparse, size: 280, Round 2: sparse, size: 854, Round 3: sparse, size: 1185, Round 4: sparse, size: 1799, Round 5: sparse, size: 2288, Round 6: sparse, size: 2899, Round 7: sparse, size: 3533, Round 8: sparse, size: 4064, Round 9: sparse, size: 4837, Round 10: sparse, size: 5095, Round 11: sparse, size: 5840, Round 12: sparse, size: 6177, Round 13: sparse, size: 6867, Round 14: sparse, size: 7487, Round 15: sparse, size: 8014, Round 16: sparse, size: 8271, Round 17: sparse, size: 9436, Round 18: sparse, size: 10008, Round 19: sparse, size: 9646, Round 20: sparse, size: 10035, Round 21: sparse, size: 11355, Round 22: sparse, size: 11169, Round 23: sparse, size: 11983, Round 24: sparse, size: 11832, Round 25: sparse, size: 11453, Round 26: sparse, size: 11830, Round 27: sparse, size: 11325, Round 28: sparse, size: 12348, Round 29: sparse, size: 11454, Round 30: sparse, size: 13072, Round 31: sparse, size: 13128, Round 32: sparse, size: 12300, Round 33: sparse, size: 11836, Round 34: sparse, size: 14365, Round 35: sparse, size: 13887, Round 36: sparse, size: 13643, Round 37: sparse, size: 14457, Round 38: sparse, size: 14503, Round 39: sparse, size: 14125, Round 40: sparse, size: 14892, Round 41: sparse, size: 15380, Round 42: sparse, size: 16310, Round 43: sparse, size: 17228, Round 44: sparse, size: 17249, Round 45: sparse, size: 17337, Round 46: sparse, size: 18257, Round 47: sparse, size: 20107, Round 48: sparse, size: 17838, Round 49: sparse, size: 17113, Round 50: sparse, size: 16643, Round 51: sparse, size: 16481, Round 52: sparse, size: 15543, Round 53: sparse, size: 15784, Round 54: sparse, size: 15128, Round 55: sparse, size: 16533, Round 56: sparse, size: 16765, Round 57: sparse, size: 17172, Round 58: sparse, size: 16563, Round 59: sparse, size: 16800, Round 60: sparse, size: 16098, Round 61: sparse, size: 16678, Round 62: sparse, size: 17279, Round 63: sparse, size: 19288, Round 64: sparse, size: 19366, Round 65: sparse, size: 17040, Round 66: sparse, size: 16372, Round 67: sparse, size: 16698, Round 68: sparse, size: 16346, Round 69: sparse, size: 18015, Round 70: sparse, size: 17791, Round 71: sparse, size: 18628, Round 72: sparse, size: 18727, Round 73: sparse, size: 19464, Round 74: sparse, size: 20959, Round 75: sparse, size: 20499, Round 76: sparse, size: 20532, Round 77: sparse, size: 19134, Round 78: sparse, size: 20172, Round 79: sparse, size: 21275, Round 80: sparse, size: 20156, Round 81: sparse, size: 20216, Round 82: sparse, size: 20924, Round 83: sparse, size: 21401, Round 84: sparse, size: 20511, Round 85: sparse, size: 21584, Round 86: sparse, size: 21423, Round 87: sparse, size: 24404, Round 88: sparse, size: 24751, Round 89: sparse, size: 24078, Round 90: sparse, size: 25166, Round 91: sparse, size: 25493, Round 92: sparse, size: 24436, Round 93: sparse, size: 23847, Round 94: sparse, size: 23743, Round 95: sparse, size: 22931, Round 96: sparse, size: 22012, Round 97: sparse, size: 22071, Round 98: sparse, size: 20844, Round 99: sparse, size: 20544, Round 100: sparse, size: 17185, Round 101: sparse, size: 15418, Round 102: sparse, size: 13185, Round 103: sparse, size: 12676, Round 104: sparse, size: 10825, Round 105: sparse, size: 9082, Round 106: sparse, size: 8663, Round 107: sparse, size: 7695, Round 108: sparse, size: 6660, Round 109: sparse, size: 4749, Round 110: sparse, size: 3079, Round 111: sparse, size: 2468, Round 112: sparse, size: 2305, Round 113: sparse, size: 1572, Round 114: sparse, size: 1239, Round 115: sparse, size: 941, Round 116: sparse, size: 687, Round 117: sparse, size: 493, Round 118: sparse, size: 179, Round 119: sparse, size: 8, Warmup Round: 0.122205
-Round 0: sparse, size: 1, Round 1: sparse, size: 280, Round 2: sparse, size: 839, Round 3: sparse, size: 1143, Round 4: sparse, size: 1801, Round 5: sparse, size: 2213, Round 6: sparse, size: 2824, Round 7: sparse, size: 3426, Round 8: sparse, size: 4136, Round 9: sparse, size: 4660, Round 10: sparse, size: 5374, Round 11: sparse, size: 5620, Round 12: sparse, size: 6382, Round 13: sparse, size: 6881, Round 14: sparse, size: 7618, Round 15: sparse, size: 7915, Round 16: sparse, size: 8252, Round 17: sparse, size: 9394, Round 18: sparse, size: 9682, Round 19: sparse, size: 10057, Round 20: sparse, size: 9744, Round 21: sparse, size: 11231, Round 22: sparse, size: 11682, Round 23: sparse, size: 12775, Round 24: sparse, size: 11792, Round 25: sparse, size: 11445, Round 26: sparse, size: 11483, Round 27: sparse, size: 11256, Round 28: sparse, size: 11799, Round 29: sparse, size: 11594, Round 30: sparse, size: 12882, Round 31: sparse, size: 12657, Round 32: sparse, size: 12516, Round 33: sparse, size: 12264, Round 34: sparse, size: 12851, Round 35: sparse, size: 13313, Round 36: sparse, size: 13605, Round 37: sparse, size: 14557, Round 38: sparse, size: 14414, Round 39: sparse, size: 14475, Round 40: sparse, size: 14407, Round 41: sparse, size: 15545, Round 42: sparse, size: 16581, Round 43: sparse, size: 16896, Round 44: sparse, size: 17391, Round 45: sparse, size: 17542, Round 46: sparse, size: 18809, Round 47: sparse, size: 19239, Round 48: sparse, size: 18870, Round 49: sparse, size: 16942, Round 50: sparse, size: 17525, Round 51: sparse, size: 16705, Round 52: sparse, size: 15586, Round 53: sparse, size: 15378, Round 54: sparse, size: 15712, Round 55: sparse, size: 16386, Round 56: sparse, size: 16447, Round 57: sparse, size: 16884, Round 58: sparse, size: 16522, Round 59: sparse, size: 16470, Round 60: sparse, size: 16258, Round 61: sparse, size: 16342, Round 62: sparse, size: 17832, Round 63: sparse, size: 18656, Round 64: sparse, size: 18141, Round 65: sparse, size: 17743, Round 66: sparse, size: 16533, Round 67: sparse, size: 16398, Round 68: sparse, size: 16867, Round 69: sparse, size: 17865, Round 70: sparse, size: 19852, Round 71: sparse, size: 18984, Round 72: sparse, size: 18694, Round 73: sparse, size: 18566, Round 74: sparse, size: 20512, Round 75: sparse, size: 19962, Round 76: sparse, size: 19972, Round 77: sparse, size: 20237, Round 78: sparse, size: 20185, Round 79: sparse, size: 21486, Round 80: sparse, size: 19889, Round 81: sparse, size: 19354, Round 82: sparse, size: 20436, Round 83: sparse, size: 21191, Round 84: sparse, size: 21586, Round 85: sparse, size: 20520, Round 86: sparse, size: 22589, Round 87: sparse, size: 24553, Round 88: sparse, size: 23997, Round 89: sparse, size: 23550, Round 90: sparse, size: 23958, Round 91: sparse, size: 23886, Round 92: sparse, size: 25529, Round 93: sparse, size: 25031, Round 94: sparse, size: 23780, Round 95: sparse, size: 23207, Round 96: sparse, size: 21793, Round 97: sparse, size: 22067, Round 98: sparse, size: 21450, Round 99: sparse, size: 20901, Round 100: sparse, size: 17989, Round 101: sparse, size: 16014, Round 102: sparse, size: 14562, Round 103: sparse, size: 13169, Round 104: sparse, size: 10884, Round 105: sparse, size: 9303, Round 106: sparse, size: 8145, Round 107: sparse, size: 7746, Round 108: sparse, size: 6403, Round 109: sparse, size: 4441, Round 110: sparse, size: 2913, Round 111: sparse, size: 2339, Round 112: sparse, size: 2336, Round 113: sparse, size: 1603, Round 114: sparse, size: 1214, Round 115: sparse, size: 985, Round 116: sparse, size: 658, Round 117: sparse, size: 414, Round 118: sparse, size: 187, Round 119: sparse, size: 17, Round 1: 0.124687
-Average time: 0.130674	0.124687
+121 Warmup Round: 0.136003
+121 Round 1: 0.135621
+121 Round 2: 0.146720
+121 Round 3: 0.132621
+121 Round 4: 0.133921
+121 Round 5: 0.137209
+121 Round 6: 0.131386
+121 Round 7: 0.132763
+121 Round 8: 0.133279
+121 Round 9: 0.134449
+121 Round 10: 0.135925
+121 Warmup Round: 0.120389
+121 Round 1: 0.122167
+121 Round 2: 0.129517
+121 Round 3: 0.140028
+121 Round 4: 0.125894
+121 Round 5: 0.125296
+121 Round 6: 0.125076
+121 Round 7: 0.119935
+121 Round 8: 0.120689
+121 Round 9: 0.120368
+121 Round 10: 0.122396
+Average time: 0.135389	0.125137
 Running verifier...
-Round 0: sparse, size: 1, Round 1: sparse, size: 251, Round 2: sparse, size: 1419, Round 3: sparse, size: 1695, Round 4: sparse, size: 2672, Round 5: sparse, size: 3527, Round 6: sparse, size: 4558, Round 7: sparse, size: 5188, Round 8: sparse, size: 6712, Round 9: sparse, size: 7145, Round 10: sparse, size: 8386, Round 11: sparse, size: 8518, Round 12: sparse, size: 9839, Round 13: sparse, size: 10493, Round 14: sparse, size: 11146, Round 15: sparse, size: 11413, Round 16: sparse, size: 12799, Round 17: sparse, size: 14559, Round 18: sparse, size: 13902, Round 19: sparse, size: 15556, Round 20: sparse, size: 14899, Round 21: sparse, size: 16110, Round 22: sparse, size: 17851, Round 23: sparse, size: 18485, Round 24: sparse, size: 17619, Round 25: sparse, size: 16689, Round 26: sparse, size: 16841, Round 27: sparse, size: 16734, Round 28: sparse, size: 17073, Round 29: sparse, size: 17919, Round 30: sparse, size: 18796, Round 31: sparse, size: 19066, Round 32: sparse, size: 18118, Round 33: sparse, size: 18044, Round 34: sparse, size: 19122, Round 35: sparse, size: 20726, Round 36: sparse, size: 20958, Round 37: sparse, size: 20895, Round 38: sparse, size: 21774, Round 39: sparse, size: 20776, Round 40: sparse, size: 21758, Round 41: sparse, size: 24115, Round 42: sparse, size: 24609, Round 43: sparse, size: 26710, Round 44: sparse, size: 26691, Round 45: sparse, size: 26539, Round 46: sparse, size: 28433, Round 47: sparse, size: 29049, Round 48: sparse, size: 28348, Round 49: sparse, size: 27900, Round 50: sparse, size: 26362, Round 51: sparse, size: 26441, Round 52: sparse, size: 24908, Round 53: sparse, size: 23285, Round 54: sparse, size: 22838, Round 55: sparse, size: 24898, Round 56: sparse, size: 24945, Round 57: sparse, size: 25942, Round 58: sparse, size: 23614, Round 59: sparse, size: 24205, Round 60: sparse, size: 24815, Round 61: sparse, size: 23951, Round 62: sparse, size: 26129, Round 63: sparse, size: 26763, Round 64: sparse, size: 27426, Round 65: sparse, size: 25189, Round 66: sparse, size: 25040, Round 67: sparse, size: 24706, Round 68: sparse, size: 24425, Round 69: sparse, size: 26161, Round 70: sparse, size: 27490, Round 71: sparse, size: 28003, Round 72: sparse, size: 27802, Round 73: sparse, size: 29012, Round 74: sparse, size: 30455, Round 75: sparse, size: 30465, Round 76: sparse, size: 30605, Round 77: sparse, size: 29868, Round 78: sparse, size: 28342, Round 79: sparse, size: 30163, Round 80: sparse, size: 29594, Round 81: sparse, size: 30350, Round 82: sparse, size: 31007, Round 83: sparse, size: 30996, Round 84: sparse, size: 32336, Round 85: sparse, size: 30035, Round 86: sparse, size: 32645, Round 87: sparse, size: 33137, Round 88: sparse, size: 34853, Round 89: sparse, size: 36823, Round 90: sparse, size: 36647, Round 91: sparse, size: 36201, Round 92: sparse, size: 36137, Round 93: sparse, size: 37254, Round 94: sparse, size: 35448, Round 95: sparse, size: 35303, Round 96: sparse, size: 33108, Round 97: sparse, size: 31285, Round 98: sparse, size: 30534, Round 99: sparse, size: 30190, Round 100: sparse, size: 25622, Round 101: sparse, size: 23248, Round 102: sparse, size: 20053, Round 103: sparse, size: 18065, Round 104: sparse, size: 16364, Round 105: sparse, size: 13939, Round 106: sparse, size: 12341, Round 107: sparse, size: 11392, Round 108: sparse, size: 10751, Round 109: sparse, size: 7313, Round 110: sparse, size: 4581, Round 111: sparse, size: 3642, Round 112: sparse, size: 3213, Round 113: sparse, size: 2398, Round 114: sparse, size: 1984, Round 115: sparse, size: 1657, Round 116: sparse, size: 1098, Round 117: sparse, size: 594, Round 118: sparse, size: 342, Round 119: sparse, size: 18, Round 0: sparse, size: 1, Round 1: sparse, size: 280, Round 2: sparse, size: 909, Round 3: sparse, size: 1458, Round 4: sparse, size: 1723, Round 5: sparse, size: 2335, Round 6: sparse, size: 2992, Round 7: sparse, size: 3674, Round 8: sparse, size: 4352, Round 9: sparse, size: 4930, Round 10: sparse, size: 5410, Round 11: sparse, size: 6134, Round 12: sparse, size: 6612, Round 13: sparse, size: 7065, Round 14: sparse, size: 7911, Round 15: sparse, size: 7846, Round 16: sparse, size: 8287, Round 17: sparse, size: 9647, Round 18: sparse, size: 9640, Round 19: sparse, size: 9915, Round 20: sparse, size: 10125, Round 21: sparse, size: 10700, Round 22: sparse, size: 12305, Round 23: sparse, size: 11652, Round 24: sparse, size: 12091, Round 25: sparse, size: 11304, Round 26: sparse, size: 11383, Round 27: sparse, size: 11194, Round 28: sparse, size: 11173, Round 29: sparse, size: 11848, Round 30: sparse, size: 12562, Round 31: sparse, size: 12894, Round 32: sparse, size: 11887, Round 33: sparse, size: 12521, Round 34: sparse, size: 12629, Round 35: sparse, size: 13038, Round 36: sparse, size: 13478, Round 37: sparse, size: 14043, Round 38: sparse, size: 13666, Round 39: sparse, size: 14310, Round 40: sparse, size: 14384, Round 41: sparse, size: 15294, Round 42: sparse, size: 16395, Round 43: sparse, size: 17335, Round 44: sparse, size: 16526, Round 45: sparse, size: 18948, Round 46: sparse, size: 19255, Round 47: sparse, size: 19771, Round 48: sparse, size: 18093, Round 49: sparse, size: 17144, Round 50: sparse, size: 16943, Round 51: sparse, size: 17693, Round 52: sparse, size: 15555, Round 53: sparse, size: 16310, Round 54: sparse, size: 15826, Round 55: sparse, size: 16225, Round 56: sparse, size: 16073, Round 57: sparse, size: 16752, Round 58: sparse, size: 16094, Round 59: sparse, size: 16934, Round 60: sparse, size: 17131, Round 61: sparse, size: 16244, Round 62: sparse, size: 17339, Round 63: sparse, size: 18829, Round 64: sparse, size: 18801, Round 65: sparse, size: 16996, Round 66: sparse, size: 16721, Round 67: sparse, size: 16818, Round 68: sparse, size: 16033, Round 69: sparse, size: 17028, Round 70: sparse, size: 18697, Round 71: sparse, size: 19171, Round 72: sparse, size: 18922, Round 73: sparse, size: 20207, Round 74: sparse, size: 19611, Round 75: sparse, size: 20254, Round 76: sparse, size: 19889, Round 77: sparse, size: 18988, Round 78: sparse, size: 20620, Round 79: sparse, size: 21461, Round 80: sparse, size: 20148, Round 81: sparse, size: 21080, Round 82: sparse, size: 22348, Round 83: sparse, size: 21428, Round 84: sparse, size: 20818, Round 85: sparse, size: 20555, Round 86: sparse, size: 21533, Round 87: sparse, size: 22346, Round 88: sparse, size: 23088, Round 89: sparse, size: 24664, Round 90: sparse, size: 23492, Round 91: sparse, size: 23660, Round 92: sparse, size: 24687, Round 93: sparse, size: 24540, Round 94: sparse, size: 22975, Round 95: sparse, size: 23512, Round 96: sparse, size: 22955, Round 97: sparse, size: 21836, Round 98: sparse, size: 20190, Round 99: sparse, size: 20826, Round 100: sparse, size: 18012, Round 101: sparse, size: 14776, Round 102: sparse, size: 13579, Round 103: sparse, size: 12464, Round 104: sparse, size: 10771, Round 105: sparse, size: 9575, Round 106: sparse, size: 8746, Round 107: sparse, size: 7426, Round 108: sparse, size: 6664, Round 109: sparse, size: 4512, Round 110: sparse, size: 2769, Round 111: sparse, size: 2168, Round 112: sparse, size: 2179, Round 113: sparse, size: 1608, Round 114: sparse, size: 1187, Round 115: sparse, size: 906, Round 116: sparse, size: 671, Round 117: sparse, size: 389, Round 118: sparse, size: 186, Our running time: 0.137151	0.145226
-dijkstra running time: 3.493517  
+121 121 Our running time: 0.133444	0.121503
+dijkstra running time: 3.412026  
 
 source 3: 4412485   
-Round 0: sparse, size: 1, Round 1: sparse, size: 249, Round 2: sparse, size: 1511, Round 3: sparse, size: 1581, Round 4: sparse, size: 2418, Round 5: sparse, size: 2952, Round 6: sparse, size: 3946, Round 7: sparse, size: 5018, Round 8: sparse, size: 6418, Round 9: sparse, size: 7954, Round 10: sparse, size: 8559, Round 11: sparse, size: 9754, Round 12: sparse, size: 10523, Round 13: sparse, size: 12539, Round 14: sparse, size: 13775, Round 15: sparse, size: 14793, Round 16: sparse, size: 16697, Round 17: sparse, size: 17657, Round 18: sparse, size: 18348, Round 19: sparse, size: 19650, Round 20: sparse, size: 21471, Round 21: sparse, size: 22648, Round 22: sparse, size: 24858, Round 23: sparse, size: 27323, Round 24: sparse, size: 26875, Round 25: sparse, size: 28050, Round 26: sparse, size: 26783, Round 27: sparse, size: 28360, Round 28: sparse, size: 31864, Round 29: sparse, size: 32265, Round 30: sparse, size: 32047, Round 31: sparse, size: 32110, Round 32: sparse, size: 32114, Round 33: sparse, size: 33418, Round 34: sparse, size: 34792, Round 35: sparse, size: 35596, Round 36: sparse, size: 37050, Round 37: sparse, size: 38147, Round 38: sparse, size: 40640, Round 39: sparse, size: 41448, Round 40: sparse, size: 38438, Round 41: sparse, size: 38156, Round 42: sparse, size: 37732, Round 43: sparse, size: 38854, Round 44: sparse, size: 37303, Round 45: sparse, size: 38761, Round 46: sparse, size: 36963, Round 47: sparse, size: 40441, Round 48: sparse, size: 40704, Round 49: sparse, size: 39424, Round 50: sparse, size: 39750, Round 51: sparse, size: 41094, Round 52: sparse, size: 42796, Round 53: sparse, size: 46180, Round 54: sparse, size: 45174, Round 55: sparse, size: 45237, Round 56: sparse, size: 44113, Round 57: sparse, size: 40802, Round 58: sparse, size: 39043, Round 59: sparse, size: 39140, Round 60: sparse, size: 41109, Round 61: sparse, size: 41101, Round 62: sparse, size: 41987, Round 63: sparse, size: 40821, Round 64: sparse, size: 42413, Round 65: sparse, size: 44877, Round 66: sparse, size: 42621, Round 67: sparse, size: 42788, Round 68: sparse, size: 40762, Round 69: sparse, size: 44818, Round 70: sparse, size: 42569, Round 71: sparse, size: 41357, Round 72: sparse, size: 39525, Round 73: sparse, size: 37306, Round 74: sparse, size: 34670, Round 75: sparse, size: 34206, Round 76: sparse, size: 32145, Round 77: sparse, size: 31698, Round 78: sparse, size: 30130, Round 79: sparse, size: 24849, Round 80: sparse, size: 21320, Round 81: sparse, size: 19131, Round 82: sparse, size: 17318, Round 83: sparse, size: 14974, Round 84: sparse, size: 13858, Round 85: sparse, size: 12234, Round 86: sparse, size: 11015, Round 87: sparse, size: 8742, Round 88: sparse, size: 5223, Round 89: sparse, size: 4031, Round 90: sparse, size: 3527, Round 91: sparse, size: 2993, Round 92: sparse, size: 1955, Round 93: sparse, size: 1613, Round 94: sparse, size: 1117, Round 95: sparse, size: 621, Round 96: sparse, size: 474, Round 97: sparse, size: 87, Warmup Round: 0.126116
-Round 0: sparse, size: 1, Round 1: sparse, size: 249, Round 2: sparse, size: 1289, Round 3: sparse, size: 1657, Round 4: sparse, size: 2259, Round 5: sparse, size: 3214, Round 6: sparse, size: 4098, Round 7: sparse, size: 5117, Round 8: sparse, size: 6375, Round 9: sparse, size: 7595, Round 10: sparse, size: 9183, Round 11: sparse, size: 9699, Round 12: sparse, size: 10707, Round 13: sparse, size: 12309, Round 14: sparse, size: 14469, Round 15: sparse, size: 14880, Round 16: sparse, size: 16707, Round 17: sparse, size: 16957, Round 18: sparse, size: 18241, Round 19: sparse, size: 20628, Round 20: sparse, size: 21220, Round 21: sparse, size: 24568, Round 22: sparse, size: 24070, Round 23: sparse, size: 26174, Round 24: sparse, size: 26301, Round 25: sparse, size: 27966, Round 26: sparse, size: 28175, Round 27: sparse, size: 30080, Round 28: sparse, size: 32365, Round 29: sparse, size: 32628, Round 30: sparse, size: 32538, Round 31: sparse, size: 32488, Round 32: sparse, size: 33335, Round 33: sparse, size: 33340, Round 34: sparse, size: 33827, Round 35: sparse, size: 35445, Round 36: sparse, size: 36496, Round 37: sparse, size: 39534, Round 38: sparse, size: 40634, Round 39: sparse, size: 41074, Round 40: sparse, size: 39916, Round 41: sparse, size: 37903, Round 42: sparse, size: 37812, Round 43: sparse, size: 38913, Round 44: sparse, size: 36903, Round 45: sparse, size: 39650, Round 46: sparse, size: 41331, Round 47: sparse, size: 39367, Round 48: sparse, size: 38024, Round 49: sparse, size: 38530, Round 50: sparse, size: 39847, Round 51: sparse, size: 41016, Round 52: sparse, size: 43039, Round 53: sparse, size: 43936, Round 54: sparse, size: 45569, Round 55: sparse, size: 44622, Round 56: sparse, size: 44720, Round 57: sparse, size: 45814, Round 58: sparse, size: 40036, Round 59: sparse, size: 38569, Round 60: sparse, size: 40131, Round 61: sparse, size: 42970, Round 62: sparse, size: 41578, Round 63: sparse, size: 42402, Round 64: sparse, size: 42192, Round 65: sparse, size: 41827, Round 66: sparse, size: 41570, Round 67: sparse, size: 43468, Round 68: sparse, size: 42289, Round 69: sparse, size: 41503, Round 70: sparse, size: 44799, Round 71: sparse, size: 41405, Round 72: sparse, size: 40114, Round 73: sparse, size: 36835, Round 74: sparse, size: 35053, Round 75: sparse, size: 34606, Round 76: sparse, size: 32107, Round 77: sparse, size: 29989, Round 78: sparse, size: 28735, Round 79: sparse, size: 24078, Round 80: sparse, size: 21480, Round 81: sparse, size: 19586, Round 82: sparse, size: 17592, Round 83: sparse, size: 15132, Round 84: sparse, size: 14310, Round 85: sparse, size: 12077, Round 86: sparse, size: 10880, Round 87: sparse, size: 8781, Round 88: sparse, size: 5363, Round 89: sparse, size: 4277, Round 90: sparse, size: 3532, Round 91: sparse, size: 2784, Round 92: sparse, size: 2246, Round 93: sparse, size: 1781, Round 94: sparse, size: 1279, Round 95: sparse, size: 727, Round 96: sparse, size: 411, Round 97: sparse, size: 86, Round 1: 0.123306
-Round 0: sparse, size: 1, Round 1: sparse, size: 225, Round 2: sparse, size: 752, Round 3: sparse, size: 983, Round 4: sparse, size: 1324, Round 5: sparse, size: 1911, Round 6: sparse, size: 2776, Round 7: sparse, size: 3040, Round 8: sparse, size: 4090, Round 9: sparse, size: 5113, Round 10: sparse, size: 5918, Round 11: sparse, size: 7190, Round 12: sparse, size: 7556, Round 13: sparse, size: 8409, Round 14: sparse, size: 9459, Round 15: sparse, size: 9872, Round 16: sparse, size: 11053, Round 17: sparse, size: 12126, Round 18: sparse, size: 12973, Round 19: sparse, size: 13645, Round 20: sparse, size: 14762, Round 21: sparse, size: 15352, Round 22: sparse, size: 16143, Round 23: sparse, size: 17515, Round 24: sparse, size: 18123, Round 25: sparse, size: 18455, Round 26: sparse, size: 19663, Round 27: sparse, size: 19795, Round 28: sparse, size: 20688, Round 29: sparse, size: 21524, Round 30: sparse, size: 20804, Round 31: sparse, size: 21099, Round 32: sparse, size: 22917, Round 33: sparse, size: 22010, Round 34: sparse, size: 24415, Round 35: sparse, size: 23967, Round 36: sparse, size: 25266, Round 37: sparse, size: 26371, Round 38: sparse, size: 26388, Round 39: sparse, size: 26355, Round 40: sparse, size: 26646, Round 41: sparse, size: 24565, Round 42: sparse, size: 26071, Round 43: sparse, size: 24783, Round 44: sparse, size: 27758, Round 45: sparse, size: 25112, Round 46: sparse, size: 26018, Round 47: sparse, size: 25737, Round 48: sparse, size: 27309, Round 49: sparse, size: 26636, Round 50: sparse, size: 28154, Round 51: sparse, size: 27936, Round 52: sparse, size: 28530, Round 53: sparse, size: 31880, Round 54: sparse, size: 30941, Round 55: sparse, size: 30524, Round 56: sparse, size: 29944, Round 57: sparse, size: 27900, Round 58: sparse, size: 26071, Round 59: sparse, size: 25523, Round 60: sparse, size: 27512, Round 61: sparse, size: 27395, Round 62: sparse, size: 27418, Round 63: sparse, size: 28172, Round 64: sparse, size: 28014, Round 65: sparse, size: 29789, Round 66: sparse, size: 28499, Round 67: sparse, size: 28393, Round 68: sparse, size: 27885, Round 69: sparse, size: 29173, Round 70: sparse, size: 29653, Round 71: sparse, size: 28030, Round 72: sparse, size: 27017, Round 73: sparse, size: 24555, Round 74: sparse, size: 23871, Round 75: sparse, size: 22519, Round 76: sparse, size: 21395, Round 77: sparse, size: 20897, Round 78: sparse, size: 18555, Round 79: sparse, size: 16457, Round 80: sparse, size: 14329, Round 81: sparse, size: 13064, Round 82: sparse, size: 11636, Round 83: sparse, size: 10139, Round 84: sparse, size: 9384, Round 85: sparse, size: 8298, Round 86: sparse, size: 7056, Round 87: sparse, size: 5275, Round 88: sparse, size: 3494, Round 89: sparse, size: 2527, Round 90: sparse, size: 2254, Round 91: sparse, size: 1803, Round 92: sparse, size: 1343, Round 93: sparse, size: 1040, Round 94: sparse, size: 734, Round 95: sparse, size: 348, Round 96: sparse, size: 224, Round 97: sparse, size: 11, Warmup Round: 0.111159
-Round 0: sparse, size: 1, Round 1: sparse, size: 225, Round 2: sparse, size: 692, Round 3: sparse, size: 1071, Round 4: sparse, size: 1498, Round 5: sparse, size: 1822, Round 6: sparse, size: 2593, Round 7: sparse, size: 3128, Round 8: sparse, size: 4106, Round 9: sparse, size: 5321, Round 10: sparse, size: 6218, Round 11: sparse, size: 6309, Round 12: sparse, size: 7520, Round 13: sparse, size: 8526, Round 14: sparse, size: 9527, Round 15: sparse, size: 10127, Round 16: sparse, size: 10963, Round 17: sparse, size: 11487, Round 18: sparse, size: 12467, Round 19: sparse, size: 13212, Round 20: sparse, size: 14128, Round 21: sparse, size: 16696, Round 22: sparse, size: 16800, Round 23: sparse, size: 17613, Round 24: sparse, size: 18411, Round 25: sparse, size: 18555, Round 26: sparse, size: 18560, Round 27: sparse, size: 20006, Round 28: sparse, size: 20637, Round 29: sparse, size: 21633, Round 30: sparse, size: 22901, Round 31: sparse, size: 22105, Round 32: sparse, size: 22638, Round 33: sparse, size: 22622, Round 34: sparse, size: 24352, Round 35: sparse, size: 24535, Round 36: sparse, size: 25110, Round 37: sparse, size: 25417, Round 38: sparse, size: 27422, Round 39: sparse, size: 28941, Round 40: sparse, size: 26293, Round 41: sparse, size: 25220, Round 42: sparse, size: 24221, Round 43: sparse, size: 23981, Round 44: sparse, size: 23994, Round 45: sparse, size: 25571, Round 46: sparse, size: 25156, Round 47: sparse, size: 25894, Round 48: sparse, size: 25659, Round 49: sparse, size: 26180, Round 50: sparse, size: 29288, Round 51: sparse, size: 27689, Round 52: sparse, size: 28790, Round 53: sparse, size: 30388, Round 54: sparse, size: 28676, Round 55: sparse, size: 29491, Round 56: sparse, size: 29681, Round 57: sparse, size: 28535, Round 58: sparse, size: 26935, Round 59: sparse, size: 25833, Round 60: sparse, size: 27403, Round 61: sparse, size: 28562, Round 62: sparse, size: 27755, Round 63: sparse, size: 27994, Round 64: sparse, size: 28414, Round 65: sparse, size: 29685, Round 66: sparse, size: 28235, Round 67: sparse, size: 28630, Round 68: sparse, size: 28396, Round 69: sparse, size: 28629, Round 70: sparse, size: 28543, Round 71: sparse, size: 28395, Round 72: sparse, size: 26827, Round 73: sparse, size: 24848, Round 74: sparse, size: 23301, Round 75: sparse, size: 22860, Round 76: sparse, size: 21905, Round 77: sparse, size: 19925, Round 78: sparse, size: 19852, Round 79: sparse, size: 16103, Round 80: sparse, size: 14286, Round 81: sparse, size: 13188, Round 82: sparse, size: 11750, Round 83: sparse, size: 11175, Round 84: sparse, size: 9205, Round 85: sparse, size: 8967, Round 86: sparse, size: 7333, Round 87: sparse, size: 6761, Round 88: sparse, size: 3773, Round 89: sparse, size: 2705, Round 90: sparse, size: 2312, Round 91: sparse, size: 1822, Round 92: sparse, size: 1501, Round 93: sparse, size: 1154, Round 94: sparse, size: 985, Round 95: sparse, size: 576, Round 96: sparse, size: 275, Round 97: sparse, size: 17, Round 1: 0.117171
-Average time: 0.123306	0.117171
+99 Warmup Round: 0.144123
+99 Round 1: 0.128314
+99 Round 2: 0.136658
+99 Round 3: 0.127297
+99 Round 4: 0.128198
+99 Round 5: 0.127324
+99 Round 6: 0.127580
+99 Round 7: 0.127657
+99 Round 8: 0.128115
+99 Round 9: 0.128401
+99 Round 10: 0.134703
+99 Warmup Round: 0.115984
+99 Round 1: 0.136191
+99 Round 2: 0.129353
+99 Round 3: 0.126709
+99 Round 4: 0.119984
+99 Round 5: 0.123605
+99 Round 6: 0.117657
+99 Round 7: 0.114448
+99 Round 8: 0.114042
+99 Round 9: 0.114997
+99 Round 10: 0.115438
+Average time: 0.129425	0.121242
 Running verifier...
-Round 0: sparse, size: 1, Round 1: sparse, size: 249, Round 2: sparse, size: 1282, Round 3: sparse, size: 1859, Round 4: sparse, size: 2570, Round 5: sparse, size: 2953, Round 6: sparse, size: 4258, Round 7: sparse, size: 5158, Round 8: sparse, size: 6466, Round 9: sparse, size: 7563, Round 10: sparse, size: 9077, Round 11: sparse, size: 9918, Round 12: sparse, size: 11337, Round 13: sparse, size: 12397, Round 14: sparse, size: 13887, Round 15: sparse, size: 15378, Round 16: sparse, size: 16431, Round 17: sparse, size: 16646, Round 18: sparse, size: 18220, Round 19: sparse, size: 20284, Round 20: sparse, size: 20999, Round 21: sparse, size: 23420, Round 22: sparse, size: 24761, Round 23: sparse, size: 26682, Round 24: sparse, size: 25912, Round 25: sparse, size: 28161, Round 26: sparse, size: 28834, Round 27: sparse, size: 28478, Round 28: sparse, size: 31694, Round 29: sparse, size: 31970, Round 30: sparse, size: 33129, Round 31: sparse, size: 33274, Round 32: sparse, size: 32371, Round 33: sparse, size: 32358, Round 34: sparse, size: 35098, Round 35: sparse, size: 36060, Round 36: sparse, size: 38569, Round 37: sparse, size: 40792, Round 38: sparse, size: 40662, Round 39: sparse, size: 39841, Round 40: sparse, size: 39955, Round 41: sparse, size: 38090, Round 42: sparse, size: 36053, Round 43: sparse, size: 39198, Round 44: sparse, size: 36427, Round 45: sparse, size: 39707, Round 46: sparse, size: 40046, Round 47: sparse, size: 41802, Round 48: sparse, size: 39829, Round 49: sparse, size: 41460, Round 50: sparse, size: 41782, Round 51: sparse, size: 41368, Round 52: sparse, size: 44057, Round 53: sparse, size: 46844, Round 54: sparse, size: 46271, Round 55: sparse, size: 46100, Round 56: sparse, size: 43965, Round 57: sparse, size: 45360, Round 58: sparse, size: 40026, Round 59: sparse, size: 40641, Round 60: sparse, size: 40677, Round 61: sparse, size: 42958, Round 62: sparse, size: 41839, Round 63: sparse, size: 40326, Round 64: sparse, size: 42782, Round 65: sparse, size: 43707, Round 66: sparse, size: 43842, Round 67: sparse, size: 43663, Round 68: sparse, size: 41656, Round 69: sparse, size: 44845, Round 70: sparse, size: 42696, Round 71: sparse, size: 41966, Round 72: sparse, size: 38707, Round 73: sparse, size: 37289, Round 74: sparse, size: 34302, Round 75: sparse, size: 34115, Round 76: sparse, size: 33908, Round 77: sparse, size: 30887, Round 78: sparse, size: 29320, Round 79: sparse, size: 24298, Round 80: sparse, size: 22531, Round 81: sparse, size: 19326, Round 82: sparse, size: 17441, Round 83: sparse, size: 15930, Round 84: sparse, size: 14350, Round 85: sparse, size: 12769, Round 86: sparse, size: 11500, Round 87: sparse, size: 8825, Round 88: sparse, size: 5493, Round 89: sparse, size: 4033, Round 90: sparse, size: 3342, Round 91: sparse, size: 2732, Round 92: sparse, size: 2187, Round 93: sparse, size: 1716, Round 94: sparse, size: 1101, Round 95: sparse, size: 807, Round 96: sparse, size: 575, Round 97: sparse, size: 76, Round 0: sparse, size: 1, Round 1: sparse, size: 225, Round 2: sparse, size: 702, Round 3: sparse, size: 912, Round 4: sparse, size: 1399, Round 5: sparse, size: 1820, Round 6: sparse, size: 2699, Round 7: sparse, size: 3252, Round 8: sparse, size: 4200, Round 9: sparse, size: 5110, Round 10: sparse, size: 5884, Round 11: sparse, size: 6429, Round 12: sparse, size: 7080, Round 13: sparse, size: 8038, Round 14: sparse, size: 9399, Round 15: sparse, size: 10948, Round 16: sparse, size: 11478, Round 17: sparse, size: 11553, Round 18: sparse, size: 12249, Round 19: sparse, size: 13459, Round 20: sparse, size: 13785, Round 21: sparse, size: 15489, Round 22: sparse, size: 17379, Round 23: sparse, size: 17237, Round 24: sparse, size: 17383, Round 25: sparse, size: 18085, Round 26: sparse, size: 18845, Round 27: sparse, size: 20584, Round 28: sparse, size: 21108, Round 29: sparse, size: 22359, Round 30: sparse, size: 22357, Round 31: sparse, size: 23257, Round 32: sparse, size: 22552, Round 33: sparse, size: 23347, Round 34: sparse, size: 23920, Round 35: sparse, size: 23906, Round 36: sparse, size: 26676, Round 37: sparse, size: 27617, Round 38: sparse, size: 27819, Round 39: sparse, size: 26904, Round 40: sparse, size: 25722, Round 41: sparse, size: 24594, Round 42: sparse, size: 25160, Round 43: sparse, size: 25799, Round 44: sparse, size: 25284, Round 45: sparse, size: 25120, Round 46: sparse, size: 26032, Round 47: sparse, size: 25832, Round 48: sparse, size: 26451, Round 49: sparse, size: 25971, Round 50: sparse, size: 26163, Round 51: sparse, size: 27043, Round 52: sparse, size: 28679, Round 53: sparse, size: 29777, Round 54: sparse, size: 30999, Round 55: sparse, size: 31788, Round 56: sparse, size: 29362, Round 57: sparse, size: 28585, Round 58: sparse, size: 26659, Round 59: sparse, size: 27071, Round 60: sparse, size: 27294, Round 61: sparse, size: 28055, Round 62: sparse, size: 27935, Round 63: sparse, size: 28222, Round 64: sparse, size: 29080, Round 65: sparse, size: 30847, Round 66: sparse, size: 29061, Round 67: sparse, size: 29832, Round 68: sparse, size: 29989, Round 69: sparse, size: 29207, Round 70: sparse, size: 29326, Round 71: sparse, size: 28185, Round 72: sparse, size: 27618, Round 73: sparse, size: 24823, Round 74: sparse, size: 24523, Round 75: sparse, size: 24176, Round 76: sparse, size: 20343, Round 77: sparse, size: 20764, Round 78: sparse, size: 19061, Round 79: sparse, size: 16898, Round 80: sparse, size: 15355, Round 81: sparse, size: 13259, Round 82: sparse, size: 11174, Round 83: sparse, size: 9647, Round 84: sparse, size: 9460, Round 85: sparse, size: 8208, Round 86: sparse, size: 7244, Round 87: sparse, size: 5854, Round 88: sparse, size: 3752, Round 89: sparse, size: 2606, Round 90: sparse, size: 2351, Round 91: sparse, size: 1735, Round 92: sparse, size: 1290, Round 93: sparse, size: 873, Round 94: sparse, size: 797, Round 95: sparse, size: 420, Round 96: sparse, size: 334, Round 97: sparse, size: 18, Our running time: 0.135683	0.123094
-dijkstra running time: 3.779282  
+99 99 Our running time: 0.129004	0.113927
+dijkstra running time: 3.495207  
 
 source 4: 2205694   
-Round 0: sparse, size: 1, Round 1: sparse, size: 249, Round 2: sparse, size: 1453, Round 3: sparse, size: 1620, Round 4: sparse, size: 2193, Round 5: sparse, size: 3084, Round 6: sparse, size: 3888, Round 7: sparse, size: 5488, Round 8: sparse, size: 5961, Round 9: sparse, size: 6998, Round 10: sparse, size: 9005, Round 11: sparse, size: 10096, Round 12: sparse, size: 11334, Round 13: sparse, size: 14026, Round 14: sparse, size: 14606, Round 15: sparse, size: 15985, Round 16: sparse, size: 18851, Round 17: sparse, size: 20160, Round 18: sparse, size: 22035, Round 19: sparse, size: 24613, Round 20: sparse, size: 26835, Round 21: sparse, size: 29179, Round 22: sparse, size: 31030, Round 23: sparse, size: 34360, Round 24: sparse, size: 36238, Round 25: sparse, size: 38305, Round 26: sparse, size: 39946, Round 27: sparse, size: 44597, Round 28: sparse, size: 42238, Round 29: sparse, size: 46465, Round 30: sparse, size: 46674, Round 31: sparse, size: 49755, Round 32: sparse, size: 48072, Round 33: sparse, size: 52021, Round 34: sparse, size: 53005, Round 35: sparse, size: 55576, Round 36: sparse, size: 57286, Round 37: sparse, size: 58698, Round 38: sparse, size: 59913, Round 39: sparse, size: 61545, Round 40: sparse, size: 61707, Round 41: sparse, size: 66435, Round 42: sparse, size: 67293, Round 43: sparse, size: 68798, Round 44: sparse, size: 68681, Round 45: sparse, size: 68877, Round 46: sparse, size: 68650, Round 47: sparse, size: 68694, Round 48: sparse, size: 66341, Round 49: sparse, size: 67007, Round 50: sparse, size: 65870, Round 51: sparse, size: 65880, Round 52: sparse, size: 59556, Round 53: sparse, size: 59386, Round 54: sparse, size: 54520, Round 55: sparse, size: 54995, Round 56: sparse, size: 50379, Round 57: sparse, size: 46917, Round 58: sparse, size: 45045, Round 59: sparse, size: 40661, Round 60: sparse, size: 40020, Round 61: sparse, size: 34607, Round 62: sparse, size: 33883, Round 63: sparse, size: 31746, Round 64: sparse, size: 28153, Round 65: sparse, size: 27575, Round 66: sparse, size: 24255, Round 67: sparse, size: 23725, Round 68: sparse, size: 21083, Round 69: sparse, size: 18190, Round 70: sparse, size: 14312, Round 71: sparse, size: 11681, Round 72: sparse, size: 6304, Round 73: sparse, size: 4111, Round 74: sparse, size: 3319, Round 75: sparse, size: 2152, Round 76: sparse, size: 1398, Round 77: sparse, size: 685, Round 78: sparse, size: 740, Round 79: sparse, size: 95, Warmup Round: 0.131709
-Round 0: sparse, size: 1, Round 1: sparse, size: 249, Round 2: sparse, size: 1215, Round 3: sparse, size: 1652, Round 4: sparse, size: 2211, Round 5: sparse, size: 2920, Round 6: sparse, size: 4238, Round 7: sparse, size: 5373, Round 8: sparse, size: 5828, Round 9: sparse, size: 7494, Round 10: sparse, size: 8787, Round 11: sparse, size: 10166, Round 12: sparse, size: 11590, Round 13: sparse, size: 13635, Round 14: sparse, size: 13662, Round 15: sparse, size: 16463, Round 16: sparse, size: 18169, Round 17: sparse, size: 20087, Round 18: sparse, size: 22877, Round 19: sparse, size: 24058, Round 20: sparse, size: 27508, Round 21: sparse, size: 28305, Round 22: sparse, size: 33767, Round 23: sparse, size: 35586, Round 24: sparse, size: 36276, Round 25: sparse, size: 38025, Round 26: sparse, size: 38539, Round 27: sparse, size: 41822, Round 28: sparse, size: 42276, Round 29: sparse, size: 44478, Round 30: sparse, size: 47808, Round 31: sparse, size: 50680, Round 32: sparse, size: 48584, Round 33: sparse, size: 52003, Round 34: sparse, size: 52500, Round 35: sparse, size: 53432, Round 36: sparse, size: 55941, Round 37: sparse, size: 59500, Round 38: sparse, size: 59334, Round 39: sparse, size: 61066, Round 40: sparse, size: 61541, Round 41: sparse, size: 65831, Round 42: sparse, size: 67805, Round 43: sparse, size: 67926, Round 44: sparse, size: 70508, Round 45: sparse, size: 68625, Round 46: sparse, size: 70093, Round 47: sparse, size: 71299, Round 48: sparse, size: 67499, Round 49: sparse, size: 69465, Round 50: sparse, size: 66925, Round 51: sparse, size: 63416, Round 52: sparse, size: 60440, Round 53: sparse, size: 57076, Round 54: sparse, size: 56244, Round 55: sparse, size: 54918, Round 56: sparse, size: 50156, Round 57: sparse, size: 46118, Round 58: sparse, size: 44396, Round 59: sparse, size: 42301, Round 60: sparse, size: 38673, Round 61: sparse, size: 36228, Round 62: sparse, size: 34175, Round 63: sparse, size: 33641, Round 64: sparse, size: 28665, Round 65: sparse, size: 27543, Round 66: sparse, size: 25351, Round 67: sparse, size: 23024, Round 68: sparse, size: 21354, Round 69: sparse, size: 17491, Round 70: sparse, size: 14725, Round 71: sparse, size: 11831, Round 72: sparse, size: 6099, Round 73: sparse, size: 4299, Round 74: sparse, size: 3444, Round 75: sparse, size: 2082, Round 76: sparse, size: 1355, Round 77: sparse, size: 780, Round 78: sparse, size: 508, Round 79: sparse, size: 182, Round 1: 0.119414
-Round 0: sparse, size: 1, Round 1: sparse, size: 189, Round 2: sparse, size: 816, Round 3: sparse, size: 1210, Round 4: sparse, size: 1560, Round 5: sparse, size: 2129, Round 6: sparse, size: 2654, Round 7: sparse, size: 3318, Round 8: sparse, size: 4117, Round 9: sparse, size: 4877, Round 10: sparse, size: 5622, Round 11: sparse, size: 6509, Round 12: sparse, size: 7721, Round 13: sparse, size: 8904, Round 14: sparse, size: 9885, Round 15: sparse, size: 11013, Round 16: sparse, size: 12683, Round 17: sparse, size: 13643, Round 18: sparse, size: 15340, Round 19: sparse, size: 16309, Round 20: sparse, size: 17290, Round 21: sparse, size: 19787, Round 22: sparse, size: 22879, Round 23: sparse, size: 23745, Round 24: sparse, size: 24878, Round 25: sparse, size: 25038, Round 26: sparse, size: 25556, Round 27: sparse, size: 28597, Round 28: sparse, size: 29509, Round 29: sparse, size: 31111, Round 30: sparse, size: 31771, Round 31: sparse, size: 33739, Round 32: sparse, size: 33957, Round 33: sparse, size: 33821, Round 34: sparse, size: 34888, Round 35: sparse, size: 36165, Round 36: sparse, size: 38826, Round 37: sparse, size: 41278, Round 38: sparse, size: 41883, Round 39: sparse, size: 40665, Round 40: sparse, size: 43204, Round 41: sparse, size: 43568, Round 42: sparse, size: 44364, Round 43: sparse, size: 46229, Round 44: sparse, size: 46433, Round 45: sparse, size: 50057, Round 46: sparse, size: 45748, Round 47: sparse, size: 47372, Round 48: sparse, size: 44197, Round 49: sparse, size: 44032, Round 50: sparse, size: 45644, Round 51: sparse, size: 42898, Round 52: sparse, size: 41954, Round 53: sparse, size: 37545, Round 54: sparse, size: 37326, Round 55: sparse, size: 35821, Round 56: sparse, size: 34311, Round 57: sparse, size: 32696, Round 58: sparse, size: 30283, Round 59: sparse, size: 28344, Round 60: sparse, size: 26722, Round 61: sparse, size: 24629, Round 62: sparse, size: 22964, Round 63: sparse, size: 22078, Round 64: sparse, size: 19388, Round 65: sparse, size: 18156, Round 66: sparse, size: 17284, Round 67: sparse, size: 14874, Round 68: sparse, size: 14339, Round 69: sparse, size: 12477, Round 70: sparse, size: 10099, Round 71: sparse, size: 7935, Round 72: sparse, size: 4159, Round 73: sparse, size: 2923, Round 74: sparse, size: 2184, Round 75: sparse, size: 1508, Round 76: sparse, size: 807, Round 77: sparse, size: 525, Round 78: sparse, size: 288, Round 79: sparse, size: 62, Warmup Round: 0.127515
-Round 0: sparse, size: 1, Round 1: sparse, size: 189, Round 2: sparse, size: 848, Round 3: sparse, size: 1107, Round 4: sparse, size: 1417, Round 5: sparse, size: 2146, Round 6: sparse, size: 2584, Round 7: sparse, size: 3226, Round 8: sparse, size: 3860, Round 9: sparse, size: 4832, Round 10: sparse, size: 5691, Round 11: sparse, size: 6502, Round 12: sparse, size: 7560, Round 13: sparse, size: 8724, Round 14: sparse, size: 9803, Round 15: sparse, size: 10328, Round 16: sparse, size: 11765, Round 17: sparse, size: 12506, Round 18: sparse, size: 14377, Round 19: sparse, size: 15895, Round 20: sparse, size: 17992, Round 21: sparse, size: 19323, Round 22: sparse, size: 22050, Round 23: sparse, size: 23784, Round 24: sparse, size: 25162, Round 25: sparse, size: 26369, Round 26: sparse, size: 27397, Round 27: sparse, size: 27683, Round 28: sparse, size: 30252, Round 29: sparse, size: 30275, Round 30: sparse, size: 31635, Round 31: sparse, size: 34258, Round 32: sparse, size: 32646, Round 33: sparse, size: 34624, Round 34: sparse, size: 36608, Round 35: sparse, size: 38262, Round 36: sparse, size: 38506, Round 37: sparse, size: 39074, Round 38: sparse, size: 42402, Round 39: sparse, size: 41641, Round 40: sparse, size: 42785, Round 41: sparse, size: 43499, Round 42: sparse, size: 43542, Round 43: sparse, size: 46705, Round 44: sparse, size: 45954, Round 45: sparse, size: 45479, Round 46: sparse, size: 46881, Round 47: sparse, size: 47282, Round 48: sparse, size: 44547, Round 49: sparse, size: 43285, Round 50: sparse, size: 44035, Round 51: sparse, size: 42161, Round 52: sparse, size: 41550, Round 53: sparse, size: 40596, Round 54: sparse, size: 38481, Round 55: sparse, size: 36866, Round 56: sparse, size: 34920, Round 57: sparse, size: 31621, Round 58: sparse, size: 29946, Round 59: sparse, size: 28429, Round 60: sparse, size: 26386, Round 61: sparse, size: 24673, Round 62: sparse, size: 22946, Round 63: sparse, size: 21204, Round 64: sparse, size: 19307, Round 65: sparse, size: 17638, Round 66: sparse, size: 17917, Round 67: sparse, size: 15683, Round 68: sparse, size: 14446, Round 69: sparse, size: 12400, Round 70: sparse, size: 10367, Round 71: sparse, size: 7677, Round 72: sparse, size: 4027, Round 73: sparse, size: 2860, Round 74: sparse, size: 2119, Round 75: sparse, size: 1396, Round 76: sparse, size: 807, Round 77: sparse, size: 533, Round 78: sparse, size: 499, Round 79: sparse, size: 72, Round 1: 0.118987
-Average time: 0.119414	0.118987
+81 Warmup Round: 0.131379
+81 Round 1: 0.123881
+81 Round 2: 0.124709
+81 Round 3: 0.123458
+81 Round 4: 0.126441
+81 Round 5: 0.124727
+81 Round 6: 0.123837
+81 Round 7: 0.131835
+81 Round 8: 0.124652
+81 Round 9: 0.125924
+81 Round 10: 0.135254
+81 Warmup Round: 0.128793
+81 Round 1: 0.123032
+81 Round 2: 0.120239
+81 Round 3: 0.119714
+81 Round 4: 0.121170
+81 Round 5: 0.120899
+81 Round 6: 0.122411
+81 Round 7: 0.122855
+81 Round 8: 0.121831
+81 Round 9: 0.120246
+81 Round 10: 0.120201
+Average time: 0.126472	0.121260
 Running verifier...
-Round 0: sparse, size: 1, Round 1: sparse, size: 249, Round 2: sparse, size: 1192, Round 3: sparse, size: 1585, Round 4: sparse, size: 2279, Round 5: sparse, size: 3011, Round 6: sparse, size: 3735, Round 7: sparse, size: 5124, Round 8: sparse, size: 6291, Round 9: sparse, size: 7014, Round 10: sparse, size: 9165, Round 11: sparse, size: 10686, Round 12: sparse, size: 10883, Round 13: sparse, size: 12857, Round 14: sparse, size: 14628, Round 15: sparse, size: 15662, Round 16: sparse, size: 19440, Round 17: sparse, size: 20139, Round 18: sparse, size: 21978, Round 19: sparse, size: 24011, Round 20: sparse, size: 25495, Round 21: sparse, size: 29889, Round 22: sparse, size: 31629, Round 23: sparse, size: 35261, Round 24: sparse, size: 37415, Round 25: sparse, size: 37316, Round 26: sparse, size: 39153, Round 27: sparse, size: 42099, Round 28: sparse, size: 43329, Round 29: sparse, size: 46095, Round 30: sparse, size: 47732, Round 31: sparse, size: 48854, Round 32: sparse, size: 48409, Round 33: sparse, size: 50057, Round 34: sparse, size: 50822, Round 35: sparse, size: 54408, Round 36: sparse, size: 57760, Round 37: sparse, size: 57500, Round 38: sparse, size: 60184, Round 39: sparse, size: 61018, Round 40: sparse, size: 63455, Round 41: sparse, size: 66113, Round 42: sparse, size: 68283, Round 43: sparse, size: 66090, Round 44: sparse, size: 70278, Round 45: sparse, size: 67431, Round 46: sparse, size: 71318, Round 47: sparse, size: 69207, Round 48: sparse, size: 67259, Round 49: sparse, size: 67647, Round 50: sparse, size: 64623, Round 51: sparse, size: 62710, Round 52: sparse, size: 59405, Round 53: sparse, size: 57785, Round 54: sparse, size: 59191, Round 55: sparse, size: 54826, Round 56: sparse, size: 51236, Round 57: sparse, size: 47771, Round 58: sparse, size: 44820, Round 59: sparse, size: 39572, Round 60: sparse, size: 38538, Round 61: sparse, size: 37009, Round 62: sparse, size: 34741, Round 63: sparse, size: 31132, Round 64: sparse, size: 30833, Round 65: sparse, size: 27703, Round 66: sparse, size: 24848, Round 67: sparse, size: 22961, Round 68: sparse, size: 23359, Round 69: sparse, size: 19052, Round 70: sparse, size: 15440, Round 71: sparse, size: 12205, Round 72: sparse, size: 6871, Round 73: sparse, size: 4305, Round 74: sparse, size: 3410, Round 75: sparse, size: 1982, Round 76: sparse, size: 1456, Round 77: sparse, size: 761, Round 78: sparse, size: 558, Round 79: sparse, size: 177, Round 0: sparse, size: 1, Round 1: sparse, size: 189, Round 2: sparse, size: 857, Round 3: sparse, size: 1025, Round 4: sparse, size: 1472, Round 5: sparse, size: 2215, Round 6: sparse, size: 2749, Round 7: sparse, size: 3139, Round 8: sparse, size: 3840, Round 9: sparse, size: 4732, Round 10: sparse, size: 5576, Round 11: sparse, size: 6678, Round 12: sparse, size: 7412, Round 13: sparse, size: 8673, Round 14: sparse, size: 10235, Round 15: sparse, size: 11206, Round 16: sparse, size: 12147, Round 17: sparse, size: 13169, Round 18: sparse, size: 14750, Round 19: sparse, size: 16384, Round 20: sparse, size: 18298, Round 21: sparse, size: 19801, Round 22: sparse, size: 21790, Round 23: sparse, size: 23429, Round 24: sparse, size: 24423, Round 25: sparse, size: 25902, Round 26: sparse, size: 26562, Round 27: sparse, size: 28371, Round 28: sparse, size: 28608, Round 29: sparse, size: 30815, Round 30: sparse, size: 31442, Round 31: sparse, size: 33522, Round 32: sparse, size: 35313, Round 33: sparse, size: 34981, Round 34: sparse, size: 35166, Round 35: sparse, size: 37326, Round 36: sparse, size: 39847, Round 37: sparse, size: 40636, Round 38: sparse, size: 40973, Round 39: sparse, size: 42732, Round 40: sparse, size: 42932, Round 41: sparse, size: 43743, Round 42: sparse, size: 45583, Round 43: sparse, size: 48114, Round 44: sparse, size: 46004, Round 45: sparse, size: 47418, Round 46: sparse, size: 47279, Round 47: sparse, size: 47374, Round 48: sparse, size: 43395, Round 49: sparse, size: 43463, Round 50: sparse, size: 43774, Round 51: sparse, size: 42530, Round 52: sparse, size: 40690, Round 53: sparse, size: 39132, Round 54: sparse, size: 37389, Round 55: sparse, size: 36837, Round 56: sparse, size: 35666, Round 57: sparse, size: 31877, Round 58: sparse, size: 29742, Round 59: sparse, size: 27465, Round 60: sparse, size: 25308, Round 61: sparse, size: 23628, Round 62: sparse, size: 22116, Round 63: sparse, size: 22848, Round 64: sparse, size: 19706, Round 65: sparse, size: 18382, Round 66: sparse, size: 16532, Round 67: sparse, size: 15466, Round 68: sparse, size: 14112, Round 69: sparse, size: 12396, Round 70: sparse, size: 9986, Round 71: sparse, size: 7718, Round 72: sparse, size: 4072, Round 73: sparse, size: 2844, Round 74: sparse, size: 2142, Round 75: sparse, size: 1468, Round 76: sparse, size: 951, Round 77: sparse, size: 392, Round 78: sparse, size: 393, Round 79: sparse, size: 74, Our running time: 0.149080	0.133129
-dijkstra running time: 3.903658  
+81 81 Our running time: 0.141961	0.133665
+dijkstra running time: 3.642832  
+
+source 5: 658452    
+101 Warmup Round: 0.137723
+100 Round 1: 0.143474
+100 Round 2: 0.139406
+100 Round 3: 0.134075
+101 Round 4: 0.130478
+101 Round 5: 0.128424
+101 Round 6: 0.140490
+101 Round 7: 0.128993
+101 Round 8: 0.130169
+101 Round 9: 0.130083
+101 Round 10: 0.130278
+101 Warmup Round: 0.129682
+101 Round 1: 0.119409
+101 Round 2: 0.119238
+101 Round 3: 0.117838
+101 Round 4: 0.117575
+101 Round 5: 0.117463
+101 Round 6: 0.116838
+101 Round 7: 0.129172
+101 Round 8: 0.120749
+101 Round 9: 0.118190
+101 Round 10: 0.117347
+Average time: 0.133587	0.119382
+Running verifier...
+101 101 Our running time: 0.131435	0.119683
+dijkstra running time: 3.563364  
+
+source 6: 7215374   
+125 Warmup Round: 0.145481
+125 Round 1: 0.141988
+125 Round 2: 0.139393
+125 Round 3: 0.143449
+125 Round 4: 0.138836
+125 Round 5: 0.142457
+125 Round 6: 0.138272
+125 Round 7: 0.134776
+125 Round 8: 0.136339
+125 Round 9: 0.133881
+125 Round 10: 0.135307
+125 Warmup Round: 0.148505
+125 Round 1: 0.122680
+125 Round 2: 0.126494
+125 Round 3: 0.122750
+125 Round 4: 0.133748
+125 Round 5: 0.121618
+125 Round 6: 0.122611
+125 Round 7: 0.124064
+125 Round 8: 0.121995
+125 Round 9: 0.122778
+125 Round 10: 0.132415
+Average time: 0.138470	0.125115
+Running verifier...
+125 125 Our running time: 0.136207	0.120182
+dijkstra running time: 3.350049  
+
+source 7: 9803725   
+103 Warmup Round: 0.135579
+103 Round 1: 0.137032
+103 Round 2: 0.136569
+103 Round 3: 0.136068
+103 Round 4: 0.136923
+103 Round 5: 0.134191
+103 Round 6: 0.138153
+103 Round 7: 0.135693
+103 Round 8: 0.136917
+103 Round 9: 0.133962
+103 Round 10: 0.135178
+103 Warmup Round: 0.130696
+103 Round 1: 0.124249
+103 Round 2: 0.136539
+103 Round 3: 0.129252
+103 Round 4: 0.124389
+103 Round 5: 0.126577
+103 Round 6: 0.124253
+103 Round 7: 0.128569
+103 Round 8: 0.125105
+103 Round 9: 0.124079
+103 Round 10: 0.128314
+Average time: 0.136069	0.127133
+Running verifier...
+103 103 Our running time: 0.137392	0.129844
+dijkstra running time: 3.473099  
+
+source 8: 6928490   
+118 Warmup Round: 0.136502
+118 Round 1: 0.132264
+118 Round 2: 0.136099
+118 Round 3: 0.143532
+118 Round 4: 0.141571
+118 Round 5: 0.144432
+118 Round 6: 0.145301
+118 Round 7: 0.130896
+118 Round 8: 0.133805
+118 Round 9: 0.136807
+118 Round 10: 0.137521
+118 Warmup Round: 0.136649
+118 Round 1: 0.122029
+118 Round 2: 0.119036
+118 Round 3: 0.127879
+118 Round 4: 0.121353
+118 Round 5: 0.121378
+118 Round 6: 0.119454
+118 Round 7: 0.120646
+118 Round 8: 0.121309
+118 Round 9: 0.121129
+118 Round 10: 0.121751
+Average time: 0.138223	0.121596
+Running verifier...
+118 118 Our running time: 0.149039	0.123043
+dijkstra running time: 3.400781  
+
+source 9: 8403035   
+124 Warmup Round: 0.138520
+124 Round 1: 0.131803
+124 Round 2: 0.133226
+124 Round 3: 0.138454
+124 Round 4: 0.133436
+124 Round 5: 0.134029
+124 Round 6: 0.133743
+124 Round 7: 0.139298
+124 Round 8: 0.150029
+124 Round 9: 0.135734
+124 Round 10: 0.142636
+124 Warmup Round: 0.149150
+124 Round 1: 0.134482
+124 Round 2: 0.135002
+124 Round 3: 0.132985
+124 Round 4: 0.131627
+124 Round 5: 0.131534
+124 Round 6: 0.130865
+124 Round 7: 0.130126
+124 Round 8: 0.141279
+124 Round 9: 0.123098
+124 Round 10: 0.122604
+Average time: 0.137239	0.131360
+Running verifier...
+124 124 Our running time: 0.135315	0.125463
+dijkstra running time: 4.236843  
+
+source 10: 526133    
+107 Warmup Round: 0.141009
+106 Round 1: 0.137887
+106 Round 2: 0.136112
+107 Round 3: 0.138840
+107 Round 4: 0.135987
+107 Round 5: 0.143280
+107 Round 6: 0.131506
+106 Round 7: 0.130125
+107 Round 8: 0.131389
+107 Round 9: 0.135756
+106 Round 10: 0.139629
+107 Warmup Round: 0.119523
+107 Round 1: 0.117966
+107 Round 2: 0.119604
+107 Round 3: 0.118138
+107 Round 4: 0.120992
+107 Round 5: 0.119787
+107 Round 6: 0.121447
+107 Round 7: 0.117709
+107 Round 8: 0.121021
+107 Round 9: 0.118809
+107 Round 10: 0.120529
+Average time: 0.136051	0.119600
+Running verifier...
+106 107 Our running time: 0.137674	0.125079
+dijkstra running time: 4.433104  
+
+source 11: 1607463   
+114 Warmup Round: 0.155455
+114 Round 1: 0.145273
+114 Round 2: 0.141902
+114 Round 3: 0.142333
+114 Round 4: 0.144091
+114 Round 5: 0.143770
+114 Round 6: 0.141310
+114 Round 7: 0.136310
+114 Round 8: 0.132416
+114 Round 9: 0.131941
+114 Round 10: 0.133863
+114 Warmup Round: 0.133404
+114 Round 1: 0.137533
+114 Round 2: 0.121707
+114 Round 3: 0.121390
+114 Round 4: 0.120992
+114 Round 5: 0.122569
+114 Round 6: 0.121934
+114 Round 7: 0.121096
+114 Round 8: 0.120288
+114 Round 9: 0.121734
+114 Round 10: 0.121974
+Average time: 0.139321	0.123122
+Running verifier...
+114 114 Our running time: 0.138100	0.122984
+dijkstra running time: 4.337545  
+
+source 12: 6737807   
+123 Warmup Round: 0.146343
+123 Round 1: 0.144373
+123 Round 2: 0.155561
+123 Round 3: 0.142871
+123 Round 4: 0.146435
+123 Round 5: 0.147700
+123 Round 6: 0.141501
+123 Round 7: 0.145602
+123 Round 8: 0.141211
+123 Round 9: 0.142869
+123 Round 10: 0.135622
+124 Warmup Round: 0.123022
+123 Round 1: 0.124212
+123 Round 2: 0.135280
+124 Round 3: 0.130186
+123 Round 4: 0.124056
+123 Round 5: 0.129491
+124 Round 6: 0.122790
+123 Round 7: 0.122530
+123 Round 8: 0.123045
+123 Round 9: 0.122244
+123 Round 10: 0.122750
+Average time: 0.144374	0.125658
+Running verifier...
+123 124 Our running time: 0.134652	0.123435
+dijkstra running time: 3.387385  
+
+source 13: 11697848  
+107 Warmup Round: 0.153036
+107 Round 1: 0.140599
+107 Round 2: 0.136685
+107 Round 3: 0.139330
+107 Round 4: 0.141235
+107 Round 5: 0.141019
+107 Round 6: 0.140245
+107 Round 7: 0.132023
+107 Round 8: 0.132105
+107 Round 9: 0.130541
+106 Round 10: 0.131180
+107 Warmup Round: 0.134617
+106 Round 1: 0.123491
+107 Round 2: 0.119216
+107 Round 3: 0.119138
+107 Round 4: 0.119202
+107 Round 5: 0.117519
+107 Round 6: 0.118266
+107 Round 7: 0.118083
+107 Round 8: 0.118826
+107 Round 9: 0.119414
+107 Round 10: 0.126954
+Average time: 0.136496	0.120011
+Running verifier...
+107 107 Our running time: 0.134832	0.118361
+dijkstra running time: 3.481545  
+
+source 14: 6546924   
+99 Warmup Round: 0.132339
+99 Round 1: 0.127943
+99 Round 2: 0.128702
+99 Round 3: 0.129436
+99 Round 4: 0.128170
+99 Round 5: 0.129293
+99 Round 6: 0.128548
+99 Round 7: 0.129077
+99 Round 8: 0.128398
+99 Round 9: 0.143216
+99 Round 10: 0.137975
+99 Warmup Round: 0.123015
+99 Round 1: 0.136596
+99 Round 2: 0.137007
+99 Round 3: 0.141382
+99 Round 4: 0.136199
+99 Round 5: 0.128041
+99 Round 6: 0.126533
+99 Round 7: 0.122144
+99 Round 8: 0.127549
+99 Round 9: 0.126298
+99 Round 10: 0.137044
+Average time: 0.131076	0.131879
+Running verifier...
+99 99 Our running time: 0.139011	0.125703
+dijkstra running time: 3.514581  
+
+source 15: 14849025  
+99 Warmup Round: 0.135379
+99 Round 1: 0.128794
+99 Round 2: 0.130159
+99 Round 3: 0.131057
+99 Round 4: 0.129457
+99 Round 5: 0.137534
+99 Round 6: 0.140128
+99 Round 7: 0.132444
+99 Round 8: 0.129175
+99 Round 9: 0.130229
+99 Round 10: 0.130233
+99 Warmup Round: 0.117153
+99 Round 1: 0.117107
+99 Round 2: 0.123533
+99 Round 3: 0.117936
+99 Round 4: 0.118022
+99 Round 5: 0.117380
+99 Round 6: 0.117792
+99 Round 7: 0.131793
+99 Round 8: 0.117507
+99 Round 9: 0.118836
+99 Round 10: 0.117951
+Average time: 0.131921	0.119786
+Running verifier...
+99 99 Our running time: 0.131248	0.119810
+dijkstra running time: 3.549654  
+
+source 16: 9493106   
+86 Warmup Round: 0.139180
+86 Round 1: 0.138486
+86 Round 2: 0.126930
+86 Round 3: 0.143835
+86 Round 4: 0.125897
+86 Round 5: 0.131686
+86 Round 6: 0.126143
+86 Round 7: 0.126929
+86 Round 8: 0.126962
+86 Round 9: 0.133336
+86 Round 10: 0.130552
+86 Warmup Round: 0.114212
+86 Round 1: 0.115145
+86 Round 2: 0.115539
+86 Round 3: 0.114561
+86 Round 4: 0.123506
+86 Round 5: 0.123945
+86 Round 6: 0.115415
+86 Round 7: 0.115947
+86 Round 8: 0.115145
+86 Round 9: 0.114157
+86 Round 10: 0.113662
+Average time: 0.131076	0.116702
+Running verifier...
+86 86 Our running time: 0.127943	0.115621
+dijkstra running time: 3.624969  
+
+source 17: 13203113  
+95 Warmup Round: 0.143085
+95 Round 1: 0.134796
+95 Round 2: 0.135394
+95 Round 3: 0.137146
+95 Round 4: 0.135624
+95 Round 5: 0.134598
+95 Round 6: 0.139256
+95 Round 7: 0.137815
+95 Round 8: 0.133600
+95 Round 9: 0.138781
+94 Round 10: 0.137123
+95 Warmup Round: 0.130901
+95 Round 1: 0.127857
+95 Round 2: 0.118339
+95 Round 3: 0.117269
+95 Round 4: 0.117323
+95 Round 5: 0.116821
+95 Round 6: 0.115912
+95 Round 7: 0.117009
+95 Round 8: 0.119060
+95 Round 9: 0.116258
+95 Round 10: 0.122424
+Average time: 0.136413	0.118827
+Running verifier...
+95 95 Our running time: 0.132285	0.116302
+dijkstra running time: 3.579081  
+
+source 18: 4531826   
+119 Warmup Round: 0.138737
+119 Round 1: 0.139791
+119 Round 2: 0.141058
+119 Round 3: 0.132053
+119 Round 4: 0.131659
+118 Round 5: 0.133428
+119 Round 6: 0.134687
+119 Round 7: 0.133572
+119 Round 8: 0.139721
+119 Round 9: 0.141389
+119 Round 10: 0.134306
+119 Warmup Round: 0.120279
+119 Round 1: 0.121663
+119 Round 2: 0.120319
+119 Round 3: 0.121944
+119 Round 4: 0.120271
+119 Round 5: 0.128803
+119 Round 6: 0.121936
+119 Round 7: 0.123453
+119 Round 8: 0.123232
+118 Round 9: 0.122298
+119 Round 10: 0.146039
+Average time: 0.136166	0.124996
+Running verifier...
+119 119 Our running time: 0.141010	0.128730
+dijkstra running time: 3.372883  
+
+source 19: 4604082   
+100 Warmup Round: 0.137996
+100 Round 1: 0.133114
+100 Round 2: 0.130816
+100 Round 3: 0.128058
+100 Round 4: 0.127913
+100 Round 5: 0.128438
+100 Round 6: 0.127784
+100 Round 7: 0.143915
+100 Round 8: 0.137708
+100 Round 9: 0.135383
+100 Round 10: 0.137444
+100 Warmup Round: 0.126775
+100 Round 1: 0.127163
+100 Round 2: 0.129464
+100 Round 3: 0.119004
+100 Round 4: 0.118065
+100 Round 5: 0.119186
+100 Round 6: 0.117846
+100 Round 7: 0.118000
+100 Round 8: 0.135440
+100 Round 9: 0.118818
+100 Round 10: 0.119927
+Average time: 0.133057	0.122291
+Running verifier...
+100 100 Our running time: 0.134505	0.121275
+dijkstra running time: 3.514832  
 
