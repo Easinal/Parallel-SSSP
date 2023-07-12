@@ -82,7 +82,7 @@ class SSSP {
     //}
     // size_t avg_deg = sum_deg / SSSP_SAMPLES;
     // bool super_sparse = (avg_deg <= DEG_THLD);
-    bool super_sparse = true;
+    bool super_sparse = true; //true
 
     EdgeTy th = get_threshold();
 
@@ -273,7 +273,8 @@ class SSSP {
     in_frontier[s] = true;
     sparse = true;
 
-     int round = 0;
+    int round = 0;
+    internal::timer t;
     while (frontier_size) {
       // printf("Round %d: %s, size: %zu, ", round++, sparse ? "sparse" :
       // "dense", frontier_size); internal::timer t;
@@ -290,6 +291,10 @@ class SSSP {
         dense2sparse();
       }
       round++;
+      // assert(sparse == true);
+      // if(round % 1000 == 0) {
+      //   t.next("time");
+      // }
       // printf("pack: %f\n", t.next_time());
       sparse = next_sparse;
     }
@@ -299,7 +304,7 @@ class SSSP {
   }
 
   void set_sd_scale(int x) { sd_scale = x; }
-};
+};  
 
 class Rho_Stepping : public SSSP {
   size_t rho;
@@ -313,6 +318,11 @@ class Rho_Stepping : public SSSP {
       //cerr<<"rho = "<<rho<<endl;
       if (frontier_size <= rho) {
         if (sparse) {
+          if(G.contracted){
+            auto _dist = delayed_seq<EdgeTy>(
+                frontier_size, [&](size_t i) { return dist[frontier[i]]+G.radius[frontier[i]]; });
+            return *max_element(_dist);
+          }
           auto _dist = delayed_seq<EdgeTy>(
               frontier_size, [&](size_t i) { return dist[frontier[i]]; });
           return *max_element(_dist);
@@ -351,6 +361,11 @@ class Delta_Stepping : public SSSP {
       : SSSP(_G), delta(_delta) {
     init = [&]() { thres = 0; };
     get_threshold = [&]() {
+      if(G.contracted){
+        auto _dist = delayed_seq<EdgeTy>(
+            frontier_size, [&](size_t i) { return dist[frontier[i]]+G.radius[frontier[i]]; });
+        return *max_element(_dist);
+      }
       thres += delta;
       return thres;
     };
