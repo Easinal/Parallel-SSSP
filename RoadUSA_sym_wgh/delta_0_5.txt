@@ -1,0 +1,75 @@
+Reading graph...
+Info: Reading pbbs format
+Reading contracted graph...
+Info: Reading pbbs format
+Running on /data9/ezhu021/graph/RoadUSA_sym_wgh.adj: |V|=23947348, |E|=57708624, param=18446744073709551615, num_src=5, num_round=3
+source 0: 4278411   
+122 Warmup Round: 0.586788
+116 Round 1: 0.602042
+119 Round 2: 0.646646
+120 Round 3: 0.652100
+41 Warmup Round: 0.189475
+40 Round 1: 0.143446
+41 Round 2: 0.148898
+39 Round 3: 0.142511
+Average time: 0.633596	0.144952
+Running verifier...
+121 40 Our running time: 0.647325	0.153424
+dijkstra running time: 3.831322  
+
+source 1: 11348062  
+105 Warmup Round: 0.524523
+105 Round 1: 0.564490
+108 Round 2: 0.533154
+103 Round 3: 0.560095
+35 Warmup Round: 0.154611
+34 Round 1: 0.136618
+31 Round 2: 0.132791
+34 Round 3: 0.138784
+Average time: 0.552580	0.136064
+Running verifier...
+101 33 Our running time: 0.536204	0.136059
+dijkstra running time: 3.858736  
+
+source 2: 14767220  
+109 Warmup Round: 0.716891
+108 Round 1: 0.704512
+107 Round 2: 0.672340
+101 Round 3: 0.690143
+37 Warmup Round: 0.165154
+38 Round 1: 0.164485
+39 Round 2: 0.165636
+38 Round 3: 0.172978
+Average time: 0.688998	0.167700
+Running verifier...
+108 36 Our running time: 0.690456	0.154446
+dijkstra running time: 3.929429  
+
+source 3: 15508624  
+125 Warmup Round: 0.659736
+120 Round 1: 0.602997
+124 Round 2: 0.626798
+112 Round 3: 0.577570
+35 Warmup Round: 0.157262
+43 Round 1: 0.156486
+37 Round 2: 0.145207
+40 Round 3: 0.150397
+Average time: 0.602455	0.150697
+Running verifier...
+120 39 Our running time: 0.613076	0.154011
+dijkstra running time: 3.699689  
+
+source 4: 12401489  
+109 Warmup Round: 0.523021
+110 Round 1: 0.564361
+108 Round 2: 0.549568
+110 Round 3: 0.562515
+31 Warmup Round: 0.153469
+33 Round 1: 0.141743
+31 Round 2: 0.133154
+33 Round 3: 0.137724
+Average time: 0.558815	0.137540
+Running verifier...
+109 32 Our running time: 0.540826	0.139285
+dijkstra running time: 3.824912  
+
