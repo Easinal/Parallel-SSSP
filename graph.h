@@ -50,7 +50,8 @@ class Graph {
   sequence<size_t> residual;
   sequence<size_t> layerOffset;
   sequence<size_t> sortedLayer;
-  sequence<size_t> radius;
+  sequence<std::array<size_t, 5>> radius;
+  size_t x=1;
   bool weighted;
   bool symmetrized;
   bool contracted=false;
@@ -100,13 +101,14 @@ class Graph {
     });
     if(contracted){
       n = num[0], m = num[1], layer = num[2];
+      cerr << n << " " << m << " " << layer << " " << num.size() << " " << (n+n+n+n+n)+n+n+m+m+layer+3 << endl;
       assert(weighted);
-      assert(num.size() == n + n + n + m + m + layer + 3);
+      assert(num.size() == (n+n+n+n+n) + n + n + m + m + layer + 3);
       offset = sequence<EdgeId>(n + 1);
       sortedLayer = sequence<size_t>(n + 1);
       edge = sequence<Edge>(m);
       layerOffset = sequence<size_t>(layer+1);
-      radius = sequence<size_t>(n);
+      radius = sequence<std::array<size_t, 5>>(n);
       parallel_for(0, n, [&](size_t i) { offset[i] = num[i+3];});
       offset[n] = m;
       parallel_for(0, n, [&](size_t i) { sortedLayer[i] = num[i + n +3];});
@@ -114,7 +116,11 @@ class Graph {
       parallel_for(0, m, [&](size_t i) { edge[i].w = num[i + n + n + m + 3]; });
       parallel_for(0, layer, [&](size_t i) { layerOffset[i] = num[i + n + n + m + m + 3]; });
       layerOffset[layer] = n;
-      parallel_for(0, n, [&](size_t i) { radius[i] = num[i + n + n + layer + m + m + 3];});
+      parallel_for(0, n, [&](size_t i) { 
+        for (size_t j=0;j<5;j++){
+          radius[i][j] = num[i + n*j + n + layer + m + m + 3];
+        }
+      });
       fclose(fp);
     }else{
       n = num[0], m = num[1];

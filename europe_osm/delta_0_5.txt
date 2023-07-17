@@ -1,0 +1,75 @@
+Reading graph...
+Info: Reading pbbs format
+Reading contracted graph...
+Info: Reading pbbs format
+Running on /data9/ezhu021/graph/europe_osm.adj: |V|=50912018, |E|=108109320, param=18446744073709551615, num_src=5, num_round=3
+source 0: 18408881  
+115 Warmup Round: 0.525768
+115 Round 1: 0.473035
+115 Round 2: 0.497218
+116 Round 3: 0.451535
+21 Warmup Round: 0.128550
+21 Round 1: 0.123808
+22 Round 2: 0.124772
+22 Round 3: 0.140151
+Average time: 0.473929	0.129577
+Running verifier...
+116 22 Our running time: 0.467828	0.132166
+dijkstra running time: 8.465415  
+
+source 1: 24904848  
+96 Warmup Round: 0.403209
+93 Round 1: 0.355972
+94 Round 2: 0.362455
+93 Round 3: 0.359491
+18 Warmup Round: 0.119740
+17 Round 1: 0.114123
+17 Round 2: 0.130575
+18 Round 3: 0.113962
+Average time: 0.359306	0.119553
+Running verifier...
+93 18 Our running time: 0.384763	0.121566
+dijkstra running time: 8.480722  
+
+source 2: 30958872  
+124 Warmup Round: 0.610470
+120 Round 1: 0.498372
+126 Round 2: 0.597203
+125 Round 3: 0.593929
+24 Warmup Round: 0.348876
+27 Round 1: 0.188599
+26 Round 2: 0.183207
+27 Round 3: 0.175337
+Average time: 0.563168	0.182381
+Running verifier...
+126 26 Our running time: 0.582987	0.176663
+dijkstra running time: 8.059361  
+
+source 3: 8900296   
+88 Warmup Round: 0.328529
+92 Round 1: 0.366387
+88 Round 2: 0.370927
+90 Round 3: 0.333458
+18 Warmup Round: 0.159858
+17 Round 1: 0.159082
+18 Round 2: 0.151738
+18 Round 3: 0.158361
+Average time: 0.356924	0.156394
+Running verifier...
+89 18 Our running time: 0.360931	0.156371
+dijkstra running time: 8.045792  
+
+source 4: 29931737  
+82 Warmup Round: 0.329858
+83 Round 1: 0.316860
+83 Round 2: 0.336232
+83 Round 3: 0.352923
+17 Warmup Round: 0.199385
+17 Round 1: 0.159817
+18 Round 2: 0.163016
+16 Round 3: 0.157158
+Average time: 0.335338	0.159997
+Running verifier...
+81 17 Our running time: 0.331940	0.184204
+dijkstra running time: 7.933275  
+

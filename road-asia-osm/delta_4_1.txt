@@ -1,0 +1,75 @@
+Reading graph...
+Info: Reading pbbs format
+Reading contracted graph...
+Info: Reading pbbs format
+Running on /data9/ezhu021/graph/road-asia-osm.adj: |V|=11950757, |E|=25423206, param=18446744073709551615, num_src=5, num_round=3
+source 0: 7715961   
+87 Warmup Round: 0.142290
+87 Round 1: 0.123774
+89 Round 2: 0.122971
+90 Round 3: 0.128389
+13 Warmup Round: 0.040360
+14 Round 1: 0.037998
+13 Round 2: 0.036685
+14 Round 3: 0.036575
+Average time: 0.125045	0.037086
+Running verifier...
+86 13 Our running time: 0.111998	0.038124
+dijkstra running time: 1.575295  
+
+source 1: 5172389   
+86 Warmup Round: 0.133090
+89 Round 1: 0.127461
+83 Round 2: 0.119000
+86 Round 3: 0.129624
+14 Warmup Round: 0.036815
+15 Round 1: 0.038648
+14 Round 2: 0.042481
+15 Round 3: 0.036438
+Average time: 0.125362	0.039189
+Running verifier...
+87 16 Our running time: 0.122668	0.037976
+dijkstra running time: 1.576457  
+
+source 2: 10058235  
+70 Warmup Round: 0.105657
+69 Round 1: 0.088760
+69 Round 2: 0.097304
+70 Round 3: 0.096750
+11 Warmup Round: 0.103011
+11 Round 1: 0.042725
+12 Round 2: 0.039779
+10 Round 3: 0.036666
+Average time: 0.094271	0.039723
+Running verifier...
+68 11 Our running time: 0.106808	0.056598
+dijkstra running time: 1.504314  
+
+source 3: 6078737   
+78 Warmup Round: 0.127709
+76 Round 1: 0.113258
+79 Round 2: 0.112110
+78 Round 3: 0.120183
+12 Warmup Round: 0.041086
+12 Round 1: 0.042462
+12 Round 2: 0.041207
+11 Round 3: 0.037027
+Average time: 0.115184	0.040232
+Running verifier...
+77 12 Our running time: 0.108751	0.038344
+dijkstra running time: 1.456162  
+
+source 4: 2238258   
+64 Warmup Round: 0.096247
+64 Round 1: 0.102552
+65 Round 2: 0.104271
+60 Round 3: 0.094956
+11 Warmup Round: 0.039177
+11 Round 1: 0.039039
+11 Round 2: 0.037640
+11 Round 3: 0.037994
+Average time: 0.100593	0.038224
+Running verifier...
+64 12 Our running time: 0.099569	0.036744
+dijkstra running time: 1.450457  
+

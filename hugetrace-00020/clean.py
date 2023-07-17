@@ -1,6 +1,6 @@
 import re
-st1 = ["delta","rho"]
-st2=["8192",  "16384", "32768", "65536", "131072", "262144", "524288", "1048576", "2097152", "4194304", "8388608", "16777216", "33554432"]
+st1 = ["0","1","2","3","4"]
+st2= ["1","2","3","4","5"]
 #"16384", 
 def main():
     with open("average.txt", "w") as f1:
@@ -16,11 +16,7 @@ def main():
                     tot_med_time_origin = 0
                     tot_avg_time_contract = 0
                     tot_med_time_contract = 0
-                    tot_avg_round_origin = 0
-                    tot_avg_size_contract = 0
-                    tot_avg_round_origin = 0
-                    tot_avg_size_contract = 0
-                    with open("{0}_{1}.txt".format(graph, tp), "r") as sf:
+                    with open("delta_{0}_{1}.txt".format(graph, tp), "r") as sf:
                         fl = sf.readlines()
                         for line in fl:
                             sr = line.split()
@@ -36,8 +32,6 @@ def main():
                                     tot_med_time_origin +=  float(sr[3])
                                     tot_med_time_contract += float(sr[4])
                                     #f2.write(sr[3]+"\n")
-
-
                         #
                     print("{0}_{1}.txt".format(graph,tp))
                     print(source_num)

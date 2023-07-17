@@ -5,8 +5,8 @@
 using namespace std;
 using namespace parlay;
 
-constexpr int NUM_SRC = 20;
-constexpr int NUM_ROUND = 10;
+constexpr int NUM_SRC = 5;
+constexpr int NUM_ROUND = 3;
 
 constexpr size_t LOCAL_QUEUE_SIZE = 4096;
 constexpr size_t DEG_THLD = 20;
@@ -307,19 +307,23 @@ class SSSP {
 
 class Rho_Stepping : public SSSP {
   size_t rho;
+  size_t radius_range;
+  size_t x;
   uint32_t seed;
 
  public:
-  Rho_Stepping(const Graph &_G, size_t _rho = 1 << 20) : SSSP(_G), rho(_rho) {
+  Rho_Stepping(const Graph &_G, size_t _rho = 1 << 20, size_t _radius_range=0, size_t _x=1) 
+  : SSSP(_G), rho(_rho), radius_range(_radius_range), x(_x){
     seed = 0;
     init = []() {};
     get_threshold = [&]() {
       //cerr<<"rho = "<<rho<<endl;
       if (frontier_size <= rho) {
         if (sparse) {
+          return DIST_MAX;
           if(G.contracted){
             auto _dist = delayed_seq<EdgeTy>(
-                frontier_size, [&](size_t i) { return dist[frontier[i]]+G.radius[frontier[i]]; });
+                frontier_size, [&](size_t i) { return dist[frontier[i]]+G.radius[frontier[i]][radius_range]; });
             return *max_element(_dist);
           }
           auto _dist = delayed_seq<EdgeTy>(
@@ -331,7 +335,7 @@ class Rho_Stepping : public SSSP {
       }
       EdgeTy sample_dist[SSSP_SAMPLES + 1];
       for (size_t i = 0; i <= SSSP_SAMPLES; i++) {
-        if (false && sparse) {
+        if (sparse) {
           NodeId v = frontier[hash32(seed + i) % frontier_size];
           sample_dist[i] = dist[v];
         } else {
@@ -353,17 +357,24 @@ class Rho_Stepping : public SSSP {
 
 class Delta_Stepping : public SSSP {
   EdgeTy delta;
+  size_t radius_range;
+  size_t x;
   EdgeTy thres;
 
  public:
-  Delta_Stepping(const Graph &_G, EdgeTy _delta = 1 << 15)
-      : SSSP(_G), delta(_delta) {
+  Delta_Stepping(const Graph &_G, EdgeTy _delta = 1 << 15, size_t _radius_range = 5, size_t _x = 1)
+      : SSSP(_G), delta(_delta), radius_range(_radius_range), x(_x) {
     init = [&]() { thres = 0; };
     get_threshold = [&]() {
       if(G.contracted){
         auto _dist = delayed_seq<EdgeTy>(
-            frontier_size, [&](size_t i) { return dist[frontier[i]]+G.radius[frontier[i]]; });
-        return *max_element(_dist);
+            frontier_size, [&](size_t i) { return dist[frontier[i]]+G.radius[frontier[i]][radius_range]; });
+        auto _min_dist = *min_element(_dist);
+        auto _max_dist = *max_element(_dist);
+        // return _min_dist + (_max_dist - _min_dist) * x;
+        thres = _min_dist + (_max_dist - _min_dist) * x;
+        return thres;
+        // return _max_dist;
       }
       thres += delta;
       return thres;

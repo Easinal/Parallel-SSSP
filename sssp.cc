@@ -120,7 +120,9 @@ int main(int argc, char *argv[]) {
         "\t-w,\tweighted input graph\n"
         "\t-s,\tsymmetrized input graph\n"
         "\t-v,\tverify result\n"
-        "\t-a,\talgorithm: [rho-stepping] [delta-stepping] [bellman-ford]\n",
+        "\t-a,\talgorithm: [rho-stepping] [delta-stepping] [bellman-ford]\n"
+        "\t-r,\tradius of i*100 steps\n"
+        "\t-x,\tratio of radius stepping\n",
         argv[0]);
     exit(EXIT_FAILURE);
   }
@@ -131,9 +133,11 @@ int main(int argc, char *argv[]) {
   bool contract = false;
   size_t param = ULLONG_MAX;
   int algo = rho_stepping;
+  int radius_range = 0;
+  int x = 1;
   char const *FILEPATH = nullptr;
   char const *FILEPATH2 = nullptr;
-  while ((c = getopt(argc, argv, "i:c:p:a:wsv")) != -1) {
+  while ((c = getopt(argc, argv, "i:c:p:a:r:x:wsv")) != -1) {
     switch (c) {
       case 'i':
         FILEPATH = optarg;
@@ -165,6 +169,16 @@ int main(int argc, char *argv[]) {
         break;
       case 'v':
         verify = true;
+        break;
+      case 'r':
+        radius_range = atol(optarg);
+        break;
+      case 'x':
+        x = atol(optarg);
+        if (x<=0){
+          fprintf(stderr, "Error: x must be positive\n");
+          exit(EXIT_FAILURE);
+        }
         break;
       default:
         fprintf(stderr, "Error: Unknown option %c\n", optopt);
@@ -200,15 +214,15 @@ int main(int argc, char *argv[]) {
   int sd_scale2 = 1;
   if(contract){
     if (algo == rho_stepping) {
-      Rho_Stepping solver(G, param);
+      Rho_Stepping solver(G, param, radius_range,x);
       solver.set_sd_scale(sd_scale);
-      Rho_Stepping solver2(G2, param);
+      Rho_Stepping solver2(G2, param, radius_range,x);
       solver2.set_sd_scale(sd_scale2);
       run2(solver, G, solver2, verify);
     } else if (algo == delta_stepping) {
-      Delta_Stepping solver(G, param);
+      Delta_Stepping solver(G, param, radius_range,x);
       solver.set_sd_scale(sd_scale);
-      Delta_Stepping solver2(G2, param);
+      Delta_Stepping solver2(G2, param, radius_range,x);
       solver2.set_sd_scale(sd_scale2);
       run2(solver, G, solver2, verify);
     } else if (algo == bellman_ford) {

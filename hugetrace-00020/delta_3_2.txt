@@ -1,0 +1,75 @@
+Reading graph...
+Info: Reading pbbs format
+Reading contracted graph...
+Info: Reading pbbs format
+Running on /data9/ezhu021/graph/hugetrace-00020.adj: |V|=16002413, |E|=47997626, param=18446744073709551615, num_src=5, num_round=3
+source 0: 8059255   
+47 Warmup Round: 0.215540
+46 Round 1: 0.210419
+45 Round 2: 0.188270
+47 Round 3: 0.194507
+31 Warmup Round: 0.178217
+31 Round 1: 0.159543
+31 Round 2: 0.169572
+30 Round 3: 0.163726
+Average time: 0.197732	0.164280
+Running verifier...
+47 30 Our running time: 0.197034	0.157108
+dijkstra running time: 3.943759  
+
+source 1: 4257853   
+56 Warmup Round: 0.241287
+52 Round 1: 0.228604
+54 Round 2: 0.228194
+52 Round 3: 0.211922
+35 Warmup Round: 0.223028
+36 Round 1: 0.185738
+35 Round 2: 0.172512
+33 Round 3: 0.171064
+Average time: 0.222907	0.176438
+Running verifier...
+55 35 Our running time: 0.219912	0.181480
+dijkstra running time: 3.569030  
+
+source 2: 5876323   
+53 Warmup Round: 0.217309
+54 Round 1: 0.216099
+55 Round 2: 0.212743
+53 Round 3: 0.221020
+36 Warmup Round: 0.176567
+35 Round 1: 0.169738
+35 Round 2: 0.173364
+36 Round 3: 0.179748
+Average time: 0.216621	0.174283
+Running verifier...
+53 35 Our running time: 0.216255	0.182090
+dijkstra running time: 3.407071  
+
+source 3: 4412485   
+44 Warmup Round: 0.222115
+45 Round 1: 0.204198
+44 Round 2: 0.206651
+44 Round 3: 0.207348
+29 Warmup Round: 0.167989
+29 Round 1: 0.177814
+29 Round 2: 0.159048
+30 Round 3: 0.161137
+Average time: 0.206066	0.166000
+Running verifier...
+44 29 Our running time: 0.204593	0.167869
+dijkstra running time: 3.529025  
+
+source 4: 2205694   
+36 Warmup Round: 0.198548
+35 Round 1: 0.194628
+37 Round 2: 0.197202
+36 Round 3: 0.197272
+24 Warmup Round: 0.167476
+24 Round 1: 0.156242
+25 Round 2: 0.159955
+25 Round 3: 0.155258
+Average time: 0.196367	0.157152
+Running verifier...
+36 25 Our running time: 0.195034	0.155969
+dijkstra running time: 3.687424  
+
