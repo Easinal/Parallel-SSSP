@@ -131,6 +131,7 @@ int main(int argc, char *argv[]) {
   bool symmetrized = false;
   bool verify = false;
   bool contract = false;
+  double scale = 0;
   size_t param = ULLONG_MAX;
   int algo = rho_stepping;
   int radius_range = 0;
@@ -175,6 +176,7 @@ int main(int argc, char *argv[]) {
         break;
       case 'x':
         x = atol(optarg);
+        scale = 0.2*x+0.4;
         if (x<=0){
           fprintf(stderr, "Error: x must be positive\n");
           exit(EXIT_FAILURE);
@@ -185,7 +187,7 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
   }
-  Graph G(weighted, symmetrized);
+  Graph G(weighted, symmetrized, true);
   Graph G2(weighted, symmetrized, contract);
 
   printf("Reading graph...\n");
@@ -209,20 +211,19 @@ int main(int argc, char *argv[]) {
           "Running on %s: |V|=%zu, |E|=%zu, param=%zu, num_src=%d, "
           "num_round=%d\n",
           FILEPATH, G.n, G.m, param, NUM_SRC, NUM_ROUND);
-
   int sd_scale = 1;
   int sd_scale2 = 1;
   if(contract){
     if (algo == rho_stepping) {
-      Rho_Stepping solver(G, param, radius_range,x);
+      Rho_Stepping solver(G, param, radius_range,scale);
       solver.set_sd_scale(sd_scale);
-      Rho_Stepping solver2(G2, param, radius_range,x);
+      Rho_Stepping solver2(G2, param, radius_range,scale);
       solver2.set_sd_scale(sd_scale2);
       run2(solver, G, solver2, verify);
     } else if (algo == delta_stepping) {
-      Delta_Stepping solver(G, param, radius_range,x);
+      Delta_Stepping solver(G, param, radius_range,scale);
       solver.set_sd_scale(sd_scale);
-      Delta_Stepping solver2(G2, param, radius_range,x);
+      Delta_Stepping solver2(G2, param, radius_range,scale);
       solver2.set_sd_scale(sd_scale2);
       run2(solver, G, solver2, verify);
     } else if (algo == bellman_ford) {
@@ -235,11 +236,11 @@ int main(int argc, char *argv[]) {
     return 0;
   }
   if (algo == rho_stepping) {
-    Rho_Stepping solver(G);
+    Rho_Stepping solver(G, param, radius_range,scale);
     solver.set_sd_scale(sd_scale);
     run(solver, G, verify);
   } else if (algo == delta_stepping) {
-    Delta_Stepping solver(G);
+    Delta_Stepping solver(G, param, radius_range,scale);
     solver.set_sd_scale(sd_scale);
     run(solver, G, verify);
   } else if (algo == bellman_ford) {

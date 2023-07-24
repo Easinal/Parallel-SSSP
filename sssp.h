@@ -5,8 +5,8 @@
 using namespace std;
 using namespace parlay;
 
-constexpr int NUM_SRC = 5;
-constexpr int NUM_ROUND = 3;
+constexpr int NUM_SRC = 1;
+constexpr int NUM_ROUND = 1;
 
 constexpr size_t LOCAL_QUEUE_SIZE = 4096;
 constexpr size_t DEG_THLD = 20;
@@ -308,11 +308,11 @@ class SSSP {
 class Rho_Stepping : public SSSP {
   size_t rho;
   size_t radius_range;
-  size_t x;
+  double x;
   uint32_t seed;
 
  public:
-  Rho_Stepping(const Graph &_G, size_t _rho = 1 << 20, size_t _radius_range=0, size_t _x=1) 
+  Rho_Stepping(const Graph &_G, size_t _rho = 1 << 20, size_t _radius_range=0, double _x=1) 
   : SSSP(_G), rho(_rho), radius_range(_radius_range), x(_x){
     seed = 0;
     init = []() {};
@@ -358,11 +358,11 @@ class Rho_Stepping : public SSSP {
 class Delta_Stepping : public SSSP {
   EdgeTy delta;
   size_t radius_range;
-  size_t x;
+  double x;
   EdgeTy thres;
 
  public:
-  Delta_Stepping(const Graph &_G, EdgeTy _delta = 1 << 15, size_t _radius_range = 5, size_t _x = 1)
+  Delta_Stepping(const Graph &_G, EdgeTy _delta = 1 << 15, size_t _radius_range = 5, double _x = 1)
       : SSSP(_G), delta(_delta), radius_range(_radius_range), x(_x) {
     init = [&]() { thres = 0; };
     get_threshold = [&]() {
