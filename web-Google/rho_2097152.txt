@@ -1,0 +1,197 @@
+Reading graph...
+Reading contracted graph...
+Info: Reading pbbs format
+Running on /data0/graphs/links/web-Google_sym.bin: |V|=875713, |E|=8644102, param=2097152, num_src=25, num_round=10
+source 0: 739296    
+8 Warmup Round: 0.018925
+8 Round 1: 0.012900
+8 Round 2: 0.012290
+8 Round 3: 0.012663
+7 Round 4: 0.013196
+7 Round 5: 0.013171
+8 Round 6: 0.011592
+7 Round 7: 0.013395
+8 Round 8: 0.011833
+8 Round 9: 0.016847
+7 Round 10: 0.016102
+6 Warmup Round: 0.022877
+6 Round 1: 0.018554
+6 Round 2: 0.020299
+7 Round 3: 0.028203
+7 Round 4: 0.030279
+7 Round 5: 0.023831
+7 Round 6: 0.019850
+5 Round 7: 0.020764
+7 Round 8: 0.020067
+5 Round 9: 0.016635
+7 Round 10: 0.019118
+Average time: 0.013399	0.021760
+
+source 1: 498356    
+8 Warmup Round: 0.012055
+8 Round 1: 0.012256
+8 Round 2: 0.013130
+8 Round 3: 0.011496
+8 Round 4: 0.011873
+8 Round 5: 0.013006
+8 Round 6: 0.012979
+8 Round 7: 0.012234
+8 Round 8: 0.011757
+8 Round 9: 0.013248
+8 Round 10: 0.013247
+5 Warmup Round: 0.019528
+7 Round 1: 0.020950
+5 Round 2: 0.016947
+6 Round 3: 0.021085
+7 Round 4: 0.018129
+6 Round 5: 0.016042
+6 Round 6: 0.020426
+6 Round 7: 0.019890
+7 Round 8: 0.031115
+6 Round 9: 0.017595
+5 Round 10: 0.018366
+Average time: 0.012523	0.020054
+
+source 2: 480923    
+8 Warmup Round: 0.016294
+10 Round 1: 0.013651
+8 Round 2: 0.012225
+8 Round 3: 0.015396
+8 Round 4: 0.014684
+8 Round 5: 0.014702
+8 Round 6: 0.014857
+8 Round 7: 0.015679
+8 Round 8: 0.015678
+8 Round 9: 0.013147
+8 Round 10: 0.017497
+8 Warmup Round: 0.019280
+9 Round 1: 0.022442
+8 Round 2: 0.022342
+8 Round 3: 0.022709
+8 Round 4: 0.021562
+9 Round 5: 0.021669
+7 Round 6: 0.022402
+8 Round 7: 0.022384
+8 Round 8: 0.022408
+8 Round 9: 0.019638
+8 Round 10: 0.020969
+Average time: 0.014752	0.021852
+
+source 3: 653291    
+9 Warmup Round: 0.014122
+10 Round 1: 0.013959
+9 Round 2: 0.013816
+9 Round 3: 0.011906
+9 Round 4: 0.013193
+9 Round 5: 0.014661
+9 Round 6: 0.013625
+9 Round 7: 0.012802
+9 Round 8: 0.012640
+9 Round 9: 0.015141
+9 Round 10: 0.014833
+8 Warmup Round: 0.021236
+8 Round 1: 0.021275
+6 Round 2: 0.019966
+8 Round 3: 0.022321
+8 Round 4: 0.020788
+8 Round 5: 0.020262
+8 Round 6: 0.021167
+9 Round 7: 0.020992
+8 Round 8: 0.021004
+8 Round 9: 0.019846
+7 Round 10: 0.021885
+Average time: 0.013658	0.020951
+
+source 4: 578021    
+8 Warmup Round: 0.012141
+8 Round 1: 0.012934
+8 Round 2: 0.012462
+8 Round 3: 0.011733
+8 Round 4: 0.012500
+8 Round 5: 0.011169
+8 Round 6: 0.012314
+8 Round 7: 0.012458
+8 Round 8: 0.012799
+8 Round 9: 0.011338
+8 Round 10: 0.011878
+6 Warmup Round: 0.017096
+8 Round 1: 0.016833
+6 Round 2: 0.016751
+8 Round 3: 0.017500
+6 Round 4: 0.016779
+6 Round 5: 0.017148
+6 Round 6: 0.015888
+6 Round 7: 0.017137
+8 Round 8: 0.027013
+7 Round 9: 0.029328
+8 Round 10: 0.022335
+Average time: 0.012159	0.019671
+
+source 5: 261897    
+7 Warmup Round: 0.012883
+8 Round 1: 0.015988
+7 Round 2: 0.015386
+9 Round 3: 0.013346
+8 Round 4: 0.012730
+7 Round 5: 0.012681
+7 Round 6: 0.011889
+7 Round 7: 0.011572
+8 Round 8: 0.012444
+7 Round 9: 0.012516
+7 Round 10: 0.012493
+6 Warmup Round: 0.014940
+6 Round 1: 0.013087
+6 Round 2: 0.015051
+6 Round 3: 0.013133
+6 Round 4: 0.013091
+7 Round 5: 0.013211
+7 Round 6: 0.013974
+6 Round 7: 0.012455
+8 Round 8: 0.013780
+6 Round 9: 0.013168
+6 Round 10: 0.013116
+Average time: 0.013104	0.013407
+
+source 6: 638539    
+9 Warmup Round: 0.013186
+9 Round 1: 0.014239
+9 Round 2: 0.013903
+9 Round 3: 0.014135
+8 Round 4: 0.014033
+9 Round 5: 0.014871
+9 Round 6: 0.014288
+10 Round 7: 0.013894
+8 Round 8: 0.013810
+9 Round 9: 0.013729
+9 Round 10: 0.013207
+10 Warmup Round: 0.019747
+7 Round 1: 0.018547
+9 Round 2: 0.019656
+8 Round 3: 0.018632
+8 Round 4: 0.019593
+9 Round 5: 0.018219
+9 Round 6: 0.018771
+8 Round 7: 0.017988
+8 Round 8: 0.016753
+8 Round 9: 0.017668
+9 Round 10: 0.017965
+Average time: 0.014011	0.018379
+
+source 7: 839330    
+8 Warmup Round: 0.014250
+8 Round 1: 0.014342
+8 Round 2: 0.014396
+8 Round 3: 0.014336
+8 Round 4: 0.013917
+8 Round 5: 0.014472
+8 Round 6: 0.014016
+8 Round 7: 0.014353
+8 Round 8: 0.014231
+8 Round 9: 0.013774
+8 Round 10: 0.013866
+8 Warmup Round: 0.025327
+6 Round 1: 0.020286
+8 Round 2: 0.019794
+8 Round 3: 0.025040
+6 Round 4: 0.021728
+8 Round 5: 

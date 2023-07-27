@@ -5,12 +5,13 @@
 using namespace std;
 using namespace parlay;
 
-constexpr int NUM_SRC = 1;
-constexpr int NUM_ROUND = 1;
+constexpr int NUM_SRC = 25;
+constexpr int NUM_ROUND = 5;
 
 constexpr size_t LOCAL_QUEUE_SIZE = 4096;
 constexpr size_t DEG_THLD = 20;
 constexpr size_t SSSP_SAMPLES = 1000;
+
 
 enum Algorithm { rho_stepping = 0, delta_stepping, bellman_ford };
 
@@ -83,9 +84,10 @@ class SSSP {
     // size_t avg_deg = sum_deg / SSSP_SAMPLES;
     // bool super_sparse = (avg_deg <= DEG_THLD);
     bool super_sparse = true; //true
-
+    tb1.start();
     EdgeTy th = get_threshold();
-
+    tb1.stop();
+    tb2.start();
     parallel_for(0, frontier_size, [&](size_t i) {
       NodeId f = frontier[i];
       in_frontier[f] = false;
@@ -170,12 +172,16 @@ class SSSP {
       }
     });
     swap(in_frontier, in_next_frontier);
+    tb2.stop();
     return bag.pack_into(make_slice(frontier));
   }
 
   size_t dense_relax() {
     while (estimate_size() >= G.n / sd_scale) {
+      tb3.start();
       EdgeTy th = get_threshold();
+      tb3.stop();
+      tb4.start();
       parallel_for(0, G.n, [&](NodeId u) {
         if (in_frontier[u]) {
           in_frontier[u] = false;
@@ -228,6 +234,7 @@ class SSSP {
         }
       });
       swap(in_frontier, in_next_frontier);
+      tb4.stop();
     }
     return count(in_frontier, true);
   }
@@ -249,6 +256,14 @@ class SSSP {
   function<EdgeTy()> get_threshold;
 
  public:
+  internal::timer tb1;
+  internal::timer tb2;
+  internal::timer tb3;
+  internal::timer tb4;
+  internal::timer t_decompress;
+  internal::timer t_init;
+  internal::timer t_trans;
+  double break_time = 0;
   SSSP() = delete;
   SSSP(const Graph &_G) : G(_G), bag(G.n) {
     dist = sequence<EdgeTy>::uninitialized(G.n);
@@ -261,7 +276,7 @@ class SSSP {
       fprintf(stderr, "Error: Input graph is unweighted\n");
       exit(EXIT_FAILURE);
     }
-
+    t_init.start();
     init();
     parallel_for(0, G.n, [&](NodeId i) {
       dist[i] = numeric_limits<EdgeTy>::max() / 2;
@@ -272,9 +287,10 @@ class SSSP {
     frontier[0] = s;
     in_frontier[s] = true;
     sparse = false;
-
     int round = 0;
-    internal::timer t;
+    t_init.stop();
+
+
     while (frontier_size) {
       // printf("(Round %d, size: %zu\n)", round++, frontier_size); internal::timer t;
       if (sparse) {
@@ -283,6 +299,7 @@ class SSSP {
         frontier_size = dense_relax();
       }
       // printf("relax: %f, ", t.next_time());
+      t_trans.start();
       bool next_sparse = (frontier_size < G.n / sd_scale) ? true : false;
       if (sparse && !next_sparse) {
         sparse2dense();
@@ -296,9 +313,19 @@ class SSSP {
       // }
       // printf("pack: %f\n", t.next_time());
       sparse = next_sparse;
+      t_trans.stop();
     }
     printf("%d ", round);
+    t_decompress.start();
     if(G.contracted)decompressLayered();
+    t_decompress.stop();
+    // printf("%f %f %f %f %f %f %f -> %f \n", tb1.total_time(), tb2.total_time(), tb3.total_time(), tb4.total_time(), t_decompress.total_time(), t_init.total_time(), t_trans.total_time(),
+    //                                         tb1.total_time()+tb2.total_time()+tb3.total_time()+tb4.total_time()+t_decompress.total_time()+t_init.total_time()+t_trans.total_time());
+    // printf("sparse get threshold: %f\n", tb1.total_time());
+    // printf("sparse get frontier: %f\n", tb2.total_time());
+    // printf("dense get threshold: %f\n", tb3.total_time());
+    // printf("dense get frontier: %f\n", tb4.total_time());
+    // printf("decompress: %f\n", t_decompress.total_time());
     return dist;
   }
 
@@ -366,16 +393,14 @@ class Delta_Stepping : public SSSP {
       : SSSP(_G), delta(_delta), radius_range(_radius_range), x(_x) {
     init = [&]() { thres = 0; };
     get_threshold = [&]() {
-      if(G.contracted){
-        auto _dist = delayed_seq<EdgeTy>(
-            frontier_size, [&](size_t i) { return dist[frontier[i]]+G.radius[frontier[i]][radius_range]; });
-        auto _min_dist = *min_element(_dist);
-        auto _max_dist = *max_element(_dist);
-        // return _min_dist + (_max_dist - _min_dist) * x;
-        thres = _min_dist + (_max_dist - _min_dist) * x;
-        return thres;
-        // return _max_dist;
-      }
+      // if(G.contracted){
+      //   auto _dist = delayed_seq<EdgeTy>(
+      //       frontier_size, [&](size_t i) { return dist[frontier[i]]+G.radius[frontier[i]][radius_range]; });
+      //   auto _min_dist = *min_element(_dist);
+      //   auto _max_dist = *max_element(_dist);
+      //   thres = _min_dist + (_max_dist - _min_dist) * x;
+      //   return thres;
+      // }
       thres += delta;
       return thres;
     };

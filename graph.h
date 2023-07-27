@@ -116,11 +116,11 @@ class Graph {
       parallel_for(0, m, [&](size_t i) { edge[i].w = num[i + n + n + m + 3]; });
       parallel_for(0, layer, [&](size_t i) { layerOffset[i] = num[i + n + n + m + m + 3]; });
       layerOffset[layer] = n;
-      parallel_for(0, n, [&](size_t i) { 
-        for (size_t j=0;j<5;j++){
-          radius[i][j] = num[i + n*j + n + layer + m + m + 3];
-        }
-      });
+      for (size_t j=0;j<5;j++){
+        parallel_for(0, n, [&](size_t i) { 
+            radius[i][j] = num[i + n*j +n + n + layer + m + m + 3];
+        });
+      }
       fclose(fp);
     }else{
       n = num[0], m = num[1];

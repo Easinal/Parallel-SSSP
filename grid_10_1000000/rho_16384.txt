@@ -1,0 +1,49 @@
+Reading graph...
+Reading contracted graph...
+Info: Reading pbbs format
+Running on /data9/zwan018/origin/grid_10_1000000.bin: |V|=10000000, |E|=40000000, param=16384, num_src=5, num_round=2
+source 0: 329511    
+500006 Warmup Round: 8.536476
+500006 Round 1: 8.366431
+500006 Round 2: 8.027996
+500004 Warmup Round: 7.744152
+500004 Round 1: 7.877446
+500004 Round 2: 7.820855
+Average time: 8.197214	7.849151
+
+source 1: 8713910   
+500006 Warmup Round: 7.397347
+500006 Round 1: 6.795798
+500006 Round 2: 6.003196
+500001 Warmup Round: 9.441007
+500001 Round 1: 9.942756
+500000 Round 2: 9.622506
+Average time: 6.399497	9.782631
+
+source 2: 8448204   
+500006 Warmup Round: 5.849062
+500006 Round 1: 5.701754
+500006 Round 2: 5.609820
+500001 Warmup Round: 9.504094
+500001 Round 1: 9.255627
+500002 Round 2: 9.200846
+Average time: 5.655787	9.228237
+
+source 3: 2612764   
+500006 Warmup Round: 5.615631
+500006 Round 1: 8.239485
+500006 Round 2: 8.228168
+500001 Warmup Round: 9.157281
+500001 Round 1: 9.088743
+500002 Round 2: 9.650882
+Average time: 8.233826	9.369812
+
+source 4: 6348061   
+500006 Warmup Round: 5.685534
+500006 Round 1: 5.457296
+500006 Round 2: 5.121077
+500001 Warmup Round: 10.975273
+500002 Round 1: 11.415138
+500003 Round 2: 10.925802
+Average time: 5.289186	11.170470
+

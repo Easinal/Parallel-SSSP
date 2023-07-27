@@ -14,8 +14,6 @@ def main():
                     source_num = 0
                     tot_avg_time_origin = 0
                     tot_med_time_origin = 0
-                    tot_avg_time_contract = 0
-                    tot_med_time_contract = 0
                     with open("delta_{0}_{1}.txt".format(graph, tp), "r") as sf:
                         fl = sf.readlines()
                         for line in fl:
@@ -25,18 +23,14 @@ def main():
                                 if(sr[0]=="Average"):
                                     source_num += 1
                                     tot_avg_time_origin += float(sr[2])
-                                    tot_avg_time_contract += float(sr[3])
                                     #print(sr[3]+"\t"+sr[4]+"\n")
                                     #f1.write(sr[3]+"\n")
                                 if(sr[0]=="Median"):
                                     tot_med_time_origin +=  float(sr[3])
-                                    tot_med_time_contract += float(sr[4])
                                     #f2.write(sr[3]+"\n")
                         #
-                    print("{0}_{1}.txt".format(graph,tp))
-                    print(source_num)
-                    f1.write(str(tot_avg_time_origin/source_num)+"\t"+str(tot_avg_time_contract/source_num)+"\n")
-                    f2.write(str(tot_med_time_origin/source_num)+"\t"+str(tot_med_time_contract/source_num)+"\n")
+                    f1.write(str(tot_avg_time_origin/source_num)+"\n")
+                    f2.write(str(tot_med_time_origin/source_num)+"\n")
                     sf.close()
         f2.close()
     f1.close()

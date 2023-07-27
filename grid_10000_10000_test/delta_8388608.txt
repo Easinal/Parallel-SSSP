@@ -1,0 +1,179 @@
+Reading graph...
+Reading contracted graph...
+Info: Reading pbbs format
+Running on /data0/graphs/links/grid_10000_10000_sym.bin: |V|=100000000, |E|=400000000, param=8388608, num_src=25, num_round=1
+source 0: 329511    
+96 Warmup Round: 0.857152
+96 Round 1: 0.808380
+98 Warmup Round: 1.294692
+99 Round 1: 1.220682
+Average time: 0.808380	1.220682
+
+source 1: 28713910  
+95 Warmup Round: 0.796965
+96 Round 1: 0.825647
+99 Warmup Round: 1.236387
+98 Round 1: 1.198851
+Average time: 0.825647	1.198851
+
+source 2: 98448204  
+97 Warmup Round: 0.808872
+96 Round 1: 0.801600
+98 Warmup Round: 1.277091
+104 Round 1: 1.250016
+Average time: 0.801600	1.250016
+
+source 3: 32612764  
+96 Warmup Round: 0.968212
+95 Round 1: 0.800474
+98 Warmup Round: 1.211931
+98 Round 1: 1.233781
+Average time: 0.800474	1.233781
+
+source 4: 46348061  
+96 Warmup Round: 0.832070
+96 Round 1: 0.815610
+98 Warmup Round: 1.265116
+99 Round 1: 1.237535
+Average time: 0.815610	1.237535
+
+source 5: 32663278  
+98 Warmup Round: 0.826512
+96 Round 1: 0.823064
+98 Warmup Round: 1.258443
+99 Round 1: 1.244493
+Average time: 0.823064	1.244493
+
+source 6: 71828276  
+96 Warmup Round: 0.824472
+97 Round 1: 0.864605
+99 Warmup Round: 1.254232
+98 Round 1: 1.216201
+Average time: 0.864605	1.216201
+
+source 7: 90419040  
+96 Warmup Round: 0.789581
+95 Round 1: 0.835047
+110 Warmup Round: 1.287877
+99 Round 1: 1.223660
+Average time: 0.835047	1.223660
+
+source 8: 31203572  
+95 Warmup Round: 0.817132
+96 Round 1: 0.818547
+98 Warmup Round: 1.275738
+99 Round 1: 1.337318
+Average time: 0.818547	1.337318
+
+source 9: 48861505  
+96 Warmup Round: 0.807842
+96 Round 1: 0.820988
+99 Warmup Round: 1.285795
+102 Round 1: 1.319103
+Average time: 0.820988	1.319103
+
+source 10: 12784324  
+95 Warmup Round: 0.799650
+96 Round 1: 0.834683
+99 Warmup Round: 1.294846
+99 Round 1: 1.237050
+Average time: 0.834683	1.237050
+
+source 11: 33732939  
+98 Warmup Round: 0.833009
+96 Round 1: 0.809057
+99 Warmup Round: 1.253114
+99 Round 1: 1.244266
+Average time: 0.809057	1.244266
+
+source 12: 27148017  
+96 Warmup Round: 0.787557
+95 Round 1: 0.823069
+98 Warmup Round: 1.251626
+99 Round 1: 1.248312
+Average time: 0.823069	1.248312
+
+source 13: 16045320  
+96 Warmup Round: 0.797318
+97 Round 1: 0.867200
+99 Warmup Round: 1.234901
+99 Round 1: 1.244178
+Average time: 0.867200	1.244178
+
+source 14: 34807528  
+96 Warmup Round: 0.810678
+96 Round 1: 0.812019
+99 Warmup Round: 1.261734
+98 Round 1: 1.282885
+Average time: 0.812019	1.282885
+
+source 15: 67445036  
+98 Warmup Round: 0.829177
+96 Round 1: 0.807160
+97 Warmup Round: 1.256415
+99 Round 1: 1.250150
+Average time: 0.807160	1.250150
+
+source 16: 25555844  
+96 Warmup Round: 0.825466
+96 Round 1: 0.831858
+100 Warmup Round: 1.231410
+100 Round 1: 1.271300
+Average time: 0.831858	1.271300
+
+source 17: 25461304  
+95 Warmup Round: 0.838832
+96 Round 1: 0.787389
+99 Warmup Round: 1.237587
+106 Round 1: 1.279058
+Average time: 0.787389	1.279058
+
+source 18: 41065099  
+97 Warmup Round: 0.833483
+97 Round 1: 0.841097
+98 Warmup Round: 1.288880
+99 Round 1: 1.242698
+Average time: 0.841097	1.242698
+
+source 19: 36608908  
+96 Warmup Round: 0.812236
+96 Round 1: 0.825024
+101 Warmup Round: 1.267321
+99 Round 1: 1.260054
+Average time: 0.825024	1.260054
+
+source 20: 63894535  
+96 Warmup Round: 0.868110
+95 Round 1: 0.806954
+99 Warmup Round: 1.227298
+99 Round 1: 1.235257
+Average time: 0.806954	1.235257
+
+source 21: 2402842   
+97 Warmup Round: 0.796983
+96 Round 1: 0.839590
+100 Warmup Round: 1.249901
+98 Round 1: 1.244807
+Average time: 0.839590	1.244807
+
+source 22: 96423163  
+96 Warmup Round: 0.845401
+96 Round 1: 0.770867
+99 Warmup Round: 1.248174
+102 Round 1: 1.244968
+Average time: 0.770867	1.244968
+
+source 23: 88052763  
+96 Warmup Round: 0.816840
+99 Round 1: 0.814630
+99 Warmup Round: 1.284518
+98 Round 1: 1.268554
+Average time: 0.814630	1.268554
+
+source 24: 46177376  
+96 Warmup Round: 0.808252
+95 Round 1: 0.797416
+101 Warmup Round: 1.273454
+97 Round 1: 1.243909
+Average time: 0.797416	1.243909
+

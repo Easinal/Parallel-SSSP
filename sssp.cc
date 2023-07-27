@@ -22,12 +22,21 @@ void run(Algo &algo, const Graph &G, bool verify) {
       t.stop();
       if (i == 0) {
         printf("Warmup Round: %f\n", t.total_time());
+        algo.tb1.reset();
+        algo.tb2.reset();
+        algo.tb3.reset();
+        algo.tb4.reset();
+        algo.t_decompress.reset();
+        algo.t_init.reset();
+        algo.t_trans.reset();
       } else {
         printf("Round %d: %f\n", i, t.total_time());
         total_time += t.total_time();
       }
     }
     double average_time = total_time / NUM_ROUND;
+    printf("%f %f %f %f %f %f %f -> %f \n", algo.tb1.total_time()/NUM_ROUND, algo.tb2.total_time()/NUM_ROUND, algo.tb3.total_time()/NUM_ROUND, algo.tb4.total_time()/NUM_ROUND, algo.t_decompress.total_time()/NUM_ROUND, algo.t_init.total_time()/NUM_ROUND, algo.t_trans.total_time()/NUM_ROUND,
+                                            (algo.tb1.total_time()+algo.tb2.total_time()+algo.tb3.total_time()+algo.tb4.total_time()+algo.t_decompress.total_time()+algo.t_init.total_time()+algo.t_trans.total_time())/NUM_ROUND);
     printf("Average time: %f\n", average_time);
 
     ofstream ofs("sssp.tsv", ios_base::app);
@@ -187,7 +196,7 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
   }
-  Graph G(weighted, symmetrized, true);
+  Graph G(weighted, symmetrized);//, true
   Graph G2(weighted, symmetrized, contract);
 
   printf("Reading graph...\n");
@@ -205,7 +214,6 @@ int main(int argc, char *argv[]) {
       return 0;
     }
   }
-
 
   fprintf(stdout,
           "Running on %s: |V|=%zu, |E|=%zu, param=%zu, num_src=%d, "

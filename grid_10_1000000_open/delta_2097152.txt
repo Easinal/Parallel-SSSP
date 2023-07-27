@@ -1,0 +1,79 @@
+Reading graph...
+Reading contracted graph...
+Info: Reading pbbs format
+Running on /data9/zwan018/origin/grid_10_1000000.bin: |V|=10000000, |E|=40000000, param=2097152, num_src=5, num_round=5
+source 0: 329511    
+1024 Warmup Round: 0.141941
+1024 Round 1: 0.134432
+1024 Round 2: 0.120606
+1024 Round 3: 0.121208
+1024 Round 4: 0.123479
+1024 Round 5: 0.119551
+1024 Warmup Round: 0.126048
+1024 Round 1: 0.113521
+1024 Round 2: 0.109477
+1024 Round 3: 0.109419
+1024 Round 4: 0.112856
+1024 Round 5: 0.110379
+Average time: 0.123855	0.111130
+
+source 1: 8713910   
+1024 Warmup Round: 0.134327
+1024 Round 1: 0.124508
+1024 Round 2: 0.120672
+1024 Round 3: 0.123784
+1024 Round 4: 0.120082
+1024 Round 5: 0.118939
+1024 Warmup Round: 0.123620
+1024 Round 1: 0.117283
+1024 Round 2: 0.110673
+1024 Round 3: 0.110557
+1024 Round 4: 0.109665
+1024 Round 5: 0.108899
+Average time: 0.121597	0.111415
+
+source 2: 8448204   
+1024 Warmup Round: 0.131376
+1024 Round 1: 0.122082
+1024 Round 2: 0.118542
+1024 Round 3: 0.127381
+1024 Round 4: 0.118099
+1024 Round 5: 0.116248
+1024 Warmup Round: 0.121753
+1024 Round 1: 0.115312
+1024 Round 2: 0.111149
+1024 Round 3: 0.110412
+1024 Round 4: 0.107922
+1024 Round 5: 0.107910
+Average time: 0.120470	0.110541
+
+source 3: 2612764   
+1024 Warmup Round: 0.132794
+1024 Round 1: 0.124355
+1024 Round 2: 0.119083
+1024 Round 3: 0.120397
+1024 Round 4: 0.117897
+1024 Round 5: 0.118451
+1024 Warmup Round: 0.123566
+1024 Round 1: 0.115677
+1024 Round 2: 0.114490
+1024 Round 3: 0.109010
+1024 Round 4: 0.109376
+1024 Round 5: 0.110452
+Average time: 0.120037	0.111801
+
+source 4: 6348061   
+1024 Warmup Round: 0.128614
+1024 Round 1: 0.120376
+1024 Round 2: 0.118399
+1024 Round 3: 0.117856
+1024 Round 4: 0.120011
+1024 Round 5: 0.118237
+1024 Warmup Round: 0.117795
+1024 Round 1: 0.113097
+1024 Round 2: 0.112465
+1024 Round 3: 0.111400
+1024 Round 4: 0.113457
+1024 Round 5: 0.109638
+Average time: 0.118976	0.112011
+
