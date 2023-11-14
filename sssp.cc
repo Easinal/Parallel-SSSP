@@ -185,9 +185,9 @@ int main(int argc, char *argv[]) {
         break;
       case 'x':
         x = atol(optarg);
-        scale = 0.2*x+0.4;
-        if (x<=0){
-          fprintf(stderr, "Error: x must be positive\n");
+        scale = 0.2*x;
+        if (x<0){
+          fprintf(stderr, "Error: x must be non negative\n");
           exit(EXIT_FAILURE);
         }
         break;
@@ -196,7 +196,7 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
   }
-  Graph G(weighted, symmetrized);//, true
+  Graph G(weighted, symmetrized, false);//true
   Graph G2(weighted, symmetrized, contract);
 
   printf("Reading graph...\n");

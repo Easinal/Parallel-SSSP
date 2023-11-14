@@ -5,7 +5,7 @@
 using namespace std;
 using namespace parlay;
 
-constexpr int NUM_SRC = 25;
+constexpr int NUM_SRC = 10;
 constexpr int NUM_ROUND = 5;
 
 constexpr size_t LOCAL_QUEUE_SIZE = 4096;
@@ -292,13 +292,14 @@ class SSSP {
 
 
     while (frontier_size) {
-      // printf("(Round %d, size: %zu\n)", round++, frontier_size); internal::timer t;
+      // printf("(Round %d, size: %zu\n)", round++, frontier_size);
+      internal::timer t;
       if (sparse) {
         frontier_size = sparse_relax();
       } else {
         frontier_size = dense_relax();
       }
-      // printf("relax: %f, ", t.next_time());
+      // printf("frontier_size: %ld \t relax: %f \t ",frontier_size, t.next_time());
       t_trans.start();
       bool next_sparse = (frontier_size < G.n / sd_scale) ? true : false;
       if (sparse && !next_sparse) {
@@ -391,17 +392,25 @@ class Delta_Stepping : public SSSP {
  public:
   Delta_Stepping(const Graph &_G, EdgeTy _delta = 1 << 15, size_t _radius_range = 5, double _x = 1)
       : SSSP(_G), delta(_delta), radius_range(_radius_range), x(_x) {
+        // cout<<x<<endl;
     init = [&]() { thres = 0; };
     get_threshold = [&]() {
-      // if(G.contracted){
-      //   auto _dist = delayed_seq<EdgeTy>(
-      //       frontier_size, [&](size_t i) { return dist[frontier[i]]+G.radius[frontier[i]][radius_range]; });
-      //   auto _min_dist = *min_element(_dist);
-      //   auto _max_dist = *max_element(_dist);
-      //   thres = _min_dist + (_max_dist - _min_dist) * x;
-      //   return thres;
-      // }
+      /*
+      if(G.contracted){
+        auto _dist = delayed_seq<EdgeTy>(
+            frontier_size, [&](size_t i) { return dist[frontier[i]]+G.radius[frontier[i]][radius_range]; });
+        auto _min_dist = *min_element(_dist);
+        auto _max_dist = *max_element(_dist);
+        // thres = _min_dist + (_max_dist - _min_dist) * x;
+        double k=thres/204007562.0;
+        k=4*k*k-4*k+1;
+        thres = _min_dist + (_max_dist - _min_dist) * (x+(1-x)*k);
+        cout<<thres<<"\t";
+        return thres;
+      }
+      */
       thres += delta;
+      // cout<<thres<<"\t";
       return thres;
     };
   }
