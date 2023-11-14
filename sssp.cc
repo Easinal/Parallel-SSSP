@@ -80,13 +80,15 @@ void run2(Algo &algo, const Graph &G, Algo &algo2, bool verify) {
       t.stop();
       if (i == 0) {
         printf("Warmup Round: %f\n", t.total_time());
+        algo2.decompress_time=0;
       } else {
         printf("Round %d: %f\n", i, t.total_time());
         total_time2 += t.total_time();
       }
     }
     double average_time2 = total_time2 / NUM_ROUND;
-    printf("Average time: %f\t%f\n", average_time, average_time2);
+    double average_time3 = algo2.decompress_time / NUM_ROUND;
+    printf("Average time: %f\t%f\t%f\n", average_time, average_time2, average_time3);
 
     ofstream ofs("sssp.tsv", ios_base::app);
     ofs << average_time << '\t' << average_time2 << '\t';
