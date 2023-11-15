@@ -2,6 +2,7 @@
 #include "graph.h"
 #include "hashbag.h"
 #include "parlay/internal/get_time.h"
+#include <queue>  
 using namespace std;
 using namespace parlay;
 
@@ -252,6 +253,49 @@ class SSSP {
     pack_into_uninitialized(identity, in_frontier, frontier);
   }
 
+  void topDown(NodeId s){
+    frontier_size=0;
+    size_t bound = G.layerOffset[2];
+    priority_queue<pair<EdgeTy, NodeId>, vector<pair<EdgeTy, NodeId>>,
+                greater<pair<EdgeTy, NodeId>>>
+    pq;
+    priority_queue<pair<EdgeTy, NodeId>, vector<pair<EdgeTy, NodeId>>,
+                greater<pair<EdgeTy, NodeId>>>
+    pq2;
+    pq.push(make_pair(dist[s], s));
+    while (!pq.empty()) {
+      pair<EdgeTy, NodeId> dist_and_node = pq.top();
+      pq.pop();
+      EdgeTy d = dist_and_node.first;
+      NodeId u = dist_and_node.second;
+      if (dist[u] < d) continue;
+      for (size_t j = G.offset[u]; j < G.offset[u + 1]; j++) {
+        NodeId v = G.edge[j].v;
+        EdgeTy w = G.edge[j].w;
+        if (dist[v] > dist[u] + w) {
+          dist[v] = dist[u] + w;
+          if(v<bound){
+            pq2.push(make_pair(dist[v], v));
+          }
+          else{
+            pq.push(make_pair(dist[v], v));
+          }
+        }
+      }
+    }
+    while (!pq2.empty()) {
+      pair<EdgeTy, NodeId> dist_and_node = pq2.top();
+      pq2.pop();
+      NodeId u = dist_and_node.second;
+      if(in_frontier[u] == true){
+        continue;
+      }
+      in_frontier[u]=true;
+      frontier[frontier_size]=u;
+      frontier_size++;
+    }
+  }
+
   function<void()> init;
   function<EdgeTy()> get_threshold;
 
@@ -264,6 +308,7 @@ class SSSP {
   internal::timer t_init;
   internal::timer t_trans;
   double break_time = 0;
+  double decompress_time = 0;
   SSSP() = delete;
   SSSP(const Graph &_G) : G(_G), bag(G.n) {
     dist = sequence<EdgeTy>::uninitialized(G.n);
@@ -282,10 +327,14 @@ class SSSP {
       dist[i] = numeric_limits<EdgeTy>::max() / 2;
       in_frontier[i] = in_next_frontier[i] = false;
     });
-    frontier_size = 1;
-    dist[s] = 0;
-    frontier[0] = s;
-    in_frontier[s] = true;
+    if(G.contracted && G.layer>1 && s>=G.layerOffset[2]){
+      topDown(s);
+    }else{
+      frontier_size = 1;
+      dist[s] = 0;
+      frontier[0] = s;
+      in_frontier[s] = true;
+    }
     sparse = false;
     int round = 0;
     t_init.stop();
@@ -316,9 +365,11 @@ class SSSP {
       t_trans.stop();
     }
     printf("%d ", round);
+    t_decompress.reset();
     t_decompress.start();
     if(G.contracted)decompressLayered();
     t_decompress.stop();
+    decompress_time+=t_decompress.total_time();
     // printf("%f %f %f %f %f %f %f -> %f \n", tb1.total_time(), tb2.total_time(), tb3.total_time(), tb4.total_time(), t_decompress.total_time(), t_init.total_time(), t_trans.total_time(),
     //                                         tb1.total_time()+tb2.total_time()+tb3.total_time()+tb4.total_time()+t_decompress.total_time()+t_init.total_time()+t_trans.total_time());
     // printf("sparse get threshold: %f\n", tb1.total_time());
