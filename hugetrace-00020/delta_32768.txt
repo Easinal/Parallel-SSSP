@@ -2,3 +2,154 @@ Reading graph...
 Info: Reading pbbs format
 Reading contracted graph...
 Info: Reading pbbs format
+Running on /data9/ezhu021/graph/hugetrace-00020.adj: |V|=16002413, |E|=47997626, param=32768, num_src=10, num_round=5
+source 0: 8059255   
+3238 Warmup Round: 0.617740
+3238 Round 1: 0.557720
+3238 Round 2: 0.537054
+3238 Round 3: 0.597582
+3238 Round 4: 0.552667
+3238 Round 5: 0.521232
+0 Warmup Round: 0.119336
+0 Round 1: 0.092298
+0 Round 2: 0.080230
+0 Round 3: 0.073127
+0 Round 4: 0.072491
+0 Round 5: 0.077715
+Average time: 0.553251	0.079172	0.075686
+
+source 1: 4257853   
+3751 Warmup Round: 0.631676
+3751 Round 1: 0.631067
+3751 Round 2: 0.601672
+3751 Round 3: 0.580391
+3751 Round 4: 0.664864
+3751 Round 5: 0.623149
+3745 Warmup Round: 0.601603
+3745 Round 1: 0.467752
+3745 Round 2: 0.491914
+3745 Round 3: 0.503182
+3745 Round 4: 0.494780
+3745 Round 5: 0.473318
+Average time: 0.620229	0.486189	0.054798
+
+source 2: 5876323   
+3793 Warmup Round: 0.572360
+3793 Round 1: 0.605724
+3793 Round 2: 0.604023
+3793 Round 3: 0.629915
+3793 Round 4: 0.628158
+3793 Round 5: 0.582571
+0 Warmup Round: 0.043010
+0 Round 1: 0.047336
+0 Round 2: 0.045663
+0 Round 3: 0.041485
+0 Round 4: 0.051338
+0 Round 5: 0.046400
+Average time: 0.610078	0.046444	0.042776
+
+source 3: 4412485   
+3102 Warmup Round: 0.584044
+3102 Round 1: 0.543517
+3102 Round 2: 0.532073
+3102 Round 3: 0.554421
+3102 Round 4: 0.492678
+3102 Round 5: 0.517704
+3078 Warmup Round: 0.420736
+3078 Round 1: 0.431110
+3078 Round 2: 0.442965
+3078 Round 3: 0.463977
+3078 Round 4: 0.451815
+3078 Round 5: 0.441232
+Average time: 0.528079	0.446220	0.057088
+
+source 4: 2205694   
+2530 Warmup Round: 0.473024
+2530 Round 1: 0.571992
+2530 Round 2: 0.478251
+2530 Round 3: 0.503652
+2530 Round 4: 0.523885
+2530 Round 5: 0.498346
+2506 Warmup Round: 0.428348
+2506 Round 1: 0.404103
+2506 Round 2: 0.419590
+2506 Round 3: 0.393358
+2506 Round 4: 0.417182
+2506 Round 5: 0.408465
+Average time: 0.515225	0.408540	0.059540
+
+source 5: 658452    
+3156 Warmup Round: 0.547777
+3156 Round 1: 0.522944
+3156 Round 2: 0.536524
+3156 Round 3: 0.575605
+3156 Round 4: 0.612934
+3156 Round 5: 0.566183
+3151 Warmup Round: 0.424759
+3151 Round 1: 0.442289
+3151 Round 2: 0.438156
+3151 Round 3: 0.431872
+3151 Round 4: 0.434521
+3151 Round 5: 0.489622
+Average time: 0.562838	0.447292	0.059573
+
+source 6: 7215374   
+3931 Warmup Round: 0.689077
+3931 Round 1: 0.715846
+3931 Round 2: 0.665394
+3931 Round 3: 0.665888
+3931 Round 4: 0.652117
+3931 Round 5: 0.638102
+0 Warmup Round: 0.051849
+0 Round 1: 0.047416
+0 Round 2: 0.048047
+0 Round 3: 0.048950
+0 Round 4: 0.048032
+0 Round 5: 0.047122
+Average time: 0.667469	0.047913	0.043964
+
+source 7: 9803725   
+3238 Warmup Round: 0.574697
+3238 Round 1: 0.578234
+3238 Round 2: 0.575386
+3238 Round 3: 0.613272
+3238 Round 4: 0.592117
+3238 Round 5: 0.604451
+0 Warmup Round: 0.096125
+0 Round 1: 0.052400
+0 Round 2: 0.057555
+0 Round 3: 0.053388
+0 Round 4: 0.061062
+0 Round 5: 0.059673
+Average time: 0.592692	0.056816	0.052720
+
+source 8: 6928490   
+3721 Warmup Round: 0.627381
+3721 Round 1: 0.678237
+3721 Round 2: 0.613359
+3721 Round 3: 0.591550
+3721 Round 4: 0.669309
+3721 Round 5: 0.616093
+0 Warmup Round: 0.050718
+0 Round 1: 0.050293
+0 Round 2: 0.061448
+0 Round 3: 0.070144
+0 Round 4: 0.056254
+0 Round 5: 0.054205
+Average time: 0.633710	0.058469	0.054700
+
+source 9: 8403035   
+3898 Warmup Round: 0.673290
+3898 Round 1: 0.621651
+3898 Round 2: 0.643681
+3898 Round 3: 0.637244
+3898 Round 4: 0.665230
+3898 Round 5: 0.698598
+0 Warmup Round: 0.062475
+0 Round 1: 0.054165
+0 Round 2: 0.052209
+0 Round 3: 0.052355
+0 Round 4: 0.051753
+0 Round 5: 0.060524
+Average time: 0.653281	0.054201	0.050233
+

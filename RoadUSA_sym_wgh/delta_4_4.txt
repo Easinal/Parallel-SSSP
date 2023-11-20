@@ -1,253 +1,463 @@
 Reading graph...
 Info: Reading pbbs format
-Running on /data9/zwan018/contract/RoadUSA_sym_wgh.adj: |V|=23947348, |E|=54114635, param=524288, num_src=25, num_round=5
+Reading contracted graph...
+Info: Reading pbbs format
+Running on /data9/ezhu021/graph/RoadUSA_sym_wgh.adj: |V|=23947348, |E|=57708624, param=524288, num_src=1, num_round=1
 source 0: 4278411   
-47 Warmup Round: 0.148209
-44 Round 1: 0.144850
-40 Round 2: 0.165959
-52 Round 3: 0.153544
-43 Round 4: 0.159224
-42 Round 5: 0.144339
-0.006010 0.109833 0.000000 0.000000 0.025620 0.005082 0.001333 -> 0.147878 
-Average time: 0.153583
-
-source 1: 11348062  
-39 Warmup Round: 0.155458
-40 Round 1: 0.141713
-38 Round 2: 0.139086
-37 Round 3: 0.137512
-37 Round 4: 0.137415
-36 Round 5: 0.128653
-0.005060 0.097141 0.000000 0.000000 0.024346 0.004265 0.000546 -> 0.131359 
-Average time: 0.136876
-
-source 2: 14767220  
-43 Warmup Round: 0.142402
-42 Round 1: 0.165059
-45 Round 2: 0.148107
-45 Round 3: 0.153031
-42 Round 4: 0.147670
-44 Round 5: 0.149218
-0.005598 0.111360 0.000000 0.000000 0.025028 0.004614 0.000545 -> 0.147146 
-Average time: 0.152617
-
-source 3: 15508624  
-44 Warmup Round: 0.140876
-43 Round 1: 0.139658
-44 Round 2: 0.143396
-42 Round 3: 0.143939
-45 Round 4: 0.132128
-48 Round 5: 0.158252
-0.005335 0.101632 0.000000 0.000000 0.026351 0.004111 0.000549 -> 0.137978 
-Average time: 0.143475
-
-source 4: 12401489  
-39 Warmup Round: 0.144220
-38 Round 1: 0.127091
-39 Round 2: 0.128539
-38 Round 3: 0.125640
-37 Round 4: 0.126402
-39 Round 5: 0.129983
-0.004621 0.089184 0.000000 0.000000 0.024144 0.004114 0.000542 -> 0.122606 
-Average time: 0.127531
-
-source 5: 8715930   
-32 Warmup Round: 0.118179
-31 Round 1: 0.122869
-31 Round 2: 0.118865
-30 Round 3: 0.111269
-33 Round 4: 0.122514
-35 Round 5: 0.118621
-0.004053 0.081102 0.000000 0.000000 0.024172 0.004093 0.000564 -> 0.113985 
-Average time: 0.118828
-
-source 6: 779116    
-45 Warmup Round: 0.166196
-45 Round 1: 0.162292
-55 Round 2: 0.159357
-50 Round 3: 0.163280
-50 Round 4: 0.153277
-45 Round 5: 0.146894
-0.005933 0.114336 0.000000 0.000000 0.024396 0.004862 0.000559 -> 0.150085 
-Average time: 0.157020
-
-source 7: 19369880  
-31 Warmup Round: 0.116622
-29 Round 1: 0.115076
-30 Round 2: 0.114916
-29 Round 3: 0.112223
-31 Round 4: 0.115976
-31 Round 5: 0.133295
-0.004077 0.078133 0.000000 0.000000 0.026916 0.004087 0.000554 -> 0.113767 
-Average time: 0.118297
-
-source 8: 11205124  
-34 Warmup Round: 0.121193
-38 Round 1: 0.120617
-34 Round 2: 0.118376
-33 Round 3: 0.114945
-31 Round 4: 0.115209
-34 Round 5: 0.112152
-0.004626 0.077764 0.000000 0.000000 0.024104 0.004223 0.000924 -> 0.111641 
-Average time: 0.116260
-
-source 9: 7548309   
-29 Warmup Round: 0.107938
-28 Round 1: 0.115529
-27 Round 2: 0.109867
-29 Round 3: 0.115566
-30 Round 4: 0.115842
-27 Round 5: 0.111489
-0.003858 0.075693 0.000000 0.000000 0.023819 0.004284 0.000567 -> 0.108221 
-Average time: 0.113659
-
-source 10: 12522616  
-38 Warmup Round: 0.126130
-38 Round 1: 0.153481
-40 Round 2: 0.131882
-40 Round 3: 0.141896
-40 Round 4: 0.136579
-40 Round 5: 0.131161
-0.004782 0.096976 0.000000 0.000000 0.026493 0.004448 0.000734 -> 0.133433 
-Average time: 0.139000
-
-source 11: 19523107  
-27 Warmup Round: 0.111581
-32 Round 1: 0.112650
-31 Round 2: 0.109669
-29 Round 3: 0.109318
-28 Round 4: 0.104624
-28 Round 5: 0.107524
-0.003759 0.072349 0.000000 0.000000 0.023433 0.004310 0.000537 -> 0.104387 
-Average time: 0.108757
-
-source 12: 21097693  
-51 Warmup Round: 0.146960
-52 Round 1: 0.168350
-49 Round 2: 0.157456
-52 Round 3: 0.161891
-49 Round 4: 0.158076
-52 Round 5: 0.152880
-0.005838 0.117089 0.000000 0.000000 0.026398 0.004302 0.000569 -> 0.154196 
-Average time: 0.159731
-
-source 13: 17099912  
-39 Warmup Round: 0.128758
-36 Round 1: 0.134517
-39 Round 2: 0.135657
-39 Round 3: 0.128253
-36 Round 4: 0.121047
-37 Round 5: 0.125705
-0.004531 0.090579 0.000000 0.000000 0.024575 0.004109 0.000538 -> 0.124332 
-Average time: 0.129036
-
-source 14: 10598472  
-37 Warmup Round: 0.132537
-38 Round 1: 0.141805
-37 Round 2: 0.130605
-35 Round 3: 0.124182
-37 Round 4: 0.127524
-38 Round 5: 0.134767
-0.004629 0.092487 0.000000 0.000000 0.024204 0.004337 0.000953 -> 0.126610 
-Average time: 0.131777
-
-source 15: 16132616  
-41 Warmup Round: 0.121432
-46 Round 1: 0.125464
-40 Round 2: 0.127361
-41 Round 3: 0.125054
-42 Round 4: 0.130634
-40 Round 5: 0.125556
-0.004699 0.089218 0.000000 0.000000 0.023412 0.004112 0.000551 -> 0.121992 
-Average time: 0.126814
-
-source 16: 18450928  
-31 Warmup Round: 0.130159
-31 Round 1: 0.133445
-30 Round 2: 0.115899
-30 Round 3: 0.117644
-31 Round 4: 0.120668
-32 Round 5: 0.120508
-0.004156 0.082375 0.000000 0.000000 0.023972 0.004352 0.001051 -> 0.115906 
-Average time: 0.121633
-
-source 17: 1252248   
-36 Warmup Round: 0.120768
-35 Round 1: 0.128616
-34 Round 2: 0.119170
-35 Round 3: 0.117415
-34 Round 4: 0.116406
-35 Round 5: 0.119217
-0.004226 0.083066 0.000000 0.000000 0.023337 0.004191 0.000544 -> 0.115364 
-Average time: 0.120165
-
-source 18: 20804943  
-35 Warmup Round: 0.124225
-40 Round 1: 0.138545
-37 Round 2: 0.141525
-37 Round 3: 0.137734
-40 Round 4: 0.135304
-37 Round 5: 0.128182
-0.004911 0.097223 0.000000 0.000000 0.024034 0.004317 0.000565 -> 0.131051 
-Average time: 0.136258
-
-source 19: 12661560  
-45 Warmup Round: 0.122545
-40 Round 1: 0.120845
-43 Round 2: 0.124927
-40 Round 3: 0.118481
-41 Round 4: 0.122279
-40 Round 5: 0.126032
-0.004365 0.084869 0.000000 0.000000 0.024058 0.004099 0.000546 -> 0.117937 
-Average time: 0.122513
-
-source 20: 15738131  
-51 Warmup Round: 0.166723
-50 Round 1: 0.177667
-49 Round 2: 0.154621
-50 Round 3: 0.164172
-48 Round 4: 0.156141
-49 Round 5: 0.150446
-0.006086 0.116190 0.000000 0.000000 0.027375 0.004143 0.000896 -> 0.154689 
-Average time: 0.160609
-
-source 21: 21616166  
-35 Warmup Round: 0.130215
-36 Round 1: 0.131376
-35 Round 2: 0.132495
-37 Round 3: 0.128556
-35 Round 4: 0.122635
-37 Round 5: 0.128972
-0.004801 0.090505 0.000000 0.000000 0.023698 0.004156 0.000918 -> 0.124077 
-Average time: 0.128807
-
-source 22: 21686811  
-40 Warmup Round: 0.129659
-38 Round 1: 0.135344
-38 Round 2: 0.130201
-40 Round 3: 0.135511
-38 Round 4: 0.133416
-40 Round 5: 0.128809
-0.004861 0.092480 0.000000 0.000000 0.025065 0.004504 0.000862 -> 0.127772 
-Average time: 0.132656
-
-source 23: 3055479   
-40 Warmup Round: 0.143013
-39 Round 1: 0.134903
-40 Round 2: 0.129118
-40 Round 3: 0.133551
-40 Round 4: 0.130192
-39 Round 5: 0.132617
-0.004789 0.092863 0.000000 0.000000 0.023794 0.004896 0.000532 -> 0.126873 
-Average time: 0.132076
-
-source 24: 19074012  
-41 Warmup Round: 0.144731
-44 Round 1: 0.137762
-44 Round 2: 0.135350
-46 Round 3: 0.143194
-46 Round 4: 0.145151
-45 Round 5: 0.139006
-0.005018 0.099664 0.000000 0.000000 0.024400 0.004306 0.001073 -> 0.134462 
-Average time: 0.140093
+frontier_size: 1 	 relax: 0.000799 	 pack: 0.000689
+frontier_size: 394 	 relax: 0.000335 	 pack: 0.000001
+frontier_size: 1158 	 relax: 0.001310 	 pack: 0.000001
+frontier_size: 4667 	 relax: 0.001528 	 pack: 0.000001
+frontier_size: 10203 	 relax: 0.001651 	 pack: 0.000001
+frontier_size: 15762 	 relax: 0.001939 	 pack: 0.000001
+frontier_size: 18651 	 relax: 0.002481 	 pack: 0.000003
+frontier_size: 25530 	 relax: 0.002348 	 pack: 0.000002
+frontier_size: 34005 	 relax: 0.002338 	 pack: 0.000001
+frontier_size: 32397 	 relax: 0.002296 	 pack: 0.000001
+frontier_size: 32002 	 relax: 0.002243 	 pack: 0.000002
+frontier_size: 29797 	 relax: 0.003699 	 pack: 0.000002
+frontier_size: 28303 	 relax: 0.002460 	 pack: 0.000001
+frontier_size: 29637 	 relax: 0.002140 	 pack: 0.000001
+frontier_size: 37286 	 relax: 0.002981 	 pack: 0.000002
+frontier_size: 45374 	 relax: 0.002670 	 pack: 0.000002
+frontier_size: 51048 	 relax: 0.003454 	 pack: 0.000002
+frontier_size: 61814 	 relax: 0.003467 	 pack: 0.000001
+frontier_size: 69632 	 relax: 0.003437 	 pack: 0.000002
+frontier_size: 69061 	 relax: 0.003965 	 pack: 0.000002
+frontier_size: 79976 	 relax: 0.003483 	 pack: 0.000001
+frontier_size: 74527 	 relax: 0.003442 	 pack: 0.000002
+frontier_size: 73128 	 relax: 0.003270 	 pack: 0.000001
+frontier_size: 80129 	 relax: 0.005689 	 pack: 0.000002
+frontier_size: 93168 	 relax: 0.003704 	 pack: 0.000001
+frontier_size: 86913 	 relax: 0.003986 	 pack: 0.000001
+frontier_size: 82006 	 relax: 0.003795 	 pack: 0.000002
+frontier_size: 90537 	 relax: 0.005080 	 pack: 0.000002
+frontier_size: 80054 	 relax: 0.003738 	 pack: 0.000002
+frontier_size: 69714 	 relax: 0.004656 	 pack: 0.000002
+frontier_size: 70286 	 relax: 0.003292 	 pack: 0.000002
+frontier_size: 64815 	 relax: 0.003107 	 pack: 0.000002
+frontier_size: 49394 	 relax: 0.002774 	 pack: 0.000001
+frontier_size: 44541 	 relax: 0.002351 	 pack: 0.000001
+frontier_size: 42466 	 relax: 0.002317 	 pack: 0.000002
+frontier_size: 41900 	 relax: 0.002519 	 pack: 0.000001
+frontier_size: 45250 	 relax: 0.002610 	 pack: 0.000001
+frontier_size: 45405 	 relax: 0.003125 	 pack: 0.000002
+frontier_size: 35132 	 relax: 0.002315 	 pack: 0.000001
+frontier_size: 31522 	 relax: 0.001958 	 pack: 0.000001
+frontier_size: 27004 	 relax: 0.002059 	 pack: 0.000001
+frontier_size: 29499 	 relax: 0.002064 	 pack: 0.000001
+frontier_size: 32499 	 relax: 0.002452 	 pack: 0.000001
+frontier_size: 44357 	 relax: 0.002940 	 pack: 0.000002
+frontier_size: 40237 	 relax: 0.002416 	 pack: 0.000002
+frontier_size: 37241 	 relax: 0.002193 	 pack: 0.000001
+frontier_size: 36124 	 relax: 0.002178 	 pack: 0.000001
+frontier_size: 46961 	 relax: 0.004580 	 pack: 0.000004
+frontier_size: 49498 	 relax: 0.003088 	 pack: 0.000002
+frontier_size: 66701 	 relax: 0.003403 	 pack: 0.000001
+frontier_size: 86611 	 relax: 0.005191 	 pack: 0.000002
+frontier_size: 77454 	 relax: 0.003263 	 pack: 0.000002
+frontier_size: 92088 	 relax: 0.003330 	 pack: 0.000002
+frontier_size: 123601 	 relax: 0.004154 	 pack: 0.000002
+frontier_size: 138907 	 relax: 0.005097 	 pack: 0.000002
+frontier_size: 135446 	 relax: 0.004888 	 pack: 0.000002
+frontier_size: 130550 	 relax: 0.004519 	 pack: 0.000002
+frontier_size: 131483 	 relax: 0.005278 	 pack: 0.000003
+frontier_size: 136063 	 relax: 0.004622 	 pack: 0.000003
+frontier_size: 124872 	 relax: 0.004787 	 pack: 0.000003
+frontier_size: 119594 	 relax: 0.004495 	 pack: 0.000002
+frontier_size: 123929 	 relax: 0.005061 	 pack: 0.000002
+frontier_size: 119440 	 relax: 0.004566 	 pack: 0.000002
+frontier_size: 127377 	 relax: 0.004293 	 pack: 0.000001
+frontier_size: 143044 	 relax: 0.004615 	 pack: 0.000002
+frontier_size: 143561 	 relax: 0.005561 	 pack: 0.000004
+frontier_size: 137335 	 relax: 0.004667 	 pack: 0.000002
+frontier_size: 144260 	 relax: 0.007649 	 pack: 0.000003
+frontier_size: 149882 	 relax: 0.005169 	 pack: 0.000004
+frontier_size: 142350 	 relax: 0.005330 	 pack: 0.000004
+frontier_size: 134490 	 relax: 0.008081 	 pack: 0.000250
+frontier_size: 137594 	 relax: 0.004770 	 pack: 0.000003
+frontier_size: 149618 	 relax: 0.004965 	 pack: 0.000003
+frontier_size: 145370 	 relax: 0.006055 	 pack: 0.000004
+frontier_size: 155337 	 relax: 0.004911 	 pack: 0.000003
+frontier_size: 181700 	 relax: 0.005506 	 pack: 0.000003
+frontier_size: 186999 	 relax: 0.006456 	 pack: 0.000006
+frontier_size: 189023 	 relax: 0.006004 	 pack: 0.000004
+frontier_size: 159583 	 relax: 0.005716 	 pack: 0.000004
+frontier_size: 152260 	 relax: 0.006044 	 pack: 0.000004
+frontier_size: 151759 	 relax: 0.005373 	 pack: 0.000005
+frontier_size: 158371 	 relax: 0.005666 	 pack: 0.000005
+frontier_size: 148863 	 relax: 0.006350 	 pack: 0.000006
+frontier_size: 156825 	 relax: 0.005380 	 pack: 0.000006
+frontier_size: 168300 	 relax: 0.005778 	 pack: 0.000005
+frontier_size: 165810 	 relax: 0.006713 	 pack: 0.000006
+frontier_size: 157703 	 relax: 0.005472 	 pack: 0.000005
+frontier_size: 169361 	 relax: 0.005579 	 pack: 0.000005
+frontier_size: 156562 	 relax: 0.009540 	 pack: 0.000012
+frontier_size: 178975 	 relax: 0.005748 	 pack: 0.000005
+frontier_size: 187282 	 relax: 0.006086 	 pack: 0.000006
+frontier_size: 211198 	 relax: 0.006934 	 pack: 0.000006
+frontier_size: 206153 	 relax: 0.006768 	 pack: 0.000007
+frontier_size: 211639 	 relax: 0.007223 	 pack: 0.000008
+frontier_size: 209128 	 relax: 0.006708 	 pack: 0.000006
+frontier_size: 217111 	 relax: 0.007828 	 pack: 0.000012
+frontier_size: 215226 	 relax: 0.006943 	 pack: 0.000007
+frontier_size: 188822 	 relax: 0.007539 	 pack: 0.000007
+frontier_size: 152996 	 relax: 0.005729 	 pack: 0.000006
+frontier_size: 141769 	 relax: 0.005304 	 pack: 0.000006
+frontier_size: 149010 	 relax: 0.005688 	 pack: 0.000006
+frontier_size: 147752 	 relax: 0.005340 	 pack: 0.000006
+frontier_size: 125739 	 relax: 0.004932 	 pack: 0.000006
+frontier_size: 94903 	 relax: 0.004583 	 pack: 0.000005
+frontier_size: 80388 	 relax: 0.003502 	 pack: 0.000004
+frontier_size: 68900 	 relax: 0.003514 	 pack: 0.000004
+frontier_size: 50645 	 relax: 0.002576 	 pack: 0.000002
+frontier_size: 46280 	 relax: 0.002412 	 pack: 0.000002
+frontier_size: 36542 	 relax: 0.002780 	 pack: 0.000002
+frontier_size: 33957 	 relax: 0.002013 	 pack: 0.000002
+frontier_size: 25095 	 relax: 0.001779 	 pack: 0.000001
+frontier_size: 22590 	 relax: 0.001513 	 pack: 0.000001
+frontier_size: 17017 	 relax: 0.001496 	 pack: 0.000001
+frontier_size: 13962 	 relax: 0.001310 	 pack: 0.000001
+frontier_size: 13575 	 relax: 0.001267 	 pack: 0.000001
+frontier_size: 11458 	 relax: 0.001300 	 pack: 0.000001
+frontier_size: 8127 	 relax: 0.001415 	 pack: 0.000001
+frontier_size: 4705 	 relax: 0.001649 	 pack: 0.000001
+frontier_size: 713 	 relax: 0.000781 	 pack: 0.000001
+frontier_size: 115 	 relax: 0.000497 	 pack: 0.000001
+frontier_size: 0 	 relax: 0.000139 	 pack: 0.000001
+121 Warmup Round: 0.490341
+frontier_size: 1 	 relax: 0.000798 	 pack: 0.000686
+frontier_size: 394 	 relax: 0.000337 	 pack: 0.000001
+frontier_size: 1386 	 relax: 0.001176 	 pack: 0.000001
+frontier_size: 4847 	 relax: 0.001703 	 pack: 0.000001
+frontier_size: 9284 	 relax: 0.001534 	 pack: 0.000001
+frontier_size: 17034 	 relax: 0.001708 	 pack: 0.000002
+frontier_size: 18897 	 relax: 0.001954 	 pack: 0.000001
+frontier_size: 26250 	 relax: 0.002260 	 pack: 0.000002
+frontier_size: 38260 	 relax: 0.002575 	 pack: 0.000002
+frontier_size: 40124 	 relax: 0.002821 	 pack: 0.000002
+frontier_size: 34092 	 relax: 0.002491 	 pack: 0.000001
+frontier_size: 34122 	 relax: 0.002186 	 pack: 0.000001
+frontier_size: 33601 	 relax: 0.002305 	 pack: 0.000001
+frontier_size: 34809 	 relax: 0.002134 	 pack: 0.000001
+frontier_size: 37442 	 relax: 0.002356 	 pack: 0.000001
+frontier_size: 41628 	 relax: 0.002494 	 pack: 0.000001
+frontier_size: 53442 	 relax: 0.002534 	 pack: 0.000001
+frontier_size: 68096 	 relax: 0.003762 	 pack: 0.000001
+frontier_size: 64291 	 relax: 0.003020 	 pack: 0.000002
+frontier_size: 59126 	 relax: 0.003171 	 pack: 0.000002
+frontier_size: 64484 	 relax: 0.002865 	 pack: 0.000001
+frontier_size: 54989 	 relax: 0.002692 	 pack: 0.000001
+frontier_size: 55297 	 relax: 0.002406 	 pack: 0.000002
+frontier_size: 69707 	 relax: 0.003273 	 pack: 0.000001
+frontier_size: 76295 	 relax: 0.004148 	 pack: 0.000002
+frontier_size: 75350 	 relax: 0.003740 	 pack: 0.000002
+frontier_size: 91981 	 relax: 0.004061 	 pack: 0.000002
+frontier_size: 73271 	 relax: 0.003569 	 pack: 0.000002
+frontier_size: 68588 	 relax: 0.002810 	 pack: 0.000001
+frontier_size: 69660 	 relax: 0.003294 	 pack: 0.000001
+frontier_size: 65027 	 relax: 0.003272 	 pack: 0.000001
+frontier_size: 55489 	 relax: 0.002844 	 pack: 0.000001
+frontier_size: 43235 	 relax: 0.002473 	 pack: 0.000001
+frontier_size: 33502 	 relax: 0.002862 	 pack: 0.000003
+frontier_size: 28824 	 relax: 0.001774 	 pack: 0.000002
+frontier_size: 29095 	 relax: 0.001883 	 pack: 0.000001
+frontier_size: 31491 	 relax: 0.001768 	 pack: 0.000001
+frontier_size: 38807 	 relax: 0.002142 	 pack: 0.000001
+frontier_size: 36026 	 relax: 0.002414 	 pack: 0.000002
+frontier_size: 27235 	 relax: 0.001894 	 pack: 0.000001
+frontier_size: 24075 	 relax: 0.002385 	 pack: 0.000001
+frontier_size: 25280 	 relax: 0.001824 	 pack: 0.000001
+frontier_size: 32312 	 relax: 0.002225 	 pack: 0.000001
+frontier_size: 34512 	 relax: 0.002161 	 pack: 0.000001
+frontier_size: 31116 	 relax: 0.002217 	 pack: 0.000001
+frontier_size: 26652 	 relax: 0.002257 	 pack: 0.000001
+frontier_size: 30498 	 relax: 0.002232 	 pack: 0.000001
+frontier_size: 37750 	 relax: 0.002623 	 pack: 0.000001
+frontier_size: 42418 	 relax: 0.002423 	 pack: 0.000001
+frontier_size: 62645 	 relax: 0.002924 	 pack: 0.000001
+frontier_size: 76187 	 relax: 0.003170 	 pack: 0.000002
+frontier_size: 70464 	 relax: 0.004458 	 pack: 0.000003
+frontier_size: 85612 	 relax: 0.003246 	 pack: 0.000011
+frontier_size: 104108 	 relax: 0.003661 	 pack: 0.000001
+frontier_size: 134863 	 relax: 0.004200 	 pack: 0.000002
+frontier_size: 137079 	 relax: 0.004867 	 pack: 0.000003
+frontier_size: 126162 	 relax: 0.004510 	 pack: 0.000002
+frontier_size: 122653 	 relax: 0.004549 	 pack: 0.000002
+frontier_size: 125409 	 relax: 0.004864 	 pack: 0.000002
+frontier_size: 117115 	 relax: 0.009417 	 pack: 0.000003
+frontier_size: 116843 	 relax: 0.003926 	 pack: 0.000002
+frontier_size: 110224 	 relax: 0.003987 	 pack: 0.000002
+frontier_size: 112639 	 relax: 0.004286 	 pack: 0.000002
+frontier_size: 118269 	 relax: 0.006483 	 pack: 0.000003
+frontier_size: 134488 	 relax: 0.004378 	 pack: 0.000002
+frontier_size: 131505 	 relax: 0.004463 	 pack: 0.000002
+frontier_size: 133449 	 relax: 0.006963 	 pack: 0.000005
+frontier_size: 134982 	 relax: 0.004815 	 pack: 0.000002
+frontier_size: 131737 	 relax: 0.004751 	 pack: 0.000003
+frontier_size: 139990 	 relax: 0.006416 	 pack: 0.000004
+frontier_size: 126378 	 relax: 0.004409 	 pack: 0.000003
+frontier_size: 128281 	 relax: 0.004455 	 pack: 0.000002
+frontier_size: 142279 	 relax: 0.005596 	 pack: 0.000003
+frontier_size: 148069 	 relax: 0.004757 	 pack: 0.000002
+frontier_size: 162024 	 relax: 0.004739 	 pack: 0.000003
+frontier_size: 161002 	 relax: 0.006301 	 pack: 0.000004
+frontier_size: 155991 	 relax: 0.004887 	 pack: 0.000004
+frontier_size: 164675 	 relax: 0.005898 	 pack: 0.000005
+frontier_size: 145631 	 relax: 0.004989 	 pack: 0.000005
+frontier_size: 120168 	 relax: 0.004558 	 pack: 0.000005
+frontier_size: 121638 	 relax: 0.005153 	 pack: 0.000006
+frontier_size: 134869 	 relax: 0.004541 	 pack: 0.000005
+frontier_size: 137083 	 relax: 0.004752 	 pack: 0.000004
+frontier_size: 135999 	 relax: 0.005240 	 pack: 0.000004
+frontier_size: 144463 	 relax: 0.004808 	 pack: 0.000004
+frontier_size: 148957 	 relax: 0.004960 	 pack: 0.000004
+frontier_size: 154681 	 relax: 0.005886 	 pack: 0.000004
+frontier_size: 151425 	 relax: 0.005210 	 pack: 0.000005
+frontier_size: 153244 	 relax: 0.005209 	 pack: 0.000005
+frontier_size: 171072 	 relax: 0.005869 	 pack: 0.000005
+frontier_size: 187933 	 relax: 0.005693 	 pack: 0.000006
+frontier_size: 205599 	 relax: 0.006073 	 pack: 0.000005
+frontier_size: 206402 	 relax: 0.007125 	 pack: 0.000007
+frontier_size: 186871 	 relax: 0.006351 	 pack: 0.000005
+frontier_size: 187051 	 relax: 0.005843 	 pack: 0.000271
+frontier_size: 177659 	 relax: 0.005700 	 pack: 0.000006
+frontier_size: 172166 	 relax: 0.005500 	 pack: 0.000006
+frontier_size: 149573 	 relax: 0.005884 	 pack: 0.000007
+frontier_size: 122190 	 relax: 0.004796 	 pack: 0.000006
+frontier_size: 109856 	 relax: 0.004183 	 pack: 0.000005
+frontier_size: 112738 	 relax: 0.004824 	 pack: 0.000005
+frontier_size: 107276 	 relax: 0.003907 	 pack: 0.000003
+frontier_size: 102321 	 relax: 0.003869 	 pack: 0.000004
+frontier_size: 88074 	 relax: 0.003553 	 pack: 0.000003
+frontier_size: 67230 	 relax: 0.003714 	 pack: 0.000004
+frontier_size: 57986 	 relax: 0.002717 	 pack: 0.000002
+frontier_size: 51129 	 relax: 0.002304 	 pack: 0.000002
+frontier_size: 47368 	 relax: 0.002360 	 pack: 0.000002
+frontier_size: 35898 	 relax: 0.002146 	 pack: 0.000002
+frontier_size: 29587 	 relax: 0.001814 	 pack: 0.000002
+frontier_size: 18521 	 relax: 0.001699 	 pack: 0.000002
+frontier_size: 13065 	 relax: 0.001232 	 pack: 0.000001
+frontier_size: 9838 	 relax: 0.001220 	 pack: 0.000001
+frontier_size: 9136 	 relax: 0.001322 	 pack: 0.000001
+frontier_size: 7669 	 relax: 0.001250 	 pack: 0.000001
+frontier_size: 2612 	 relax: 0.000992 	 pack: 0.000001
+frontier_size: 478 	 relax: 0.000501 	 pack: 0.000001
+frontier_size: 140 	 relax: 0.000332 	 pack: 0.000001
+frontier_size: 99 	 relax: 0.000257 	 pack: 0.000001
+frontier_size: 0 	 relax: 0.000127 	 pack: 0.000001
+120 Round 1: 0.426770
+frontier_size: 1 	 relax: 0.000800 	 pack: 0.000672
+frontier_size: 491 	 relax: 0.000443 	 pack: 0.000001
+frontier_size: 3390 	 relax: 0.001431 	 pack: 0.000001
+frontier_size: 3562 	 relax: 0.001574 	 pack: 0.000001
+frontier_size: 2847 	 relax: 0.001057 	 pack: 0.000001
+frontier_size: 959 	 relax: 0.000906 	 pack: 0.000001
+frontier_size: 1881 	 relax: 0.001115 	 pack: 0.000001
+frontier_size: 997 	 relax: 0.000886 	 pack: 0.000001
+frontier_size: 645 	 relax: 0.000633 	 pack: 0.000001
+frontier_size: 592 	 relax: 0.001025 	 pack: 0.000001
+frontier_size: 475 	 relax: 0.000410 	 pack: 0.000001
+frontier_size: 2086 	 relax: 0.001449 	 pack: 0.000001
+frontier_size: 2784 	 relax: 0.001164 	 pack: 0.000001
+frontier_size: 5854 	 relax: 0.001417 	 pack: 0.000001
+frontier_size: 2030 	 relax: 0.001221 	 pack: 0.000001
+frontier_size: 1646 	 relax: 0.001058 	 pack: 0.000001
+frontier_size: 1804 	 relax: 0.000922 	 pack: 0.000000
+frontier_size: 876 	 relax: 0.000731 	 pack: 0.000001
+frontier_size: 998 	 relax: 0.000614 	 pack: 0.000001
+frontier_size: 2188 	 relax: 0.001306 	 pack: 0.000001
+frontier_size: 1017 	 relax: 0.001009 	 pack: 0.000001
+frontier_size: 996 	 relax: 0.000502 	 pack: 0.000001
+frontier_size: 1224 	 relax: 0.000649 	 pack: 0.000001
+frontier_size: 5088 	 relax: 0.001450 	 pack: 0.000001
+frontier_size: 2373 	 relax: 0.001064 	 pack: 0.000001
+frontier_size: 2924 	 relax: 0.001496 	 pack: 0.000000
+frontier_size: 1813 	 relax: 0.000859 	 pack: 0.000001
+frontier_size: 1115 	 relax: 0.000772 	 pack: 0.000001
+frontier_size: 828 	 relax: 0.000396 	 pack: 0.000001
+frontier_size: 661 	 relax: 0.000451 	 pack: 0.000001
+frontier_size: 772 	 relax: 0.000473 	 pack: 0.000000
+frontier_size: 744 	 relax: 0.000517 	 pack: 0.000001
+frontier_size: 630 	 relax: 0.000470 	 pack: 0.000001
+frontier_size: 1129 	 relax: 0.000865 	 pack: 0.000001
+frontier_size: 1116 	 relax: 0.000855 	 pack: 0.000001
+frontier_size: 3125 	 relax: 0.001941 	 pack: 0.000001
+frontier_size: 2128 	 relax: 0.001122 	 pack: 0.000001
+frontier_size: 1044 	 relax: 0.001077 	 pack: 0.000001
+frontier_size: 850 	 relax: 0.000414 	 pack: 0.000001
+frontier_size: 1123 	 relax: 0.000547 	 pack: 0.000001
+frontier_size: 1634 	 relax: 0.000638 	 pack: 0.000001
+frontier_size: 2255 	 relax: 0.000922 	 pack: 0.000001
+frontier_size: 2904 	 relax: 0.000993 	 pack: 0.000001
+frontier_size: 1864 	 relax: 0.000733 	 pack: 0.000001
+frontier_size: 1640 	 relax: 0.000545 	 pack: 0.000001
+frontier_size: 1888 	 relax: 0.000530 	 pack: 0.000000
+frontier_size: 2306 	 relax: 0.000628 	 pack: 0.000001
+frontier_size: 2676 	 relax: 0.001481 	 pack: 0.000001
+frontier_size: 3097 	 relax: 0.001008 	 pack: 0.000247
+frontier_size: 5133 	 relax: 0.001311 	 pack: 0.000001
+frontier_size: 3330 	 relax: 0.001107 	 pack: 0.000001
+frontier_size: 6948 	 relax: 0.001343 	 pack: 0.000001
+frontier_size: 10202 	 relax: 0.001953 	 pack: 0.000002
+frontier_size: 7223 	 relax: 0.001352 	 pack: 0.000001
+frontier_size: 4352 	 relax: 0.001226 	 pack: 0.000001
+frontier_size: 4336 	 relax: 0.001274 	 pack: 0.000001
+frontier_size: 4929 	 relax: 0.001173 	 pack: 0.000001
+frontier_size: 8486 	 relax: 0.001789 	 pack: 0.000001
+frontier_size: 3140 	 relax: 0.001325 	 pack: 0.000001
+frontier_size: 3129 	 relax: 0.000894 	 pack: 0.000000
+frontier_size: 2903 	 relax: 0.001066 	 pack: 0.000000
+frontier_size: 3415 	 relax: 0.000933 	 pack: 0.000001
+frontier_size: 3097 	 relax: 0.001001 	 pack: 0.000001
+frontier_size: 4018 	 relax: 0.000801 	 pack: 0.000001
+frontier_size: 8863 	 relax: 0.001472 	 pack: 0.000001
+frontier_size: 5861 	 relax: 0.001896 	 pack: 0.000001
+frontier_size: 2786 	 relax: 0.000957 	 pack: 0.000001
+frontier_size: 4306 	 relax: 0.001608 	 pack: 0.000001
+frontier_size: 2631 	 relax: 0.001336 	 pack: 0.000001
+frontier_size: 3929 	 relax: 0.001022 	 pack: 0.000001
+frontier_size: 4646 	 relax: 0.001356 	 pack: 0.000001
+frontier_size: 3858 	 relax: 0.001387 	 pack: 0.000001
+frontier_size: 5282 	 relax: 0.001186 	 pack: 0.000001
+frontier_size: 5043 	 relax: 0.001544 	 pack: 0.000001
+frontier_size: 4263 	 relax: 0.001090 	 pack: 0.000001
+frontier_size: 2419 	 relax: 0.001242 	 pack: 0.000001
+frontier_size: 2202 	 relax: 0.000826 	 pack: 0.000001
+frontier_size: 2930 	 relax: 0.000914 	 pack: 0.000001
+frontier_size: 3582 	 relax: 0.001785 	 pack: 0.000001
+frontier_size: 2322 	 relax: 0.000935 	 pack: 0.000001
+frontier_size: 3146 	 relax: 0.001050 	 pack: 0.000001
+frontier_size: 3685 	 relax: 0.001626 	 pack: 0.000001
+frontier_size: 5153 	 relax: 0.001467 	 pack: 0.000001
+frontier_size: 4383 	 relax: 0.001137 	 pack: 0.000001
+frontier_size: 12998 	 relax: 0.001510 	 pack: 0.000001
+frontier_size: 7008 	 relax: 0.001453 	 pack: 0.000001
+frontier_size: 6511 	 relax: 0.001596 	 pack: 0.000001
+frontier_size: 7614 	 relax: 0.001587 	 pack: 0.000001
+frontier_size: 8479 	 relax: 0.001865 	 pack: 0.000001
+frontier_size: 6393 	 relax: 0.001868 	 pack: 0.000001
+frontier_size: 7540 	 relax: 0.002314 	 pack: 0.000001
+frontier_size: 4960 	 relax: 0.001534 	 pack: 0.000002
+frontier_size: 2880 	 relax: 0.001243 	 pack: 0.000001
+frontier_size: 3958 	 relax: 0.001266 	 pack: 0.000001
+frontier_size: 618 	 relax: 0.001198 	 pack: 0.000001
+frontier_size: 305 	 relax: 0.001010 	 pack: 0.000001
+frontier_size: 149 	 relax: 0.000369 	 pack: 0.000001
+frontier_size: 83 	 relax: 0.000141 	 pack: 0.000001
+frontier_size: 171 	 relax: 0.000371 	 pack: 0.000001
+frontier_size: 40 	 relax: 0.000094 	 pack: 0.000001
+frontier_size: 51 	 relax: 0.000077 	 pack: 0.000000
+frontier_size: 57 	 relax: 0.000070 	 pack: 0.000000
+frontier_size: 43 	 relax: 0.000057 	 pack: 0.000001
+frontier_size: 22 	 relax: 0.000151 	 pack: 0.000000
+frontier_size: 0 	 relax: 0.000036 	 pack: 0.000001
+105 Warmup Round: 0.159229
+frontier_size: 1 	 relax: 0.000787 	 pack: 0.000677
+frontier_size: 491 	 relax: 0.000461 	 pack: 0.000001
+frontier_size: 3354 	 relax: 0.001621 	 pack: 0.000001
+frontier_size: 3147 	 relax: 0.001234 	 pack: 0.000001
+frontier_size: 3173 	 relax: 0.001396 	 pack: 0.000001
+frontier_size: 1038 	 relax: 0.000788 	 pack: 0.000001
+frontier_size: 1776 	 relax: 0.001327 	 pack: 0.000001
+frontier_size: 1438 	 relax: 0.001100 	 pack: 0.000001
+frontier_size: 606 	 relax: 0.000570 	 pack: 0.000001
+frontier_size: 478 	 relax: 0.000644 	 pack: 0.000001
+frontier_size: 530 	 relax: 0.000552 	 pack: 0.000001
+frontier_size: 1525 	 relax: 0.000773 	 pack: 0.000000
+frontier_size: 3077 	 relax: 0.001267 	 pack: 0.000001
+frontier_size: 5120 	 relax: 0.001415 	 pack: 0.000001
+frontier_size: 1870 	 relax: 0.001097 	 pack: 0.000001
+frontier_size: 1469 	 relax: 0.000888 	 pack: 0.000001
+frontier_size: 1237 	 relax: 0.000879 	 pack: 0.000001
+frontier_size: 919 	 relax: 0.000677 	 pack: 0.000001
+frontier_size: 988 	 relax: 0.000580 	 pack: 0.000001
+frontier_size: 2666 	 relax: 0.001117 	 pack: 0.000001
+frontier_size: 1253 	 relax: 0.001073 	 pack: 0.000001
+frontier_size: 1039 	 relax: 0.000420 	 pack: 0.000000
+frontier_size: 1091 	 relax: 0.000773 	 pack: 0.000001
+frontier_size: 4249 	 relax: 0.001467 	 pack: 0.000001
+frontier_size: 2392 	 relax: 0.001043 	 pack: 0.000001
+frontier_size: 2055 	 relax: 0.001339 	 pack: 0.000000
+frontier_size: 2084 	 relax: 0.001184 	 pack: 0.000001
+frontier_size: 1164 	 relax: 0.000713 	 pack: 0.000001
+frontier_size: 833 	 relax: 0.000360 	 pack: 0.000001
+frontier_size: 633 	 relax: 0.000461 	 pack: 0.000001
+frontier_size: 739 	 relax: 0.000428 	 pack: 0.000001
+frontier_size: 757 	 relax: 0.000460 	 pack: 0.000001
+frontier_size: 671 	 relax: 0.000563 	 pack: 0.000001
+frontier_size: 1616 	 relax: 0.001009 	 pack: 0.000000
+frontier_size: 1180 	 relax: 0.001060 	 pack: 0.000001
+frontier_size: 3494 	 relax: 0.001361 	 pack: 0.000001
+frontier_size: 2274 	 relax: 0.001075 	 pack: 0.000001
+frontier_size: 1044 	 relax: 0.000807 	 pack: 0.000001
+frontier_size: 986 	 relax: 0.000522 	 pack: 0.000001
+frontier_size: 1130 	 relax: 0.000547 	 pack: 0.000000
+frontier_size: 1691 	 relax: 0.000551 	 pack: 0.000001
+frontier_size: 2238 	 relax: 0.001073 	 pack: 0.000001
+frontier_size: 2190 	 relax: 0.006330 	 pack: 0.000007
+frontier_size: 1858 	 relax: 0.001145 	 pack: 0.000001
+frontier_size: 1696 	 relax: 0.000512 	 pack: 0.000001
+frontier_size: 1730 	 relax: 0.000474 	 pack: 0.000001
+frontier_size: 2275 	 relax: 0.000990 	 pack: 0.000001
+frontier_size: 2328 	 relax: 0.001064 	 pack: 0.000001
+frontier_size: 2858 	 relax: 0.000825 	 pack: 0.000001
+frontier_size: 4700 	 relax: 0.001129 	 pack: 0.000001
+frontier_size: 3061 	 relax: 0.000947 	 pack: 0.000001
+frontier_size: 6942 	 relax: 0.001461 	 pack: 0.000003
+frontier_size: 10387 	 relax: 0.001753 	 pack: 0.000003
+frontier_size: 6910 	 relax: 0.001815 	 pack: 0.000003
+frontier_size: 4178 	 relax: 0.001252 	 pack: 0.000003
+frontier_size: 4567 	 relax: 0.001073 	 pack: 0.000001
+frontier_size: 4649 	 relax: 0.001156 	 pack: 0.000001
+frontier_size: 8741 	 relax: 0.001942 	 pack: 0.000002
+frontier_size: 3562 	 relax: 0.001152 	 pack: 0.000001
+frontier_size: 2784 	 relax: 0.000938 	 pack: 0.000001
+frontier_size: 2510 	 relax: 0.000815 	 pack: 0.000001
+frontier_size: 3418 	 relax: 0.001131 	 pack: 0.000001
+frontier_size: 3021 	 relax: 0.000926 	 pack: 0.000001
+frontier_size: 4195 	 relax: 0.001046 	 pack: 0.000001
+frontier_size: 8711 	 relax: 0.001577 	 pack: 0.000002
+frontier_size: 5466 	 relax: 0.001518 	 pack: 0.000002
+frontier_size: 2833 	 relax: 0.000962 	 pack: 0.000001
+frontier_size: 4340 	 relax: 0.001430 	 pack: 0.000001
+frontier_size: 2456 	 relax: 0.000819 	 pack: 0.000001
+frontier_size: 3577 	 relax: 0.001617 	 pack: 0.000001
+frontier_size: 4561 	 relax: 0.001494 	 pack: 0.000001
+frontier_size: 4523 	 relax: 0.001315 	 pack: 0.000001
+frontier_size: 5523 	 relax: 0.001323 	 pack: 0.000002
+frontier_size: 4980 	 relax: 0.001531 	 pack: 0.000001
+frontier_size: 5095 	 relax: 0.001317 	 pack: 0.000001
+frontier_size: 3215 	 relax: 0.001427 	 pack: 0.000002
+frontier_size: 2282 	 relax: 0.000998 	 pack: 0.000001
+frontier_size: 2750 	 relax: 0.001034 	 pack: 0.000001
+frontier_size: 3928 	 relax: 0.001337 	 pack: 0.000001
+frontier_size: 2213 	 relax: 0.000885 	 pack: 0.000002
+frontier_size: 2800 	 relax: 0.000916 	 pack: 0.000001
+frontier_size: 3339 	 relax: 0.001547 	 pack: 0.000001
+frontier_size: 4310 	 relax: 0.001064 	 pack: 0.000001
+frontier_size: 3800 	 relax: 0.001168 	 pack: 0.000001
+frontier_size: 11583 	 relax: 0.001336 	 pack: 0.000001
+frontier_size: 6483 	 relax: 0.001847 	 pack: 0.000001
+frontier_size: 6197 	 relax: 0.001792 	 pack: 0.000001
+frontier_size: 7068 	 relax: 0.001637 	 pack: 0.000001
+frontier_size: 7348 	 relax: 0.001315 	 pack: 0.000001
+frontier_size: 7306 	 relax: 0.001539 	 pack: 0.000001
+frontier_size: 8101 	 relax: 0.002101 	 pack: 0.000001
+frontier_size: 6840 	 relax: 0.001427 	 pack: 0.000001
+frontier_size: 3019 	 relax: 0.001000 	 pack: 0.000271
+frontier_size: 3368 	 relax: 0.001312 	 pack: 0.000001
+frontier_size: 493 	 relax: 0.001244 	 pack: 0.000001
+frontier_size: 381 	 relax: 0.001166 	 pack: 0.000001
+frontier_size: 139 	 relax: 0.000326 	 pack: 0.000000
+frontier_size: 77 	 relax: 0.000176 	 pack: 0.000000
+frontier_size: 52 	 relax: 0.000181 	 pack: 0.000001
+frontier_size: 53 	 relax: 0.000143 	 pack: 0.000000
+frontier_size: 44 	 relax: 0.000056 	 pack: 0.000001
+frontier_size: 54 	 relax: 0.000048 	 pack: 0.000000
+frontier_size: 40 	 relax: 0.000063 	 pack: 0.000000
+frontier_size: 24 	 relax: 0.000126 	 pack: 0.000001
+frontier_size: 0 	 relax: 0.000036 	 pack: 0.000001
+105 Round 1: 0.145690
+Average time: 0.426770	0.145690
 

@@ -13,6 +13,7 @@
 #include <vector>
 
 #include "parlay/delayed_sequence.h"
+#include "parlay/io.h"
 #include "parlay/primitives.h"
 #include "parlay/sequence.h"
 #include "parlay/utilities.h"
@@ -73,72 +74,52 @@ class Graph {
     });
   }
   void read_pbbs_format(char const* filename) {
-    FILE* fp = fopen(filename, "r");
-    if (fp == nullptr) {
-      fprintf(stderr, "Error: file %s does not exist\n", filename);
-      exit(EXIT_FAILURE);
-    }
-    fseek(fp, 0, SEEK_END);
-    size_t size = ftell(fp);
-    rewind(fp);
-    sequence<char> buf(size);
-    if (fread(buf.begin(), 1, size, fp) != size) {
-      fprintf(stderr, "Error: Read failed\n");
-      exit(EXIT_FAILURE);
-    }
-    sequence<bool> digit(size);
-    auto idx = delayed_seq<size_t>(size, [](size_t i) { return i; });
-    auto st = filter(idx, [&](size_t i) {
-      return isdigit(buf[i]) && (i == 0 || !isdigit(buf[i - 1]));
-    });
-    auto ed = filter(idx, [&](size_t i) {
-      return isdigit(buf[i]) && (i == size - 1 || !isdigit(buf[i + 1]));
-    });
-    assert(st.size() == ed.size());
-    size_t num_sum = st.size();
-    auto num = delayed_seq<size_t>(num_sum, [&](size_t i) {
-      return stol(string(buf.begin() + st[i], buf.begin() + ed[i] + 1));
-    });
+    auto chars = chars_from_file(string(filename));
+    auto tokens_seq = tokens(chars);
+    auto header = tokens_seq[0];
+
+    n = chars_to_ulong_long(tokens_seq[1]);
+    m = chars_to_ulong_long(tokens_seq[2]);
+
     if(contracted){
-      n = num[0], m = num[1], layer = num[2];
-      cerr << n << " " << m << " " << layer << " " << num.size() << " " << (n+n+n+n+n)+n+n+m+m+layer+3 << endl;
+      layer = chars_to_ulong_long(tokens_seq[3]);
+      // cerr << n << " " << m << " " << layer << " " << num.size() << " " << (n+n+n+n+n)+n+n+m+m+layer+3 << endl;
+      cerr << n << " " << m << " " << layer << " " << tokens_seq.size() << " " << n+n+m+m+layer+4 << endl;
       assert(weighted);
-      assert(num.size() == (n+n+n+n+n) + n + n + m + m + layer + 3);
+      // assert(num.size() == (n+n+n+n+n) + n + n + m + m + layer + 3);
+      assert(tokens_seq.size() == n + n + m + m + layer + 4);
       offset = sequence<EdgeId>(n + 1);
       sortedLayer = sequence<size_t>(n + 1);
       edge = sequence<Edge>(m);
       layerOffset = sequence<size_t>(layer+1);
       radius = sequence<std::array<size_t, 5>>(n);
-      parallel_for(0, n, [&](size_t i) { offset[i] = num[i+3];});
+      parallel_for(0, n, [&](size_t i) { offset[i] = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i+4]));});
       offset[n] = m;
-      parallel_for(0, n, [&](size_t i) { sortedLayer[i] = num[i + n +3];});
-      parallel_for(0, m, [&](size_t i) { edge[i].v = num[i + n + n + 3]; });
-      parallel_for(0, m, [&](size_t i) { edge[i].w = num[i + n + n + m + 3]; });
-      parallel_for(0, layer, [&](size_t i) { layerOffset[i] = num[i + n + n + m + m + 3]; });
+      parallel_for(0, n, [&](size_t i) { sortedLayer[i] = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n +4]));});
+      parallel_for(0, m, [&](size_t i) { edge[i].v = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n + n + 4]));});
+      parallel_for(0, m, [&](size_t i) { edge[i].w = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n + n + m + 4]));});
+      parallel_for(0, layer, [&](size_t i) { layerOffset[i] = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n + n + m + m + 4]));});
       layerOffset[layer] = n;
-      for (size_t j=0;j<5;j++){
-        parallel_for(0, n, [&](size_t i) { 
-            radius[i][j] = num[i + n*j +n + n + layer + m + m + 3];
-        });
-      }
-      fclose(fp);
+      // for (size_t j=0;j<5;j++){
+      //   parallel_for(0, n, [&](size_t i) { 
+      //       radius[i][j] = num[i + n*j +n + n + layer + m + m + 3];
+      //   });
+      // }
     }else{
-      n = num[0], m = num[1];
       if (weighted) {
-        assert(num.size() == n + m + m + 2);
+        assert(tokens_seq.size() == n + m + m + 3);
       } else {
-        assert(num.size() == n + m + 2);
+        assert(tokens_seq.size() == n + m + 3);
       }
       offset = sequence<EdgeId>(n + 1);
       edge = sequence<Edge>(m);
-      parallel_for(0, n, [&](size_t i) { offset[i] = num[i + 2]; });
+      parallel_for(0, n, [&](size_t i) { offset[i] = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + 3]));});
       offset[n] = m;
-      parallel_for(0, m, [&](size_t i) { edge[i].v = num[i + n + 2]; });
+      parallel_for(0, m, [&](size_t i) { edge[i].v = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n + 3]));});
       if (weighted) {
-        parallel_for(0, m, [&](size_t i) { edge[i].w = num[i + n + m + 2]; });
+        parallel_for(0, m, [&](size_t i) { edge[i].w = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n + m + 3]));});
         // generate_weight();
       }
-      fclose(fp);
     }
   }
  

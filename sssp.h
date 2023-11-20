@@ -35,6 +35,7 @@ class SSSP {
     }
   }
   void decompressLayered() {
+    EdgeTy upper = numeric_limits<EdgeTy>::max() / 2;
     for(size_t i=G.layer-1;i>0;--i){
       if(G.layerOffset[i+1]-G.layerOffset[i]>1000){
         parallel_for(G.layerOffset[i], G.layerOffset[i+1], [&](size_t k){
@@ -42,6 +43,7 @@ class SSSP {
           for (size_t j = G.offset[u]; j < G.offset[u + 1]; j++) {
             NodeId v = G.edge[j].v;
             EdgeTy w = G.edge[j].w;
+            if (w == upper) break;
             if (dist[u] >dist[v]+ w) {
               dist[u] = dist[v] + w;
             }
@@ -53,6 +55,7 @@ class SSSP {
           for (size_t j = G.offset[u]; j < G.offset[u + 1]; j++) {
             NodeId v = G.edge[j].v;
             EdgeTy w = G.edge[j].w;
+            if (w == upper) break;
             if (dist[u] >dist[v]+ w) {
               dist[u] = dist[v] + w;
             }

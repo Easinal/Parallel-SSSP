@@ -6,10 +6,12 @@ folderContract="/data9/zwan018/contract"
 steps=("8192" "16384" "32768" "65536" "131072" "262144" "524288" "1048576" "2097152" "4194304" "8388608" "16777216" "33554432")
 # steps=("128" "256" "512" "1024" "2048" "4096" "8192" "16384" "32768")
 radiuses=("0" "1" "2" "3" "4")
-xs=("1" "2" "3" "4" "5")
-# graphs=("com-orkut" "friendster")
-graphs=("RoadUSA_sym_wgh" "Germany_sym_wgh" "hugebubbles-00020" "road-asia-osm" "hugetrace-00020" "europe_osm")
-# "Germany_sym_wgh" "hugebubbles-00020" "road-asia-osm" "hugetrace-00020" "europe_osm"
+#
+xs=("0" "1" "2" "3" "4" "5")
+# # graphs=("com-orkut" "friendster")
+# graphs=("RoadUSA_sym_wgh" "Germany_sym_wgh" "hugebubbles-00020" "road-asia-osm" "hugetrace-00020" "europe_osm")
+graphs=("Germany_sym_wgh")
+# "Germany_sym_wgh" "hugebubbles-00020" "road-asia-osm" "hugetrace-00020" "europe_osm" "grid_10_1000000"
 
 for graph in ${graphs[@]}; do
     # for step in ${steps[@]}; do
