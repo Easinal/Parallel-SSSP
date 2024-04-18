@@ -6,19 +6,21 @@
 using namespace std;
 using namespace parlay;
 
-constexpr int NUM_SRC = 10;
+constexpr int NUM_SRC = 20;
 constexpr int NUM_ROUND = 5;
 
 constexpr size_t LOCAL_QUEUE_SIZE = 4096;
 constexpr size_t DEG_THLD = 20;
 constexpr size_t SSSP_SAMPLES = 1000;
 
+bool change = false;
+
 
 enum Algorithm { rho_stepping = 0, delta_stepping, bellman_ford };
 
 class SSSP {
  protected:
-  const Graph &G;
+  Graph &G;
   bool sparse;
   int sd_scale;
   size_t frontier_size;
@@ -35,29 +37,28 @@ class SSSP {
     }
   }
   void decompressLayered() {
-    EdgeTy upper = numeric_limits<EdgeTy>::max() / 2;
     for(size_t i=G.layer-1;i>0;--i){
       if(G.layerOffset[i+1]-G.layerOffset[i]>1000){
         parallel_for(G.layerOffset[i], G.layerOffset[i+1], [&](size_t k){
-          NodeId u = G.sortedLayer[k];
-          for (size_t j = G.offset[u]; j < G.offset[u + 1]; j++) {
-            NodeId v = G.edge[j].v;
-            EdgeTy w = G.edge[j].w;
-            if (w == upper) break;
-            if (dist[u] >dist[v]+ w) {
-              dist[u] = dist[v] + w;
+          if(dist[G.edge[G.offset[k]].v]!=DIST_MAX){
+            for (size_t j = G.offset[k]; j < G.offset[k + 1]; j++) {
+              NodeId v = G.edge[j].v;
+              EdgeTy w = G.edge[j].w;
+              if (dist[k] >dist[v]+ w) {
+                dist[k] = dist[v] + w;
+              }
             }
           }
         });
       }else{
         for(size_t k = G.layerOffset[i]; k<G.layerOffset[i+1];++k){
-          NodeId u = G.sortedLayer[k];
-          for (size_t j = G.offset[u]; j < G.offset[u + 1]; j++) {
-            NodeId v = G.edge[j].v;
-            EdgeTy w = G.edge[j].w;
-            if (w == upper) break;
-            if (dist[u] >dist[v]+ w) {
-              dist[u] = dist[v] + w;
+          if(dist[G.edge[G.offset[k]].v]!=DIST_MAX){
+            for (size_t j = G.offset[k]; j < G.offset[k + 1]; j++) {
+              NodeId v = G.edge[j].v;
+              EdgeTy w = G.edge[j].w;
+              if (dist[k] >dist[v]+ w) {
+                dist[k] = dist[v] + w;
+              }
             }
           }
         }
@@ -99,6 +100,7 @@ class SSSP {
         add_to_bag(f);
       } else {
         size_t _n = G.offset[f + 1] - G.offset[f];
+        // if(change)cout<<f<<" with neighbor"<<_n<<endl;
         if (super_sparse && _n < LOCAL_QUEUE_SIZE) {
           NodeId local_queue[LOCAL_QUEUE_SIZE];
           size_t front = 0, rear = 0;
@@ -203,6 +205,7 @@ class SSSP {
             // write_min(&dist[u], temp_dist,
             //[](EdgeTy w1, EdgeTy w2) { return w1 < w2; });
             //}
+            // if(change)cout<<u<<" with neighbor"<<G.offset[u+1]-G.offset[u]<<endl;
             blocked_for(G.offset[u], G.offset[u + 1], BLOCK_SIZE,
                         [&](size_t, size_t _s, size_t _e) {
                           if (G.symmetrized) {
@@ -256,39 +259,52 @@ class SSSP {
     pack_into_uninitialized(identity, in_frontier, frontier);
   }
 
-  void topDown(NodeId s){
+  bool topDown(NodeId s){
     frontier_size=0;
-    size_t bound = G.layerOffset[2];
     priority_queue<pair<EdgeTy, NodeId>, vector<pair<EdgeTy, NodeId>>,
                 greater<pair<EdgeTy, NodeId>>>
     pq;
     priority_queue<pair<EdgeTy, NodeId>, vector<pair<EdgeTy, NodeId>>,
                 greater<pair<EdgeTy, NodeId>>>
     pq2;
-    pq.push(make_pair(dist[s], s));
-    while (!pq.empty()) {
-      pair<EdgeTy, NodeId> dist_and_node = pq.top();
-      pq.pop();
+    pq2.push(make_pair(dist[s], s));
+    while (!pq2.empty()) {
+      pair<EdgeTy, NodeId> dist_and_node = pq2.top();
+      pq2.pop();
       EdgeTy d = dist_and_node.first;
       NodeId u = dist_and_node.second;
       if (dist[u] < d) continue;
+      if(in_frontier[u] == false){
+        in_frontier[u]=true;
+        frontier[frontier_size]=u;
+        frontier_size++;
+      }
       for (size_t j = G.offset[u]; j < G.offset[u + 1]; j++) {
         NodeId v = G.edge[j].v;
         EdgeTy w = G.edge[j].w;
         if (dist[v] > dist[u] + w) {
           dist[v] = dist[u] + w;
-          if(v<bound){
-            pq2.push(make_pair(dist[v], v));
+          if(G.residualFlag[v]==0){
+            pq.push(make_pair(dist[v], v));
           }
           else{
-            pq.push(make_pair(dist[v], v));
+            pq2.push(make_pair(dist[v], v));
           }
         }
       }
     }
-    while (!pq2.empty()) {
-      pair<EdgeTy, NodeId> dist_and_node = pq2.top();
-      pq2.pop();
+    if(pq.empty()) {
+      // if(G.layerOffset[1]>0.01*G.n) return false;
+      // return true;
+      return false;
+    }
+    parallel_for(0, frontier_size, [&](NodeId i) {
+      in_frontier[frontier[i]]=false;
+    });
+    frontier_size = 0;
+    while (!pq.empty()) {
+      pair<EdgeTy, NodeId> dist_and_node = pq.top();
+      pq.pop();
       NodeId u = dist_and_node.second;
       if(in_frontier[u] == true){
         continue;
@@ -297,7 +313,75 @@ class SSSP {
       frontier[frontier_size]=u;
       frontier_size++;
     }
+    return true;
   }
+
+  bool backTrack(){
+    priority_queue<pair<EdgeTy, NodeId>, vector<pair<EdgeTy, NodeId>>,
+                  greater<pair<EdgeTy, NodeId>>> pq2;
+    for(size_t i=0;i<frontier_size;++i)pq2.push(make_pair(dist[frontier[i]],frontier[i]));
+    while (!pq2.empty()) {
+      pair<EdgeTy, NodeId> dist_and_node = pq2.top();
+      pq2.pop();
+      EdgeTy d = dist_and_node.first;
+      NodeId u = dist_and_node.second;
+      if (dist[u] < d) continue;
+      for (size_t j = G.offset[u]; j < G.offset[u + 1]; j++) {
+        NodeId v = G.edge[j].v;
+        EdgeTy w = G.edge[j].w;
+        if (dist[v] > dist[u] + w) {
+          dist[v] = dist[u] + w;
+          pq2.push(make_pair(dist[v], v));
+        }
+      }
+    }
+    return false;
+  }
+  void reverseSearch(){
+    change=true;
+    init();
+    sparse = false;
+    // cout<<"Reverse "<<G.rm<<" "<<frontier_size<<" "<<count(in_frontier, true)<<endl;
+    swap(G.edge, G.reverseEdge);
+    swap(G.m,G.rm);
+    swap(G.offset, G.reverseOffset);
+    loop();
+    // backTrack();
+    change=false;
+    swap(G.edge, G.reverseEdge);
+    swap(G.m,G.rm);
+    swap(G.offset, G.reverseOffset);
+  }
+  
+  void loop(){
+    int round = 0;
+    while (frontier_size) {
+      // internal::timer t;
+      // printf("(Round %d, size: %zu, %d)\n", round, frontier_size, sparse);
+      if (sparse) {
+        frontier_size = sparse_relax();
+      } else {
+        frontier_size = dense_relax();
+      }
+      // printf("frontier_size: %ld \t relax: %f \t ",frontier_size, t.next_time());
+      t_trans.start();
+      bool next_sparse = (frontier_size < G.n / sd_scale) ? true : false;
+      if (sparse && !next_sparse) {
+        sparse2dense();
+      } else if (!sparse && next_sparse) {
+        dense2sparse();
+      }
+      round++;
+      // if(round % 1000 == 0) {
+      //   t.next("time");
+      // }
+      // printf("pack: %f\n", t.next_time());
+      sparse = next_sparse;
+      t_trans.stop();
+    }
+    printf("%d ", round);
+  }
+  
 
   function<void()> init;
   function<EdgeTy()> get_threshold;
@@ -313,7 +397,7 @@ class SSSP {
   double break_time = 0;
   double decompress_time = 0;
   SSSP() = delete;
-  SSSP(const Graph &_G) : G(_G), bag(G.n) {
+  SSSP(Graph &_G) : G(_G), bag(G.n) {
     dist = sequence<EdgeTy>::uninitialized(G.n);
     frontier = sequence<NodeId>::uninitialized(G.n);
     in_frontier = sequence<atomic<bool>>::uninitialized(G.n);
@@ -330,48 +414,39 @@ class SSSP {
       dist[i] = numeric_limits<EdgeTy>::max() / 2;
       in_frontier[i] = in_next_frontier[i] = false;
     });
-    if(G.contracted && G.layer>1 && s>=G.layerOffset[2]){
-      topDown(s);
+    if(G.contracted)s=G.sortedLayer[s];
+    dist[s]=0;
+    bool dcep=true;
+    if(G.contracted && G.layer>1 && G.residualFlag[s]!=0){
+      dcep = topDown(s);
     }else{
       frontier_size = 1;
-      dist[s] = 0;
       frontier[0] = s;
       in_frontier[s] = true;
     }
     sparse = false;
-    int round = 0;
     t_init.stop();
-
-
-    while (frontier_size) {
-      // printf("(Round %d, size: %zu\n)", round++, frontier_size);
-      internal::timer t;
-      if (sparse) {
-        frontier_size = sparse_relax();
-      } else {
-        frontier_size = dense_relax();
-      }
-      // printf("frontier_size: %ld \t relax: %f \t ",frontier_size, t.next_time());
-      t_trans.start();
-      bool next_sparse = (frontier_size < G.n / sd_scale) ? true : false;
-      if (sparse && !next_sparse) {
-        sparse2dense();
-      } else if (!sparse && next_sparse) {
-        dense2sparse();
-      }
-      round++;
-      // assert(sparse == true);
-      // if(round % 1000 == 0) {
-      //   t.next("time");
-      // }
-      // printf("pack: %f\n", t.next_time());
-      sparse = next_sparse;
-      t_trans.stop();
-    }
-    printf("%d ", round);
+    if(dcep && frontier_size)loop();
     t_decompress.reset();
     t_decompress.start();
-    if(G.contracted)decompressLayered();
+    if(G.contracted){
+      if(dcep){
+        if(frontier_size==0){
+          parallel_for(0, G.n, [&](NodeId i) {
+            if(dist[i]!=numeric_limits<EdgeTy>::max() / 2 && G.reverseOffset[i]!=G.reverseOffset[i+1]){
+              add_to_bag(i);
+              in_frontier[i]=true;
+            }
+            in_next_frontier[i] = false;
+          });
+          frontier_size = bag.pack_into(make_slice(frontier));
+        }
+        if(frontier_size >  2000)decompressLayered();
+        else reverseSearch();
+      }else{
+        reverseSearch();
+      }
+    }
     t_decompress.stop();
     decompress_time+=t_decompress.total_time();
     // printf("%f %f %f %f %f %f %f -> %f \n", tb1.total_time(), tb2.total_time(), tb3.total_time(), tb4.total_time(), t_decompress.total_time(), t_init.total_time(), t_trans.total_time(),
@@ -394,7 +469,7 @@ class Rho_Stepping : public SSSP {
   uint32_t seed;
 
  public:
-  Rho_Stepping(const Graph &_G, size_t _rho = 1 << 20, size_t _radius_range=0, double _x=1) 
+  Rho_Stepping(Graph &_G, size_t _rho = 1 << 20, size_t _radius_range=0, double _x=1) 
   : SSSP(_G), rho(_rho), radius_range(_radius_range), x(_x){
     seed = 0;
     init = []() {};
@@ -444,7 +519,7 @@ class Delta_Stepping : public SSSP {
   EdgeTy thres;
 
  public:
-  Delta_Stepping(const Graph &_G, EdgeTy _delta = 1 << 15, size_t _radius_range = 5, double _x = 1)
+  Delta_Stepping(Graph &_G, EdgeTy _delta = 1 << 15, size_t _radius_range = 5, double _x = 1)
       : SSSP(_G), delta(_delta), radius_range(_radius_range), x(_x) {
         // cout<<x<<endl;
     init = [&]() { thres = 0; };
@@ -464,6 +539,7 @@ class Delta_Stepping : public SSSP {
       }
       */
       thres += delta;
+      // if(change)thres += 10*delta;
       // cout<<thres<<"\t";
       return thres;
     };
@@ -472,7 +548,7 @@ class Delta_Stepping : public SSSP {
 
 class Bellman_Ford : public SSSP {
  public:
-  Bellman_Ford(const Graph &_G) : SSSP(_G) {
+  Bellman_Ford(Graph &_G) : SSSP(_G) {
     init = []() {};
     get_threshold = []() { return DIST_MAX; };
   }

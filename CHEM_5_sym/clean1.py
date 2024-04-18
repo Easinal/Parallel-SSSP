@@ -1,6 +1,7 @@
+
 import re
 st1 = ["delta"]
-st2=["16384", "32768", "65536", "131072", "262144", "524288", "1048576", "2097152", "4194304", "8388608", "16777216", "33554432"]
+st2=["4096", "8192", "16384", "32768", "65536", "131072", "262144", "524288", "1048576", "2097152", "4194304", "8388608", "16777216", "33554432"]
 #"16384", 
 def main():
     with open("average.txt", "w") as f1:
@@ -21,12 +22,12 @@ def main():
                             source_num += 1
                             tot_avg_time_origin += float(sr[2])
                             tot_avg_time_contract += float(sr[3])
-                            tot_avg_time_decompress += float(sr[4])
+                            tot_avg_time_decompress +=float(sr[4])
                             #print(sr[2]+"\t"+sr[3]+"\n")
                         #
                 print("{0}_{1}.txt".format(graph,tp))
                 print(source_num)
-                f1.write(str(tot_avg_time_origin/source_num)+"\t"+str(tot_avg_time_contract/source_num+"\t"+str(tot_avg_time_decompress/source_num)+"\n")
+                f1.write(str(tot_avg_time_origin/source_num)+"\t"+str(tot_avg_time_contract/source_num)+"\t"+str(tot_avg_time_decompress/source_num)+"\n")
                 sf.close()
     f1.close()
 

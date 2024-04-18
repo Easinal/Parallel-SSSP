@@ -24,7 +24,7 @@ using namespace parlay;
 using NodeId = uint32_t;
 using EdgeId = uint64_t;
 using EdgeTy = uint32_t;
-constexpr int LOG2_WEIGHT = 18;
+constexpr int LOG2_WEIGHT = 5;
 constexpr int WEIGHT = 1 << LOG2_WEIGHT;
 
 constexpr EdgeTy DIST_MAX = numeric_limits<EdgeTy>::max() / 2;
@@ -48,11 +48,15 @@ class Graph {
   size_t n, m;
   sequence<Edge> edge;
   sequence<EdgeId> offset;
-  sequence<size_t> residual;
+  sequence<size_t> residualFlag;
   sequence<size_t> layerOffset;
   sequence<size_t> sortedLayer;
   sequence<std::array<size_t, 5>> radius;
   size_t x=1;
+  size_t rm; // reverse edges num
+  sequence<Edge> reverseEdge;
+  sequence<EdgeId> reverseOffset;
+  
   bool weighted;
   bool symmetrized;
   bool contracted=false;
@@ -69,7 +73,7 @@ class Graph {
     }
     parallel_for(0, n, [&](size_t i) {
       for (size_t j = offset[i]; j < offset[i + 1]; j++) {
-        edge[j].w = ((hash32(i) ^ hash32(edge[j].v)) & (WEIGHT - 1)) + 1;
+        edge[j].w = ((hash32_2(i) ^ hash32_2(edge[j].v)) & (WEIGHT - 1)) + 1;
       }
     });
   }
@@ -82,24 +86,37 @@ class Graph {
     m = chars_to_ulong_long(tokens_seq[2]);
 
     if(contracted){
-      layer = chars_to_ulong_long(tokens_seq[3]);
+      rm = chars_to_ulong_long(tokens_seq[3]);
+      layer = chars_to_ulong_long(tokens_seq[4]);
       // cerr << n << " " << m << " " << layer << " " << num.size() << " " << (n+n+n+n+n)+n+n+m+m+layer+3 << endl;
-      cerr << n << " " << m << " " << layer << " " << tokens_seq.size() << " " << n+n+m+m+layer+4 << endl;
+      cerr << n << " " << m << " " << rm << " " << layer << " " << tokens_seq.size() << " " << n+n+n+rm+rm+m+m+layer+5 << endl;
       assert(weighted);
       // assert(num.size() == (n+n+n+n+n) + n + n + m + m + layer + 3);
-      assert(tokens_seq.size() == n + n + m + m + layer + 4);
+      assert(tokens_seq.size() == n + n + n + m + m + rm + rm + layer + 5);
       offset = sequence<EdgeId>(n + 1);
       sortedLayer = sequence<size_t>(n + 1);
+      residualFlag = sequence<size_t>(n + 1);
       edge = sequence<Edge>(m);
       layerOffset = sequence<size_t>(layer+1);
-      radius = sequence<std::array<size_t, 5>>(n);
-      parallel_for(0, n, [&](size_t i) { offset[i] = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i+4]));});
+      reverseOffset = sequence<EdgeId>(n + 1);
+      reverseEdge = sequence<Edge>(rm);
+      // radius = sequence<std::array<size_t, 5>>(n);
+      parallel_for(0, n, [&](size_t i) { offset[i] = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i+5]));});
       offset[n] = m;
-      parallel_for(0, n, [&](size_t i) { sortedLayer[i] = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n +4]));});
-      parallel_for(0, m, [&](size_t i) { edge[i].v = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n + n + 4]));});
-      parallel_for(0, m, [&](size_t i) { edge[i].w = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n + n + m + 4]));});
-      parallel_for(0, layer, [&](size_t i) { layerOffset[i] = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n + n + m + m + 4]));});
+      parallel_for(0, n, [&](size_t i) { sortedLayer[i] = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n +5]));});
+      parallel_for(0, m, [&](size_t i) { edge[i].v = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n + n + 5]));});
+      parallel_for(0, m, [&](size_t i) { edge[i].w = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n + n + m + 5]));});
+      parallel_for(0, layer, [&](size_t i) { layerOffset[i] = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n + n + m + m + 5]));});
+      parallel_for(0, layer, [&](size_t i) { 
+        parallel_for(layerOffset[i],layerOffset[i+1], [&](size_t j) {
+          residualFlag[j]=i;
+        });
+      });
       layerOffset[layer] = n;
+      parallel_for(0, n, [&](size_t i) { reverseOffset[i] = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n + n + m + m + layer +5]));});
+      offset[n] = m;
+      parallel_for(0, rm, [&](size_t i) { reverseEdge[i].v = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n + n + n + m + m + layer +5]));});
+      parallel_for(0, rm, [&](size_t i) { reverseEdge[i].w = internal::chars_to_int_t<NodeId>(make_slice(tokens_seq[i + n + n + n + m + m + rm + layer +5]));});
       // for (size_t j=0;j<5;j++){
       //   parallel_for(0, n, [&](size_t i) { 
       //       radius[i][j] = num[i + n*j +n + n + layer + m + m + 3];

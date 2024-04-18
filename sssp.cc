@@ -56,7 +56,7 @@ void run(Algo &algo, const Graph &G, bool verify) {
 }
 
 template <class Algo>
-void run2(Algo &algo, const Graph &G, Algo &algo2, bool verify) {
+void run2(Algo &algo, const Graph &G, const Graph &G2, Algo &algo2, bool verify) {
   for (int v = 0; v < NUM_SRC; v++) {
     NodeId s = hash32(v) % G.n;
     printf("source %d: %-10d\n", v, s);
@@ -104,7 +104,7 @@ void run2(Algo &algo, const Graph &G, Algo &algo2, bool verify) {
       auto dist2 = algo2.sssp(s);
       t2.stop();
       printf("Our running time: %f\t%f\n", t.total_time(), t2.total_time());
-      verifier2(s, G, dist, dist2);
+      verifier2(s, G, G2, dist, dist2);
     }
     printf("\n");
   }
@@ -229,19 +229,19 @@ int main(int argc, char *argv[]) {
       solver.set_sd_scale(sd_scale);
       Rho_Stepping solver2(G2, param, radius_range,scale);
       solver2.set_sd_scale(sd_scale2);
-      run2(solver, G, solver2, verify);
+      run2(solver, G, G2, solver2, verify);
     } else if (algo == delta_stepping) {
       Delta_Stepping solver(G, param, radius_range,scale);
       solver.set_sd_scale(sd_scale);
       Delta_Stepping solver2(G2, param, radius_range,scale);
       solver2.set_sd_scale(sd_scale2);
-      run2(solver, G, solver2, verify);
+      run2(solver, G, G2, solver2, verify);
     } else if (algo == bellman_ford) {
       Bellman_Ford solver(G);
       solver.set_sd_scale(sd_scale);
       Bellman_Ford solver2(G2);
       solver2.set_sd_scale(sd_scale2);
-      run2(solver, G, solver2, verify);
+      run2(solver, G, G2, solver2, verify);
     }
     return 0;
   }
